@@ -166,6 +166,9 @@ CONSTRAINT IsTypeCorrect_ck  CHECK (IsType in (0,1)),
 CONSTRAINT IsTechSpecCorrect_ck  CHECK (IsTechSpec in (0,1))
 )
 GO
+Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (1,"Product Type",0,0)
+Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (2,"Model Year",0,0)
+Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (3,"Technicial Spec",0,0)
 CREATE TABLE 	[dbo].tblProduct
 (
 Product_ID int Not Null,
@@ -192,11 +195,16 @@ GO
 CREATE TABLE [dbo].[tblPropertyValue](
 Property_ID INT NOT NULL,
 Product_ID INT NOT NULL,
-Value INT,
+[Value] INT,
 PRIMARY KEY (Property_ID,Product_ID),
 FOREIGN KEY (Product_ID) REFERENCES [dbo].[tblProduct](Product_ID),
 FOREIGN KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID)
 )
+GO
+--is used for search functionality must defaulted to 0 or none at all
+Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (1,1,null)
+Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (2,1,null)
+Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (3,1,null)
 GO
 CREATE TABLE [dbo].[tblTypeFilter](
 Property_ID INT NOT NULL,
@@ -208,6 +216,19 @@ FOREIGN KEY (SubCategory_ID) REFERENCES [dbo].[tblSubCategory](SubCategory_ID),
 Foreign KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID)
 )
 GO
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Useless")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Decent")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Reliable")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","Old")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","Modern")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","New")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Useless")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Decent")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Reliable")
+
+
+
+GO
 CREATE TABLE [dbo].[tblTechSpecFilter](
 Property_ID INT NOT NULL,
 SubCategory_ID INT NOT NULL,
@@ -218,6 +239,9 @@ FOREIGN KEY (SubCategory_ID) REFERENCES [dbo].[tblSubCategory](SubCategory_ID),
 FOREIGN KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID),
 CONSTRAINT IsTechSpecMaxMinCor_ck  CHECK (Min_Value<=Max_Value)
 )
+GO
+Insert [dbo].[tblTechSpecFilter]([Property_ID],[SubCategory_ID],[Min_Value],[Max_Value]) Values (1,1,0,100)
+
 Go
 Create Table [dbo].tblFeedBack
 (
@@ -318,11 +342,7 @@ Insert [dbo].tblFeedBack([Feeback_ID], [User_ID], [Product_ID], [Feedback_Time],
 values()
 */
 /*will be used when values need to be made DO NOT DELETE*/
-/*Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (1,'Happy',1,1)
-GO
-Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (2,'Mad',1,1)
-GO
-Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (3,'Fun',0,0)
+/*
 GO
 Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (1,1,1)
 GO
