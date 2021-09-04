@@ -47,20 +47,27 @@ Category_ID int Primary Key,
 Category_Name varchar(50)
 )
 GO
+INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(1,"Electronics")
+GO
 CREATE TABLE [dbo].[tblDocument](
 	[Document_ID] [int] IDENTITY(1,1) NOT NULL,
 	[Document_Folder_Path] [varchar](100) NOT NULL,
 	PRIMARY KEY (Document_ID),
 )
 GO
+INSERT [dbo].[tblDocument]([Document_ID],[Document_Folder_Path]) VALUES(1, "JoolServerApp\Item_Docs\Item1_Doc.txt")
+GO
+
 CREATE TABLE [dbo].[tblSubCategory](
 	[SubCategory_ID] [int] IDENTITY(1,1) NOT NULL,
 	[Category_ID] [int] NOT NULL,
 	[SubCategory_Name] [varchar](100) NOT NULL,
 	PRIMARY KEY (SubCategory_ID),
 	FOREIGN KEY (Category_ID) REFERENCES dbo.tblCategory(Category_ID) --(Uncomment on merge)
-
 )
+GO
+INSERT [dbo].[tblSubCategory]([SubCategory_ID],[Category_ID],[SubCategory_Name]) VALUES(1,1, "PC Part")
+
 GO
 CREATE TABLE [dbo].[tblCredential]
 (
@@ -107,10 +114,10 @@ FOREIGN KEY(User_ID) REFERENCES [dbo].[tblUser](User_ID)
 )
 GO
 
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(1,"Sony","Electronics",null, 1)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(2,"Ducati","Transportation",null, 2)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(3,"Apple","Electronics",null, 3)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(4,"Netflix","Entertainment",null, 4)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(1,"Sony","Customer Service",null, 1)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(2,"Ducati","Transportation Service",null, 2)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(3,"Apple","Customer Service",null, 3)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web]) VALUES(4,"Netflix","Entertainment Service",null, 4)
 
 GO
 CREATE TABLE [dbo].[tblSales]
@@ -232,14 +239,36 @@ CREATE TABLE [dbo].[tblState](
 	PRIMARY KEY (State_ID)
 ) ON [PRIMARY]
 GO
+INSERT [dbo].[tblState] ([State_ID],[State_Name]) VALUES(1,"California")
+INSERT [dbo].[tblState] ([State_ID],[State_Name]) VALUES(2,"Texas")
+INSERT [dbo].[tblState] ([State_ID],[State_Name]) VALUES(3,"New Jersey")
+INSERT [dbo].[tblState] ([State_ID],[State_Name]) VALUES(4,"Florida")
+INSERT [dbo].[tblState] ([State_ID],[State_Name]) VALUES(5,"New York")
+
+GO
 CREATE TABLE [dbo].[tblCity](
 	[City_ID] [int] IDENTITY(1,1) NOT NULL,
 	[City_Name] [varchar](50) NOT NULL,
 	[State_ID] [int] NOT NULL,
 	PRIMARY KEY (City_ID),
 	FOREIGN KEY (State_ID) REFERENCES dbo.tblState(State_ID)
-
 )
+GO
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(1,"Los Angeles",1)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(2, "San Francisco", 1)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(3, "Austin", 2)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(4, " Houston", 2)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(5, "Trenton", 3)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(6, "Newark", 3)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(7, "Miami", 4)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(8, "Orlando", 4)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(9, "Buffalo", 5)
+INSERT [dbo].[tblCity] ([City_ID],[City_Name],[State_ID]) VALUES(10, "New York", 5)
+
+
+
+
+
 GO
 
 CREATE TABLE [dbo].[tblProject](
@@ -256,9 +285,10 @@ CREATE TABLE [dbo].[tblProject](
 	FOREIGN KEY (User_Id) REFERENCES dbo.tblUser(User_ID),  --(Table is not implemented by me) Uncomment on merge
 	FOREIGN KEY (Project_City) REFERENCES dbo.tblCity(City_ID),
 	FOREIGN KEY (Project_State) REFERENCES dbo.tblState(State_ID)
-
 )
 Go
+INSERT [dbo].[tblProject] ([Project_ID],[Project_Name],[User_Id],[Project_Address1],[Project_Address2],[Project_City],[Project_State],[Project_Size],[Client_Name]) VALUES(1,"Computer",1,"Home St.", null, 3, 3, 1, "Random Client") 
+GO
 Create Table [dbo].tblProjToProd
 (
 Project_ID int,
