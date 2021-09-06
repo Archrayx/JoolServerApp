@@ -1,4 +1,4 @@
-USE [JoolServer]
+﻿USE [JoolServer]
 GO 
 /***************************TABLE DROPS****************************************/
 DROP TABLE [dbo].[tblPropertyValue]
@@ -48,6 +48,10 @@ Category_Name varchar(50)
 )
 GO
 INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(1,"Electronics")
+INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(2,"Fashion")
+INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(3,"Motor Parts")
+
+
 GO
 CREATE TABLE [dbo].[tblDocument](
 	[Document_ID] [int] IDENTITY(1,1) NOT NULL,
@@ -67,6 +71,9 @@ CREATE TABLE [dbo].[tblSubCategory](
 )
 GO
 INSERT [dbo].[tblSubCategory]([SubCategory_ID],[Category_ID],[SubCategory_Name]) VALUES(1,1, "PC Part")
+INSERT [dbo].[tblSubCategory]([SubCategory_ID],[Category_ID],[SubCategory_Name]) VALUES(2,2, "Motor Jacket")
+INSERT [dbo].[tblSubCategory]([SubCategory_ID],[Category_ID],[SubCategory_Name]) VALUES(3,3, "Muffler")
+
 
 GO
 CREATE TABLE [dbo].[tblCredential]
@@ -169,6 +176,7 @@ GO
 Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (1,"Product Type",0,0)
 Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (2,"Model Year",0,0)
 Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (3,"Technicial Spec",0,0)
+GO
 CREATE TABLE 	[dbo].tblProduct
 (
 Product_ID int Not Null,
@@ -176,7 +184,7 @@ Manufacturer_ID int Not Null,
 Sales_ID int Not Null,
 SubCategory_ID int Not Null,
 Product_Name varchar(50) Not Null,
-Product_Image image Not Null,
+Product_Image image Null,
 Series varchar(50) Not Null,
 Model varchar(50) Not Null,
 Model_Year int Not Null,
@@ -192,6 +200,17 @@ Foreign Key (Document_ID) References dbo.tblDocument(Document_ID),
 
 )
 GO
+Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(1,1,1,1, "PS5", null, "Gaming",2020, "Playstation by Sony",1, "Yes")
+
+
+Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(2,2,1,2, "Ducatti 2021", null, "2-Wheel",2021, "Motorcycle top tier",1, "Yes")
+
+Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(3,2,1,3, "Ducatti 2021", null, "2-Wheel",2021, "Motorcycle top tier",1, "Yes")
+
+GO
 CREATE TABLE [dbo].[tblPropertyValue](
 Property_ID INT NOT NULL,
 Product_ID INT NOT NULL,
@@ -203,8 +222,8 @@ FOREIGN KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID)
 GO
 --is used for search functionality must defaulted to 0 or none at all
 Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (1,1,null)
-Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (2,1,null)
-Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (3,1,null)
+Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (2,2,null)
+Insert [dbo].[tblPropertyValue]([Property_ID],[Product_ID],[Value]) Values (3,3,null)
 GO
 CREATE TABLE [dbo].[tblTypeFilter](
 Property_ID INT NOT NULL,
@@ -216,17 +235,24 @@ FOREIGN KEY (SubCategory_ID) REFERENCES [dbo].[tblSubCategory](SubCategory_ID),
 Foreign KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID)
 )
 GO
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Reliability","Useless")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Reliability","Decent")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Reliability","Reliable")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Model Type","Old")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Model Type","Modern")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (2,2,"Model Type","New")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Useless")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Decent")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Reliable")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","Old")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","Modern")
 Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Model Type","New")
-Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Useless")
-Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Decent")
-Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (1,1,"Reliability","Reliable")
-
-
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Reliability","Useless")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Reliability","Decent")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Reliability","Reliable")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Model Type","Old")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Model Type","Modern")
+Insert [dbo].[tblTypeFilter]([Property_ID],[SubCategory_ID],[Type_Name],[Type_Options]) Values (3,3,"Model Type","New")
 
 GO
 CREATE TABLE [dbo].[tblTechSpecFilter](
@@ -312,6 +338,7 @@ CREATE TABLE [dbo].[tblProject](
 )
 Go
 INSERT [dbo].[tblProject] ([Project_ID],[Project_Name],[User_Id],[Project_Address1],[Project_Address2],[Project_City],[Project_State],[Project_Size],[Client_Name]) VALUES(1,"Computer",1,"Home St.", null, 3, 3, 1, "Random Client") 
+
 GO
 Create Table [dbo].tblProjToProd
 (
@@ -323,6 +350,10 @@ Foreign Key (Project_ID) References dbo.tblProject(Project_ID),
 Foreign Key (Product_ID) References dbo.tblProduct(Product_ID)
 )
 GO
+Insert [dbo].tblProjToProd([Project_ID], [Product_ID], [Quantity]) values(1, 1, 33)
+Insert [dbo].tblProjToProd([Project_ID], [Product_ID], [Quantity]) values(1, 2, 27)
+Insert [dbo].tblProjToProd([Project_ID], [Product_ID], [Quantity]) values(1, 3, 303)
+
 /***************************TABLE INSERTS****************************************/
 
 
