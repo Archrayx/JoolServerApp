@@ -20,14 +20,11 @@ using JoolServerApp.Data;
 
 namespace JoolServerApp.Repo
 {
-    public partial class JoolServerEntities : DbContext
+    public partial class JoolServerEntities : BaseEntity 
     {
-        public JoolServerEntities()
-            : base("name=JoolServerEntities")
-        {
-        }
+       
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
         {
             throw new UnintentionalCodeFirstException();
         }
