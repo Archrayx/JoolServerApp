@@ -6,12 +6,9 @@ using System.Web;
 using System.Data.Entity.Infrastructure;
 namespace JoolServerApp.Data
 {
-    public class BaseEntity : DbContext
+    public class BaseEntity
     {
-        public partial class JoolServerEntities()
-             :base("name=JoolServerEntities")
-        {
-        }
+   
 
         public Int64 Id { get; set; }
             public DateTime AddedDate { get; set; }

@@ -12,7 +12,7 @@ namespace JoolServerApp.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class tblDepartment
+    public partial class tblDepartment : BaseEntity
     {
         public int Department_ID { get; set; }
         public int Manufacturer_ID { get; set; }
