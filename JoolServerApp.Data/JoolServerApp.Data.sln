@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoolServerApp.Data", "JoolServerApp.Data.csproj", "{5E7AD55F-D9DB-4D4E-B090-D9C9595F5DEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoolServerApp.Repo", "..\JoolServerApp.Repo\JoolServerApp.Repo.csproj", "{B0192B07-461D-41B9-9111-A4ECB6C2783A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E7AD55F-D9DB-4D4E-B090-D9C9595F5DEE} = {5E7AD55F-D9DB-4D4E-B090-D9C9595F5DEE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoolServerApp.Service", "..\JoolServerApp.Service\JoolServerApp.Service.csproj", "{26B2A496-2DF1-4F94-A670-7338A1BBD103}"
 EndProject
