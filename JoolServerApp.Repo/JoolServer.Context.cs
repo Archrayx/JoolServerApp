@@ -20,7 +20,7 @@ using JoolServerApp.Data;
 
 namespace JoolServerApp.Repo
 {
-    public partial class JoolServerEntities : BaseEntity 
+    public partial class JoolServerEntities : DbContext
     {
        
 
