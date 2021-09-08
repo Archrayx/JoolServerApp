@@ -32,6 +32,8 @@ namespace JoolServerApp.Repo
             throw new UnintentionalCodeFirstException();
         }
 
+
+
         public virtual DbSet<tblCategory> tblCategories { get; set; }
         public virtual DbSet<tblCity> tblCities { get; set; }
         public virtual DbSet<tblCredential> tblCredentials { get; set; }
