@@ -70,6 +70,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ICategoryService.cs" />
+    <Compile Include="IProductService.cs" />
+    <Compile Include="IProjectService.cs" />
+    <Compile Include="IPropertyService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="ProjectService.cs" />
+    <Compile Include="PropertyService.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\testClass.cs" />
   </ItemGroup>
@@ -83,6 +93,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JoolServerApp.Data\JoolServerApp.Data.csproj">
+      <Project>{5E7AD55F-D9DB-4D4E-B090-D9C9595F5DEE}</Project>
+      <Name>JoolServerApp.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JoolServerApp.Repo\JoolServerApp.Repo.csproj">
       <Project>{b0192b07-461d-41b9-9111-a4ecb6c2783a}</Project>
       <Name>JoolServerApp.Repo</Name>

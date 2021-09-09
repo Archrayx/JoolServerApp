@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace JoolServerApp.Repo
 {
-    public interface IRepository<T> where T : JoolServerEntities
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T Get(long id);
