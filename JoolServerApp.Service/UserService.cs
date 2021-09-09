@@ -27,7 +27,7 @@ namespace JoolServerApp.Service
         }
         public void UpdateUser(tblUser user)
         {
-            userRepository.Update(user)
+            userRepository.Update(user);
         }
 
         public void DeleteUser(long id)
