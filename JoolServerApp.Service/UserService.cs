@@ -13,7 +13,7 @@ namespace JoolServerApp.Service
             this.userRepository = userRepository;
         }
 
-        public IEnumerable<tblUser> GetUsers()
+        public IEnumerable<tblUser> GetAllUsers()
         {
             return userRepository.GetAll();
         }
