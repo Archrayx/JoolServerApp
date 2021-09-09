@@ -8,7 +8,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace JoolServerApp.Repo
 {
-    public class Repository<T> : IRepository<T> where T : JoolServerEntities
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly JoolServerEntities context;
         private DbSet<T> entities;
