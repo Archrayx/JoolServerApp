@@ -8,7 +8,7 @@ namespace JoolServerApp.Service
 {
     public interface IUserService
     {
-        IEnumerable<tblUser> GetUsers();
+        IEnumerable<tblUser> GetAllUsers();
         tblUser GetUser(long id);
         void insertUser(tblUser user);
         void UpdateUser(tblUser user);
