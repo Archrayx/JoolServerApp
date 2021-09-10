@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblProduct
     {
@@ -20,7 +21,8 @@ namespace JoolServerApp.Data
             this.tblFeedBacks = new HashSet<tblFeedBack>();
             this.tblPropertyValues = new HashSet<tblPropertyValue>();
         }
-    
+
+        [Key]
         public int Product_ID { get; set; }
         public int Manufacturer_ID { get; set; }
         public int Sales_ID { get; set; }

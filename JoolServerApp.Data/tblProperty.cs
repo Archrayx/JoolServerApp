@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblProperty
     {
@@ -21,7 +22,8 @@ namespace JoolServerApp.Data
             this.tblTechSpecFilters = new HashSet<tblTechSpecFilter>();
             this.tblTypeFilters = new HashSet<tblTypeFilter>();
         }
-    
+
+        [Key]
         public int Property_ID { get; set; }
         public string Property_Name { get; set; }
         public Nullable<int> IsType { get; set; }

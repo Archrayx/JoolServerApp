@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,7 +33,10 @@ namespace JoolServerApp.Web.Controllers
             var userDetails = db.tblUsers;
             IUserService tblService = new UserService(userRepo);
             IEnumerable<tblUser> Users = tblService.GetAllUsers();
+
+            /*
             List<UserViewModel> model = new List<UserViewModel>();
+            
              tblService.GetAllUsers().ForEach(u =>
             {
                 UserViewModel user = new UserViewModel
@@ -43,8 +47,10 @@ namespace JoolServerApp.Web.Controllers
                 };
                 model.Add(user);
             });
+            */
+            Debug.WriteLine(Users);
 
-            return View();
+            return View(Users);
         }
 
         public ActionResult About()

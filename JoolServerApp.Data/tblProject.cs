@@ -11,10 +11,13 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblProject
     {
+        [Key]
         public int Project_ID { get; set; }
+
         public string Project_Name { get; set; }
         public int User_Id { get; set; }
         public string Project_Address1 { get; set; }

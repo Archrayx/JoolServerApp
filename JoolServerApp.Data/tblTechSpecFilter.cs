@@ -11,9 +11,11 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblTechSpecFilter
     {
+        [Key]
         public int Property_ID { get; set; }
         public int SubCategory_ID { get; set; }
         public Nullable<int> Min_Value { get; set; }

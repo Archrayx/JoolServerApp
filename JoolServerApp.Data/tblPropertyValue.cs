@@ -11,9 +11,11 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblPropertyValue
     {
+        [Key]
         public int Property_ID { get; set; }
         public int Product_ID { get; set; }
         public Nullable<int> Value { get; set; }

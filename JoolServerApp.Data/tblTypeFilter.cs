@@ -11,9 +11,11 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblTypeFilter
     {
+        [Key]
         public int Property_ID { get; set; }
         public int SubCategory_ID { get; set; }
         public string Type_Name { get; set; }

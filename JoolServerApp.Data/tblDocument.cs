@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblDocument
     {
@@ -19,7 +20,8 @@ namespace JoolServerApp.Data
         {
             this.tblProducts = new HashSet<tblProduct>();
         }
-    
+
+        [Key]
         public int Document_ID { get; set; }
         public string Document_Folder_Path { get; set; }
     

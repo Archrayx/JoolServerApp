@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblSale
     {
@@ -19,7 +20,8 @@ namespace JoolServerApp.Data
         {
             this.tblProducts = new HashSet<tblProduct>();
         }
-    
+
+        [Key]
         public int Sales_ID { get; set; }
         public string Sales_Name { get; set; }
         public string Sales_Phone { get; set; }

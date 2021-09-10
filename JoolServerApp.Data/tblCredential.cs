@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class tblCredential : BaseEntity
     {
@@ -19,7 +20,8 @@ namespace JoolServerApp.Data
         {
             this.tblUsers = new HashSet<tblUser>();
         }
-    
+
+        [Key]
         public int Credential_ID { get; set; }
         public string User_Type { get; set; }
     

@@ -11,9 +11,11 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblFeedBack
     {
+        [Key]
         public int Feeback_ID { get; set; }
         public Nullable<int> User_ID { get; set; }
         public Nullable<int> Product_ID { get; set; }

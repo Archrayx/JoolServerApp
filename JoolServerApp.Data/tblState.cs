@@ -11,6 +11,7 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tblState
     {
@@ -20,7 +21,8 @@ namespace JoolServerApp.Data
             this.tblCities = new HashSet<tblCity>();
             this.tblProjects = new HashSet<tblProject>();
         }
-    
+        [Key]
+
         public int State_ID { get; set; }
         public string State_Name { get; set; }
     
