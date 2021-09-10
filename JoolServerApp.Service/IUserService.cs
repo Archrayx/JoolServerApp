@@ -13,5 +13,6 @@ namespace JoolServerApp.Service
         void insertUser(tblUser user);
         void UpdateUser(tblUser user);
         void DeleteUser(long id);
+        
     }
 }

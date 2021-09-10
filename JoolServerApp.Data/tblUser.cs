@@ -12,7 +12,7 @@ namespace JoolServerApp.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class tblUser : BaseEntity
+    public partial class tblUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblUser()

@@ -7,6 +7,7 @@ using JoolServerApp.Data;
 using JoolServerApp.Repo;
 using JoolServerApp.Service;
 using JoolServerApp.Web.Models;
+using Microsoft.Ajax.Utilities;
 //using Microsoft.Extensions.DependencyInjection;
 
 namespace JoolServerApp.Web.Controllers
@@ -26,9 +27,13 @@ namespace JoolServerApp.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            IEnumerable<tblUser> Users = userService.GetAllUsers();
+            Repo.JoolServerEntities db = new Repo.JoolServerEntities();
+            IRepository<tblUser> userRepo = new Repository<tblUser>(db);
+            var userDetails = db.tblUsers;
+            IUserService tblService = new UserService(userRepo);
+            IEnumerable<tblUser> Users = tblService.GetAllUsers();
             List<UserViewModel> model = new List<UserViewModel>();
-            userService.GetAllUsers().ToList().ForEach(u =>
+             tblService.GetAllUsers().ForEach(u =>
             {
                 UserViewModel user = new UserViewModel
                 {
