@@ -76,6 +76,7 @@
     <Compile Include="IProjectService.cs" />
     <Compile Include="IPropertyService.cs" />
     <Compile Include="IUserService.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="ProjectService.cs" />
     <Compile Include="PropertyService.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Test\testClass.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="obj\Release\JoolServerApp.Service.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
