@@ -203,6 +203,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="JoolServer.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JoolServer.edmx</DependentUpon>
+      <LastGenOutput>JoolServer.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="JoolServer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JoolServer.edmx</DependentUpon>
+      <LastGenOutput>JoolServer.cs</LastGenOutput>
+    </Content>
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Data.dll" />
     <Content Include="obj\Debug\JoolServerApp.Data.pdb" />
@@ -286,6 +296,13 @@
     <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.pdb" />
     <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.dll" />
     <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.pdb" />
+    <EntityDeploy Include="JoolServer.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JoolServer.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="JoolServer.edmx.diagram">
+      <DependentUpon>JoolServer.edmx</DependentUpon>
+    </Content>
     <None Include="packages\jQuery.3.6.0\Content\Scripts\jquery-3.6.0-vsdoc.js" />
     <Content Include="packages\jQuery.3.6.0\Content\Scripts\jquery-3.6.0.js" />
     <Content Include="packages\jQuery.3.6.0\Content\Scripts\jquery-3.6.0.min.js" />
@@ -2435,8 +2452,74 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="JoolServer.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolServer.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JoolServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JoolServer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JoolServer.edmx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tblCategory.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCity.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCredential.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDepartment.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDocument.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFeedBack.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblManufacturer.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProduct.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProject.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProperty.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPropertyValue.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSale.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblState.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSubCategory.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTechSpecFilter.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTypeFilter.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
