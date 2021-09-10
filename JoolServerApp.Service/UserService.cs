@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using JoolServerApp.Repo;
 using JoolServerApp.Data;
+using System.Diagnostics;
 
 namespace JoolServerApp.Service
 {
@@ -11,6 +12,7 @@ namespace JoolServerApp.Service
         public UserService(IRepository<tblUser> userRepository)
         {
             this.userRepository = userRepository;
+            Debug.WriteLine(this.userRepository);
         }
 
         public IEnumerable<tblUser> GetAllUsers()

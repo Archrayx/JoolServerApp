@@ -32,10 +32,10 @@ namespace JoolServerApp.Repo
         {
             _httpContextAccessor = httpContextAccessor;
         }*/
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder) 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
         {
             throw new UnintentionalCodeFirstException();
-        }*/
+        }
 
         public virtual DbSet<tblCategory> tblCategories { get; set; }
         public virtual DbSet<tblCity> tblCities { get; set; }

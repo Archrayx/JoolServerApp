@@ -30,10 +30,17 @@ namespace JoolServerApp.Web.Controllers
         {
             Repo.JoolServerEntities db = new Repo.JoolServerEntities();
             IRepository<tblUser> userRepo = new Repository<tblUser>(db);
-            var userDetails = db.tblUsers;
+            IEnumerable<tblUser> Users = userRepo.GetAll();
+            Debug.WriteLine(Users);
             IUserService tblService = new UserService(userRepo);
-            IEnumerable<tblUser> Users = tblService.GetAllUsers();
-
+            IEnumerable<tblUser> usertwo = tblService.GetAllUsers();
+            foreach(var item in usertwo)
+            {
+                Debug.WriteLine(item.User_Name);
+            }
+             
+            //Debug.WriteLine(Users);
+            //Debug.WriteLine(tblService.GetUser(1));
             /*
             List<UserViewModel> model = new List<UserViewModel>();
             
@@ -48,7 +55,7 @@ namespace JoolServerApp.Web.Controllers
                 model.Add(user);
             });
             */
-            Debug.WriteLine(Users);
+
 
             return View(Users);
         }

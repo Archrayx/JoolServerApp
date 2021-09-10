@@ -13,7 +13,7 @@ namespace JoolServerApp.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class JoolServerEntities :DbContext
+    public partial class JoolServerEntities : DbContext
     {
         public JoolServerEntities()
             : base("name=JoolServerEntities")
@@ -24,10 +24,7 @@ namespace JoolServerApp.Data
         {
             throw new UnintentionalCodeFirstException();
         }
-        public Int64 Id { get; set; }
-        public DateTime AddedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
-        public string IPAddress { get; set; }
+    
         public virtual DbSet<tblCategory> tblCategories { get; set; }
         public virtual DbSet<tblCity> tblCities { get; set; }
         public virtual DbSet<tblCredential> tblCredentials { get; set; }

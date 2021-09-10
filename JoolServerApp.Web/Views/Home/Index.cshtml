@@ -1,4 +1,4 @@
-﻿@model IEnumerable<UserViewModel>
+﻿@model IEnumerable<JoolServerApp.Data.tblUser>
 @using JoolServerApp.Web.Models;
 
 
@@ -14,7 +14,11 @@
 
 <h1>
     Hello: -> 
-    @Model.ElementAt(0).FirstName
+    @Html.ActionLink("Test Button", "Index", "Home")
+    @foreach (var item in Model)
+            {
+                @item.User_ID
+            }
 </h1>
 
 <div class="row">

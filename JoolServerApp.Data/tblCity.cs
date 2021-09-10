@@ -9,19 +9,17 @@
 
 namespace JoolServerApp.Data
 {
-    using System.ComponentModel.DataAnnotations;
     using System;
     using System.Collections.Generic;
     
-    public partial class tblCity : BaseEntity
+    public partial class tblCity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblCity()
         {
             this.tblProjects = new HashSet<tblProject>();
         }
-
-        [Key]
+    
         public int City_ID { get; set; }
         public string City_Name { get; set; }
         public int State_ID { get; set; }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 
 namespace JoolServerApp.Repo
 {
@@ -17,7 +18,9 @@ namespace JoolServerApp.Repo
         public Repository(JoolServerEntities context)
         {
             this.context = context;
+            Debug.WriteLine(context);
             entities = context.Set<T>();
+            Debug.WriteLine(entities);
         }
         public IEnumerable<T> GetAll()
         {

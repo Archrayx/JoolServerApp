@@ -11,7 +11,6 @@ namespace JoolServerApp.Data
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class tblUser
     {
@@ -22,8 +21,7 @@ namespace JoolServerApp.Data
             this.tblManufacturers = new HashSet<tblManufacturer>();
             this.tblProjects = new HashSet<tblProject>();
         }
-
-        [Key]
+    
         public int User_ID { get; set; }
         public string User_Name { get; set; }
         public string User_Email { get; set; }
