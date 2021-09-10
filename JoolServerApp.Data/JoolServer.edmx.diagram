@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="82ea1ba28d9d4b30b2622b040cd0a05b" Name="Diagram1">
+      <Diagram DiagramId="378cbeeefc4648ba95dac30feeba5df1" Name="Diagram1">
         <EntityTypeShape EntityType="JoolServerModel.tblCategory" Width="1.5" PointX="6" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblCity" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblCredential" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
