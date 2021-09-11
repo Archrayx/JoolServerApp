@@ -6,10 +6,16 @@
 }
 
 #logo {
-    width: 100%;
+    width: 50%;
     height: auto;
+    margin: 10px 10px;
 }
-
+#slogan {
+    font-size: 2rem;
+}
+#divLogo {
+    width: 50%;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {

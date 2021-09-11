@@ -7,13 +7,9 @@
     transform: translate(-50%, -50%);
 }
 
+
 .input {
     margin: 10px 0;
-}
-
-#logoDiv {
-    width: 80%;
-    margin: 0 auto;
 }
 
 #loginBtn {
