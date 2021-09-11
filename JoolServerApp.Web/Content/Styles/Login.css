@@ -26,7 +26,13 @@
     margin: 4px 8px;
 }
 
+#signUp {
+    margin-right: 15%;
+}
 
-#signUp:hover {
-    cursor: pointer;
+body {
+    background-image: linear-gradient(#01579b, white);
+    height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }

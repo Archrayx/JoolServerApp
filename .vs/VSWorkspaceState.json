@@ -5,8 +5,9 @@
     "\\JoolServerApp.Web",
     "\\JoolServerApp.Web\\App_Start",
     "\\JoolServerApp.Web\\Views",
-    "\\JoolServerApp.Web\\Views\\Home"
+    "\\JoolServerApp.Web\\Views\\Home",
+    "\\JoolServerApp.Web\\Views\\Login"
   ],
-  "SelectedNode": "\\JoolServerApp.Data\\tblSubCategory.cs",
+  "SelectedNode": "\\JoolServerApp.Web\\Views\\Login\\Login.cshtml",
   "PreviewInSolutionExplorer": false
 }
