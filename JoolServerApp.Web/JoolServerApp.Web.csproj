@@ -384,6 +384,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -393,10 +394,6 @@
     <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\JoolServerApp.Repo.JoolServerEntities.mdf" />
-    <Content Include="App_Data\JoolServerApp.Repo.JoolServerEntities_log.ldf">
-      <DependentUpon>JoolServerApp.Repo.JoolServerEntities.mdf</DependentUpon>
-    </Content>
     <Content Include="bin\JoolServerApp.Web.dll" />
     <Content Include="bin\JoolServerApp.Web.pdb" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -415,6 +412,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Images\JooleSVG.svg" />
+    <Content Include="Content\Styles\Login.css" />
+    <Content Include="Content\Styles\Login2.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -460,8 +460,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
