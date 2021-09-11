@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@section Scripts
+{
+    <link href="~/Content/Styles/Login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+}
+
+
+<body>
+    <link href="~/Content/Styles/Login2.css" rel="stylesheet" />
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal">
+            Sign Up
+        </button>
+    </div>
+    <div id="login">
+        <div id="logoDiv">
+            <img id="logo" src="~/Content/Images/JooleSVG.svg" />
+        </div>
+        <h1 data-bs-toggle="modal" data-bs-target="#exampleModal">Building Product Selection Platform</h1>
+        <form class="form-group" action="">
+            <i class="bi bi-person-fill pageIcon"></i>
+            <input id="usernameLogin" type="text" class="form-control input" placeholder="Username or Email" />
+            <i class="bi bi-lock-fill pageIcon"></i>
+            <input id="passwordLogin" type="text" class="form-control input" placeholder="Password" />
+            <div class="d-flex justify-content-end">
+                <button id="loginBtn" type="submit" class="btn btn-primary">Log In</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1> I will add new form here</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
