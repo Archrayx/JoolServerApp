@@ -384,7 +384,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tblProductsController.cs" />
+    <Compile Include="Controllers\tblSubCategoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -392,6 +395,8 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserTests.cs" />
+    <Compile Include="ViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\SearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\JoolServerApp.Web.dll" />
@@ -445,7 +450,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Admin\admin.html" />
     <Content Include="Views\Admin\Adminrole.html" />
-    <Content Include="Views\Product\Productsearch.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -466,10 +470,22 @@
     <Content Include="Views\tblProducts\Details.cshtml" />
     <Content Include="Views\tblProducts\Edit.cshtml" />
     <Content Include="Views\tblProducts\Index.cshtml" />
+    <Content Include="Views\Register\Create.cshtml" />
+    <Content Include="Views\Register\Delete.cshtml" />
+    <Content Include="Views\Register\Details.cshtml" />
+    <Content Include="Views\Register\Edit.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\tblSubCategories\Create.cshtml" />
+    <Content Include="Views\tblSubCategories\Delete.cshtml" />
+    <Content Include="Views\tblSubCategories\Details.cshtml" />
+    <Content Include="Views\tblSubCategories\Edit.cshtml" />
+    <Content Include="Views\tblSubCategories\Index.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
