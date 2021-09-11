@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+@section Scripts
+{
+    <link href="~/Content/Styles/Search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+}
+
+
+<div id="searchDiv">
+    <div class="logoDiv">
+        <img id="logo" src="~/Content/Images/JooleSVG.svg" />
+        <h1 id="slogan">Building Product Selection Platform</h1>
+    </div>
+    <form method="get">
+        <div class="row">
+            <div class="col-3 padding-0" >
+                <select id="searchCategory" class="form-select" aria-label="Search Category">
+                    <option selected>Category</option>
+                    <!--This part must be filled from db-->
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col padding-0">
+                <select id="searchItem" class="form-select" aria-label="Search Item">
+                    <option selected>Search</option>
+                    <!--This part must be filled from db-->
+                    <option class="option" value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-1 padding-0">
+                <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+</div>
