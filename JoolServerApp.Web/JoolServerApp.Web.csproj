@@ -414,6 +414,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\JooleSVG.svg" />
     <Content Include="Content\Styles\Login.css" />
+    <Content Include="Content\Styles\Login2.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

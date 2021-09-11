@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\JoolServerApp.Data",
+    "\\JoolServerApp.Web",
+    "\\JoolServerApp.Web\\App_Start",
+    "\\JoolServerApp.Web\\Views",
+    "\\JoolServerApp.Web\\Views\\Home"
   ],
-  "SelectedNode": "\\JoolServerApp.Data.sln",
+  "SelectedNode": "\\JoolServerApp.Data\\tblSubCategory.cs",
   "PreviewInSolutionExplorer": false
 }

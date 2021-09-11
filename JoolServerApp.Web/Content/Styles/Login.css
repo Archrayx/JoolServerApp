@@ -1,8 +1,36 @@
-﻿﻿.login {
+﻿﻿#login {
     text-align: center;
     position: absolute;
     padding-bottom: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.input {
+    margin: 10px 0;
+}
+
+#logoDiv {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#loginBtn {
+    margin-top: 25px;
+    background-color: #01579b;
+    border-color: #01579b;
+    width: 150px;
+}
+
+.pageIcon {
+    display: inline;
+    position: absolute;
+    right: 0;
+    margin: 4px 8px;
+}
+
+
+#signUp:hover {
+    cursor: pointer;
 }
