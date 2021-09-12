@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-
+using JoolServerApp.Service;
 namespace JoolServerApp.Web
 {
     public class RouteConfig
@@ -16,8 +16,9 @@ namespace JoolServerApp.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
             );
         }
+       
     }
 }
