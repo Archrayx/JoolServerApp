@@ -2482,55 +2482,55 @@
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblCategory.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblCity.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblCredential.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblDepartment.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblDocument.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblFeedBack.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblManufacturer.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProduct.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProject.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProperty.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblPropertyValue.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblSale.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblState.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblSubCategory.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblTechSpecFilter.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblTypeFilter.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblUser.cs">
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
+      <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

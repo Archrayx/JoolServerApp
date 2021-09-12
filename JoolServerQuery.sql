@@ -43,13 +43,13 @@ GO
 /***************************TABLE CREATE****************************************/
 Create Table [dbo].[tblCategory]
 (
-Category_ID int Primary Key,
+Category_ID int IDENTITY(1,1) Primary Key,
 Category_Name varchar(50)
 )
 GO
-INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(1,'Electronics')
-INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(2,'Fashion')
-INSERT [dbo].[tblCategory]([Category_ID],[Category_Name]) VALUES(3,'Motor Parts')
+INSERT [dbo].[tblCategory]([Category_Name]) VALUES('Electronics')
+INSERT [dbo].[tblCategory]([Category_Name]) VALUES('Fashion')
+INSERT [dbo].[tblCategory]([Category_Name]) VALUES('Motor Parts')
 GO
 CREATE TABLE [dbo].[tblDocument](
 	[Document_ID] [int] IDENTITY(1,1) NOT NULL,
@@ -79,21 +79,21 @@ SET IDENTITY_INSERT [dbo].[tblSubCategory] OFF
 GO
 CREATE TABLE [dbo].[tblCredential]
 (
-[Credential_ID][int] NOT NULL,
+[Credential_ID][int] IDENTITY(1,1) NOT NULL,
 [User_Type][varchar](50)NULL
 PRIMARY KEY(Credential_ID)
 )
 GO
-INSERT [dbo].[tblCredential] ([Credential_ID],[User_Type]) VALUES(1,'user')
-INSERT [dbo].[tblCredential] ([Credential_ID],[User_Type]) VALUES(2,'admin')
-INSERT [dbo].[tblCredential] ([Credential_ID],[User_Type]) VALUES(3,'king')
+INSERT [dbo].[tblCredential] ([User_Type]) VALUES('user')
+INSERT [dbo].[tblCredential] ([User_Type]) VALUES('admin')
+INSERT [dbo].[tblCredential] ([User_Type]) VALUES('king')
 
 
 
 GO
 
 CREATE TABLE [dbo].[tblUser]
-([User_ID][int] NOT NULL,
+([User_ID][int] IDENTITY(1,1) NOT NULL,
 [User_Name][varchar](100) NOT NULL,
 [User_Email][varchar](100) NOT NULL,
 [User_Image][image] NULL,
@@ -103,16 +103,16 @@ PRIMARY KEY (User_ID),
 FOREIGN KEY (Credential_ID) REFERENCES [dbo].[tblCredential](Credential_ID)
 )
 GO
-INSERT [dbo].[tblUser] ([User_ID],[User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES(1,'XavierR','test1@gmail.com',null,'password',1)
-INSERT [dbo].[tblUser] ([User_ID],[User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES(2,'JoseM','test2@gmail.com',null,'password',2)
-INSERT [dbo].[tblUser] ([User_ID],[User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES(3,'BenW','test3@gmail.com',null,'password',1)
-INSERT [dbo].[tblUser] ([User_ID],[User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES(4,'KelvinA','test3@gmail.com',null,'password',3)
+INSERT [dbo].[tblUser] ([User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES('XavierR','test1@gmail.com',null,'password',1)
+INSERT [dbo].[tblUser] ([User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES('JoseM','test2@gmail.com',null,'password',2)
+INSERT [dbo].[tblUser] ([User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES('BenW','test3@gmail.com',null,'password',1)
+INSERT [dbo].[tblUser] ([User_Name],[User_Email],[User_Image],[User_Password],[Credential_ID]) VALUES('KelvinA','test3@gmail.com',null,'password',3)
 
 GO
 
 CREATE TABLE [dbo].[tblManufacturer]
 (
-[Manufacturer_ID][int] NOT NULL,
+[Manufacturer_ID][int] IDENTITY(1,1) NOT NULL,
 [Manufacturer_Name][varchar](100) NOT NULL,
 [Manufacturer_Department][varchar](100) NOT NULL,
 [Manufacturer_Web][varchar] NULL, 
@@ -122,15 +122,15 @@ FOREIGN KEY(User_ID) REFERENCES [dbo].[tblUser](User_ID)
 )
 GO
 
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES(1,'Sony','Customer Service',null,1)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES(2,'Ducati','Transportation Service',null,2)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES(3,'Apple','Customer Service',null,3)
-INSERT [dbo].[tblManufacturer] ([Manufacturer_ID],[Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES(4,'Netflix','Entertainment Service',null,4)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES('Sony','Customer Service',null,1)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES('Ducati','Transportation Service',null,2)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES('Apple','Customer Service',null,3)
+INSERT [dbo].[tblManufacturer] ([Manufacturer_Name],[Manufacturer_Department],[Manufacturer_Web],[User_ID]) VALUES('Netflix','Entertainment Service',null,4)
 
 GO
 CREATE TABLE [dbo].[tblSales]
 (
-[Sales_ID][int] NOT NULL,
+[Sales_ID][int] IDENTITY(1,1) NOT NULL,
 [Sales_Name][varchar] (50) NOT NULL,
 [Sales_Phone][varchar] (50) NOT NULL,
 [Sales_Email][nvarchar] (50) NOT NULL,
@@ -138,13 +138,13 @@ CREATE TABLE [dbo].[tblSales]
 PRIMARY KEY (Sales_ID)
 )
 GO
-INSERT [dbo].[tblSales] ([Sales_ID],[Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES(1,'purchasedItem','8565428075','test1@gmail.com',null)
-INSERT [dbo].[tblSales] ([Sales_ID],[Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES(2,'purchasedItem','8565428075','test1@gmail.com',null)
-INSERT [dbo].[tblSales] ([Sales_ID],[Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES(3,'purchasedItem','8565428075','test1@gmail.com',null)
+INSERT [dbo].[tblSales] ([Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES('purchasedItem','8565428075','test1@gmail.com',null)
+INSERT [dbo].[tblSales] ([Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES('purchasedItem','8565428075','test1@gmail.com',null)
+INSERT [dbo].[tblSales] ([Sales_Name],[Sales_Phone],[Sales_Email],[Sales_Web]) VALUES('purchasedItem','8565428075','test1@gmail.com',null)
 GO
 CREATE TABLE [dbo].[tblDepartment]
 (
-[Department_ID][int] NOT NULL,
+[Department_ID][int] IDENTITY(1,1) NOT NULL,
 [Manufacturer_ID][int] NOT NULL,
 [Department_Name][varchar] (100) NOT NULL,
 [Department_Phone][varchar](50) NOT NULL,
@@ -153,19 +153,19 @@ PRIMARY KEY (Department_ID),
 FOREIGN KEY (Manufacturer_ID) REFERENCES [dbo].[tblManufacturer](Manufacturer_ID)
  )
 GO
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(1,1,'MobileCenter','8568568567','test1@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(2,1,'PC Center','8568568567','test2@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(3,2,'MotorBike','8568568567','test3@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(4,2,'Fashion','8568568567','test4@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(5,3,'MobileCenter','8568568567','test5@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(6,3,'PC Center','8568568567','test6@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(7,4,'Entertainment','8568568567','test7@department.com')
-INSERT [dbo].[tblDepartment] ([Department_ID], [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(8,4,'Subscription','8568568567','test8@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(1,'MobileCenter','8568568567','test1@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(1,'PC Center','8568568567','test2@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(2,'MotorBike','8568568567','test3@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(2,'Fashion','8568568567','test4@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(3,'MobileCenter','8568568567','test5@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(3,'PC Center','8568568567','test6@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(4,'Entertainment','8568568567','test7@department.com')
+INSERT [dbo].[tblDepartment] ( [Manufacturer_ID],[Department_Name],[Department_Phone],[Department_Email]) VALUES(4,'Subscription','8568568567','test8@department.com')
 
 
  GO
 CREATE TABLE [dbo].[tblProperty](
-Property_ID INT NOT NULL,
+Property_ID INT IDENTITY(1,1) NOT NULL,
 Property_Name VARCHAR(50) NOT NULL,
 IsType INT,
 IsTechSpec INT,
@@ -174,12 +174,12 @@ CONSTRAINT IsTypeCorrect_ck  CHECK (IsType in (0,1)),
 CONSTRAINT IsTechSpecCorrect_ck  CHECK (IsTechSpec in (0,1))
 )
 GO
-Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (1,'Product Type',0,0)
-Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (2,'Model Year',0,0)
-Insert [dbo].[tblProperty]([Property_ID],[Property_Name],[IsType],[IsTechSpec]) Values (3,'Technicial Spec',0,0)
+Insert [dbo].[tblProperty]([Property_Name],[IsType],[IsTechSpec]) Values ('Product Type',0,0)
+Insert [dbo].[tblProperty]([Property_Name],[IsType],[IsTechSpec]) Values ('Model Year',0,0)
+Insert [dbo].[tblProperty]([Property_Name],[IsType],[IsTechSpec]) Values ('Technicial Spec',0,0)
 CREATE TABLE 	[dbo].tblProduct
 (
-Product_ID int Not Null,
+Product_ID int IDENTITY(1,1) Not Null,
 Manufacturer_ID int Not Null,
 Sales_ID int Not Null,
 SubCategory_ID int Not Null,
@@ -200,21 +200,21 @@ Foreign Key (Document_ID) References dbo.tblDocument(Document_ID),
 
 )
 GO
-Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
-values(1,1,1,1, 'PS5', null, 'Gaming','5',2020, 'Playstation by Sony',1, 'Yes')
+Insert [dbo].tblProduct( [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(1,1,1, 'PS5', null, 'Gaming','5',2020, 'Playstation by Sony',1, 'Yes')
 
 
-Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
-values(2,2,1,2, 'Ducatti 2021', null, 'X','2-Wheel',2021, 'Motorcycle top tier',1, 'Yes')
+Insert [dbo].tblProduct( [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(2,1,2, 'Ducatti 2021', null, 'X','2-Wheel',2021, 'Motorcycle top tier',1, 'Yes')
 
-Insert [dbo].tblProduct([Product_ID], [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
-values(3,2,1,3, 'Ducatti 2021', null,'X', '2-Wheel',2021, 'Motorcycle top tier',1, 'Yes')
+Insert [dbo].tblProduct( [Manufacturer_ID], [Sales_ID],[SubCategory_ID],[Product_Name], [Product_Image], [Series], [Model], [Model_Year], [Series_Info], [Document_ID], [Featured])
+values(2,1,3, 'Ducatti 2021', null,'X', '2-Wheel',2021, 'Motorcycle top tier',1, 'Yes')
 GO
 CREATE TABLE [dbo].[tblPropertyValue](
 Property_ID INT NOT NULL,
 Product_ID INT NOT NULL,
 [Value] INT,
-PRIMARY KEY (Property_ID,Product_ID),
+PRIMARY KEY (Property_ID, Product_ID),
 FOREIGN KEY (Product_ID) REFERENCES [dbo].[tblProduct](Product_ID),
 FOREIGN KEY (Property_ID) REFERENCES [dbo].[tblProperty](Property_ID)
 )
@@ -271,7 +271,7 @@ Insert [dbo].[tblTechSpecFilter]([Property_ID],[SubCategory_ID],[Min_Value],[Max
 Go
 Create Table [dbo].tblFeedBack
 (
-Feeback_ID int Primary Key,
+Feeback_ID int IDENTITY(1,1) Primary Key,
 User_ID int, 
 Product_ID int,
 Feedback_Time time,

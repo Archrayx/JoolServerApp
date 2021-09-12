@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Category_ID" />
           </Key>
-          <Property Name="Category_ID" Type="int" Nullable="false" />
+          <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Category_Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblCity">
@@ -24,14 +24,14 @@
           <Key>
             <PropertyRef Name="Credential_ID" />
           </Key>
-          <Property Name="Credential_ID" Type="int" Nullable="false" />
+          <Property Name="Credential_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_Type" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
             <PropertyRef Name="Department_ID" />
           </Key>
-          <Property Name="Department_ID" Type="int" Nullable="false" />
+          <Property Name="Department_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Manufacturer_ID" Type="int" Nullable="false" />
           <Property Name="Department_Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Department_Phone" Type="varchar" MaxLength="50" Nullable="false" />
@@ -48,7 +48,7 @@
           <Key>
             <PropertyRef Name="Feeback_ID" />
           </Key>
-          <Property Name="Feeback_ID" Type="int" Nullable="false" />
+          <Property Name="Feeback_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_ID" Type="int" />
           <Property Name="Product_ID" Type="int" />
           <Property Name="Feedback_Time" Type="time" Precision="7" />
@@ -59,7 +59,7 @@
           <Key>
             <PropertyRef Name="Manufacturer_ID" />
           </Key>
-          <Property Name="Manufacturer_ID" Type="int" Nullable="false" />
+          <Property Name="Manufacturer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Manufacturer_Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Manufacturer_Department" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Manufacturer_Web" Type="varchar" MaxLength="1" />
@@ -69,7 +69,7 @@
           <Key>
             <PropertyRef Name="Product_ID" />
           </Key>
-          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Manufacturer_ID" Type="int" Nullable="false" />
           <Property Name="Sales_ID" Type="int" Nullable="false" />
           <Property Name="SubCategory_ID" Type="int" Nullable="false" />
@@ -107,7 +107,7 @@ warning 6013: The table/view 'JoolServer.dbo.tblProjToProd' does not have a prim
           <Key>
             <PropertyRef Name="Property_ID" />
           </Key>
-          <Property Name="Property_ID" Type="int" Nullable="false" />
+          <Property Name="Property_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Property_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IsType" Type="int" />
           <Property Name="IsTechSpec" Type="int" />
@@ -125,7 +125,7 @@ warning 6013: The table/view 'JoolServer.dbo.tblProjToProd' does not have a prim
           <Key>
             <PropertyRef Name="Sales_ID" />
           </Key>
-          <Property Name="Sales_ID" Type="int" Nullable="false" />
+          <Property Name="Sales_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Sales_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Sales_Phone" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Sales_Email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -172,14 +172,14 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
-          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="User_Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="User_Image" Type="image" />
           <Property Name="user_Password" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Credential_ID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblCity__State_I__30CE2BBB">
+        <Association Name="FK__tblCity__State_I__0ECE1972">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,7 +191,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__133DC8D4">
+        <Association Name="FK__tblDepart__Manuf__713DB68B">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -203,7 +203,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__2C09769E">
+        <Association Name="FK__tblFeedBa__Produ__0A096455">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +215,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___2B155265">
+        <Association Name="FK__tblFeedBa__User___0915401C">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -227,7 +227,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___0E7913B7">
+        <Association Name="FK__tblManufa__User___6C79016E">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -239,7 +239,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__1CC7330E">
+        <Association Name="FK__tblProduc__Docum__7AC720C5">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +251,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__19EAC663">
+        <Association Name="FK__tblProduc__Manuf__77EAB41A">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +263,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__1ADEEA9C">
+        <Association Name="FK__tblProduc__Sales__78DED853">
           <End Role="tblSales" Type="Self.tblSales" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -275,7 +275,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__1BD30ED5">
+        <Association Name="FK__tblProduc__SubCa__79D2FC8C">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -287,7 +287,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__349EBC9F">
+        <Association Name="FK__tblProjec__Proje__129EAA56">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -299,7 +299,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__3592E0D8">
+        <Association Name="FK__tblProjec__Proje__1392CE8F">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -311,7 +311,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___33AA9866">
+        <Association Name="FK__tblProjec__User___11AA861D">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -325,11 +325,11 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
         </Association>
         <!--Errors Found During Generation:
 error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__tblProjTo__Produ__386F4D83" />-->
+        <Association Name="FK__tblProjTo__Produ__166F3B3A" />-->
         <!--Errors Found During Generation:
 error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__tblProjTo__Proje__377B294A" />-->
-        <Association Name="FK__tblProper__Produ__1FA39FB9">
+        <Association Name="FK__tblProjTo__Proje__157B1701" />-->
+        <Association Name="FK__tblProper__Produ__7DA38D70">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -341,7 +341,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__2097C3F2">
+        <Association Name="FK__tblProper__Prope__7E97B1A9">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -353,7 +353,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblSubCat__Categ__06D7F1EF">
+        <Association Name="FK__tblSubCat__Categ__64D7DFA6">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -365,7 +365,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__2744C181">
+        <Association Name="FK__tblTechSp__Prope__0544AF38">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -377,7 +377,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__26509D48">
+        <Association Name="FK__tblTechSp__SubCa__04508AFF">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -389,7 +389,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__2374309D">
+        <Association Name="FK__tblTypeFi__Prope__01741E54">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -401,7 +401,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__22800C64">
+        <Association Name="FK__tblTypeFi__SubCa__007FFA1B">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -413,7 +413,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__0B9CA70C">
+        <Association Name="FK__tblUser__Credent__699C94C3">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -450,83 +450,83 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
     [tblTypeFilter].[Type_Options] AS [Type_Options]
     FROM [dbo].[tblTypeFilter] AS [tblTypeFilter]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__tblCity__State_I__30CE2BBB" Association="Self.FK__tblCity__State_I__30CE2BBB">
+          <AssociationSet Name="FK__tblCity__State_I__0ECE1972" Association="Self.FK__tblCity__State_I__0ECE1972">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblCity" EntitySet="tblCity" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__133DC8D4" Association="Self.FK__tblDepart__Manuf__133DC8D4">
+          <AssociationSet Name="FK__tblDepart__Manuf__713DB68B" Association="Self.FK__tblDepart__Manuf__713DB68B">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblDepartment" EntitySet="tblDepartment" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__2C09769E" Association="Self.FK__tblFeedBa__Produ__2C09769E">
+          <AssociationSet Name="FK__tblFeedBa__Produ__0A096455" Association="Self.FK__tblFeedBa__Produ__0A096455">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___2B155265" Association="Self.FK__tblFeedBa__User___2B155265">
+          <AssociationSet Name="FK__tblFeedBa__User___0915401C" Association="Self.FK__tblFeedBa__User___0915401C">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___0E7913B7" Association="Self.FK__tblManufa__User___0E7913B7">
+          <AssociationSet Name="FK__tblManufa__User___6C79016E" Association="Self.FK__tblManufa__User___6C79016E">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__1CC7330E" Association="Self.FK__tblProduc__Docum__1CC7330E">
+          <AssociationSet Name="FK__tblProduc__Docum__7AC720C5" Association="Self.FK__tblProduc__Docum__7AC720C5">
             <End Role="tblDocument" EntitySet="tblDocument" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__19EAC663" Association="Self.FK__tblProduc__Manuf__19EAC663">
+          <AssociationSet Name="FK__tblProduc__Manuf__77EAB41A" Association="Self.FK__tblProduc__Manuf__77EAB41A">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__1ADEEA9C" Association="Self.FK__tblProduc__Sales__1ADEEA9C">
+          <AssociationSet Name="FK__tblProduc__Sales__78DED853" Association="Self.FK__tblProduc__Sales__78DED853">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__1BD30ED5" Association="Self.FK__tblProduc__SubCa__1BD30ED5">
+          <AssociationSet Name="FK__tblProduc__SubCa__79D2FC8C" Association="Self.FK__tblProduc__SubCa__79D2FC8C">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__349EBC9F" Association="Self.FK__tblProjec__Proje__349EBC9F">
+          <AssociationSet Name="FK__tblProjec__Proje__129EAA56" Association="Self.FK__tblProjec__Proje__129EAA56">
             <End Role="tblCity" EntitySet="tblCity" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__3592E0D8" Association="Self.FK__tblProjec__Proje__3592E0D8">
+          <AssociationSet Name="FK__tblProjec__Proje__1392CE8F" Association="Self.FK__tblProjec__Proje__1392CE8F">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___33AA9866" Association="Self.FK__tblProjec__User___33AA9866">
+          <AssociationSet Name="FK__tblProjec__User___11AA861D" Association="Self.FK__tblProjec__User___11AA861D">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__1FA39FB9" Association="Self.FK__tblProper__Produ__1FA39FB9">
+          <AssociationSet Name="FK__tblProper__Produ__7DA38D70" Association="Self.FK__tblProper__Produ__7DA38D70">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__2097C3F2" Association="Self.FK__tblProper__Prope__2097C3F2">
+          <AssociationSet Name="FK__tblProper__Prope__7E97B1A9" Association="Self.FK__tblProper__Prope__7E97B1A9">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblSubCat__Categ__06D7F1EF" Association="Self.FK__tblSubCat__Categ__06D7F1EF">
+          <AssociationSet Name="FK__tblSubCat__Categ__64D7DFA6" Association="Self.FK__tblSubCat__Categ__64D7DFA6">
             <End Role="tblCategory" EntitySet="tblCategory" />
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__2744C181" Association="Self.FK__tblTechSp__Prope__2744C181">
+          <AssociationSet Name="FK__tblTechSp__Prope__0544AF38" Association="Self.FK__tblTechSp__Prope__0544AF38">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__26509D48" Association="Self.FK__tblTechSp__SubCa__26509D48">
+          <AssociationSet Name="FK__tblTechSp__SubCa__04508AFF" Association="Self.FK__tblTechSp__SubCa__04508AFF">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__2374309D" Association="Self.FK__tblTypeFi__Prope__2374309D">
+          <AssociationSet Name="FK__tblTypeFi__Prope__01741E54" Association="Self.FK__tblTypeFi__Prope__01741E54">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__22800C64" Association="Self.FK__tblTypeFi__SubCa__22800C64">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__007FFA1B" Association="Self.FK__tblTypeFi__SubCa__007FFA1B">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__0B9CA70C" Association="Self.FK__tblUser__Credent__0B9CA70C">
+          <AssociationSet Name="FK__tblUser__Credent__699C94C3" Association="Self.FK__tblUser__Credent__699C94C3">
             <End Role="tblCredential" EntitySet="tblCredential" />
             <End Role="tblUser" EntitySet="tblUser" />
           </AssociationSet>
@@ -540,9 +540,9 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Key>
             <PropertyRef Name="Category_ID" />
           </Key>
-          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__06D7F1EF" FromRole="tblCategory" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__64D7DFA6" FromRole="tblCategory" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblCity">
           <Key>
@@ -551,27 +551,27 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="City_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="State_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__30CE2BBB" FromRole="tblCity" ToRole="tblState" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__349EBC9F" FromRole="tblCity" ToRole="tblProject" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__0ECE1972" FromRole="tblCity" ToRole="tblState" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__129EAA56" FromRole="tblCity" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblCredential">
           <Key>
             <PropertyRef Name="Credential_ID" />
           </Key>
-          <Property Name="Credential_ID" Type="Int32" Nullable="false" />
+          <Property Name="Credential_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__0B9CA70C" FromRole="tblCredential" ToRole="tblUser" />
+          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__699C94C3" FromRole="tblCredential" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
             <PropertyRef Name="Department_ID" />
           </Key>
-          <Property Name="Department_ID" Type="Int32" Nullable="false" />
+          <Property Name="Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" />
           <Property Name="Department_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Department_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Department_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__133DC8D4" FromRole="tblDepartment" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__713DB68B" FromRole="tblDepartment" ToRole="tblManufacturer" />
         </EntityType>
         <EntityType Name="tblDocument">
           <Key>
@@ -579,39 +579,39 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           </Key>
           <Property Name="Document_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Document_Folder_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__1CC7330E" FromRole="tblDocument" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__7AC720C5" FromRole="tblDocument" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblFeedBack">
           <Key>
             <PropertyRef Name="Feeback_ID" />
           </Key>
-          <Property Name="Feeback_ID" Type="Int32" Nullable="false" />
+          <Property Name="Feeback_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_ID" Type="Int32" />
           <Property Name="Product_ID" Type="Int32" />
           <Property Name="Feedback_Time" Type="Time" Precision="7" />
           <Property Name="Feedback_Score" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Feedback_Content" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__2C09769E" FromRole="tblFeedBack" ToRole="tblProduct" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___2B155265" FromRole="tblFeedBack" ToRole="tblUser" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__0A096455" FromRole="tblFeedBack" ToRole="tblProduct" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___0915401C" FromRole="tblFeedBack" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblManufacturer">
           <Key>
             <PropertyRef Name="Manufacturer_ID" />
           </Key>
-          <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Manufacturer_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Manufacturer_Department" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Manufacturer_Web" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__133DC8D4" FromRole="tblManufacturer" ToRole="tblDepartment" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___0E7913B7" FromRole="tblManufacturer" ToRole="tblUser" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__19EAC663" FromRole="tblManufacturer" ToRole="tblProduct" />
+          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__713DB68B" FromRole="tblManufacturer" ToRole="tblDepartment" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___6C79016E" FromRole="tblManufacturer" ToRole="tblUser" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__77EAB41A" FromRole="tblManufacturer" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblProduct">
           <Key>
             <PropertyRef Name="Product_ID" />
           </Key>
-          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" />
           <Property Name="Sales_ID" Type="Int32" Nullable="false" />
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
@@ -623,12 +623,12 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="Series_Info" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Document_ID" Type="Int32" Nullable="false" />
           <Property Name="Featured" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__1CC7330E" FromRole="tblProduct" ToRole="tblDocument" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__2C09769E" FromRole="tblProduct" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__19EAC663" FromRole="tblProduct" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__1ADEEA9C" FromRole="tblProduct" ToRole="tblSales" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__1BD30ED5" FromRole="tblProduct" ToRole="tblSubCategory" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__1FA39FB9" FromRole="tblProduct" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__7AC720C5" FromRole="tblProduct" ToRole="tblDocument" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__0A096455" FromRole="tblProduct" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__77EAB41A" FromRole="tblProduct" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__78DED853" FromRole="tblProduct" ToRole="tblSales" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__79D2FC8C" FromRole="tblProduct" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__7DA38D70" FromRole="tblProduct" ToRole="tblPropertyValue" />
         </EntityType>
         <EntityType Name="tblProject">
           <Key>
@@ -643,21 +643,21 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="Project_State" Type="Int32" Nullable="false" />
           <Property Name="Project_Size" Type="Int32" Nullable="false" />
           <Property Name="Client_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__349EBC9F" FromRole="tblProject" ToRole="tblCity" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__3592E0D8" FromRole="tblProject" ToRole="tblState" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___33AA9866" FromRole="tblProject" ToRole="tblUser" />
+          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__129EAA56" FromRole="tblProject" ToRole="tblCity" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__1392CE8F" FromRole="tblProject" ToRole="tblState" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___11AA861D" FromRole="tblProject" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblProperty">
           <Key>
             <PropertyRef Name="Property_ID" />
           </Key>
-          <Property Name="Property_ID" Type="Int32" Nullable="false" />
+          <Property Name="Property_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IsType" Type="Int32" />
           <Property Name="IsTechSpec" Type="Int32" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__2097C3F2" FromRole="tblProperty" ToRole="tblPropertyValue" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__2744C181" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__2374309D" FromRole="tblProperty" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__7E97B1A9" FromRole="tblProperty" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__0544AF38" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__01741E54" FromRole="tblProperty" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblPropertyValue">
           <Key>
@@ -667,19 +667,19 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="Property_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_ID" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="Int32" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__1FA39FB9" FromRole="tblPropertyValue" ToRole="tblProduct" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__2097C3F2" FromRole="tblPropertyValue" ToRole="tblProperty" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__7DA38D70" FromRole="tblPropertyValue" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__7E97B1A9" FromRole="tblPropertyValue" ToRole="tblProperty" />
         </EntityType>
         <EntityType Name="tblSale">
           <Key>
             <PropertyRef Name="Sales_ID" />
           </Key>
-          <Property Name="Sales_ID" Type="Int32" Nullable="false" />
+          <Property Name="Sales_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Sales_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Sales_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Sales_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sales_Web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__1ADEEA9C" FromRole="tblSales" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__78DED853" FromRole="tblSales" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblState">
           <Key>
@@ -687,8 +687,8 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           </Key>
           <Property Name="State_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="State_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__30CE2BBB" FromRole="tblState" ToRole="tblCity" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__3592E0D8" FromRole="tblState" ToRole="tblProject" />
+          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__0ECE1972" FromRole="tblState" ToRole="tblCity" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__1392CE8F" FromRole="tblState" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblSubCategory">
           <Key>
@@ -697,10 +697,10 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <Property Name="SubCategory_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__06D7F1EF" FromRole="tblSubCategory" ToRole="tblCategory" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__1BD30ED5" FromRole="tblSubCategory" ToRole="tblProduct" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__26509D48" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__22800C64" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__64D7DFA6" FromRole="tblSubCategory" ToRole="tblCategory" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__79D2FC8C" FromRole="tblSubCategory" ToRole="tblProduct" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__04508AFF" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__007FFA1B" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblTechSpecFilter">
           <Key>
@@ -711,23 +711,23 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Min_Value" Type="Int32" />
           <Property Name="Max_Value" Type="Int32" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__2744C181" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__26509D48" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__0544AF38" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__04508AFF" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
-          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="user_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Credential_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__0B9CA70C" FromRole="tblUser" ToRole="tblCredential" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___2B155265" FromRole="tblUser" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___0E7913B7" FromRole="tblUser" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___33AA9866" FromRole="tblUser" ToRole="tblProject" />
+          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__699C94C3" FromRole="tblUser" ToRole="tblCredential" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___0915401C" FromRole="tblUser" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___6C79016E" FromRole="tblUser" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___11AA861D" FromRole="tblUser" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblTypeFilter">
           <Key>
@@ -738,10 +738,10 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Type_Options" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__2374309D" FromRole="tblTypeFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__22800C64" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__01741E54" FromRole="tblTypeFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__007FFA1B" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
         </EntityType>
-        <Association Name="FK__tblSubCat__Categ__06D7F1EF">
+        <Association Name="FK__tblSubCat__Categ__64D7DFA6">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -753,7 +753,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblCity__State_I__30CE2BBB">
+        <Association Name="FK__tblCity__State_I__0ECE1972">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -765,7 +765,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__349EBC9F">
+        <Association Name="FK__tblProjec__Proje__129EAA56">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -777,7 +777,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__0B9CA70C">
+        <Association Name="FK__tblUser__Credent__699C94C3">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -789,7 +789,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__133DC8D4">
+        <Association Name="FK__tblDepart__Manuf__713DB68B">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -801,7 +801,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__1CC7330E">
+        <Association Name="FK__tblProduc__Docum__7AC720C5">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -813,7 +813,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__2C09769E">
+        <Association Name="FK__tblFeedBa__Produ__0A096455">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -825,7 +825,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___2B155265">
+        <Association Name="FK__tblFeedBa__User___0915401C">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -837,7 +837,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___0E7913B7">
+        <Association Name="FK__tblManufa__User___6C79016E">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -849,7 +849,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__19EAC663">
+        <Association Name="FK__tblProduc__Manuf__77EAB41A">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -861,7 +861,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__1ADEEA9C">
+        <Association Name="FK__tblProduc__Sales__78DED853">
           <End Role="tblSales" Type="Self.tblSale" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -873,7 +873,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__1BD30ED5">
+        <Association Name="FK__tblProduc__SubCa__79D2FC8C">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -885,7 +885,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Produ__1FA39FB9">
+        <Association Name="FK__tblProper__Produ__7DA38D70">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -897,7 +897,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__3592E0D8">
+        <Association Name="FK__tblProjec__Proje__1392CE8F">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -909,7 +909,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___33AA9866">
+        <Association Name="FK__tblProjec__User___11AA861D">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -921,7 +921,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__2097C3F2">
+        <Association Name="FK__tblProper__Prope__7E97B1A9">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -933,7 +933,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__2744C181">
+        <Association Name="FK__tblTechSp__Prope__0544AF38">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -945,7 +945,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__2374309D">
+        <Association Name="FK__tblTypeFi__Prope__01741E54">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -957,7 +957,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__26509D48">
+        <Association Name="FK__tblTechSp__SubCa__04508AFF">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -969,7 +969,7 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__22800C64">
+        <Association Name="FK__tblTypeFi__SubCa__007FFA1B">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -999,83 +999,83 @@ error 6004: The table 'JoolServer.dbo.tblProjToProd' is referenced by a relation
           <EntitySet Name="tblTechSpecFilters" EntityType="Self.tblTechSpecFilter" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
           <EntitySet Name="tblTypeFilters" EntityType="Self.tblTypeFilter" />
-          <AssociationSet Name="FK__tblSubCat__Categ__06D7F1EF" Association="Self.FK__tblSubCat__Categ__06D7F1EF">
+          <AssociationSet Name="FK__tblSubCat__Categ__64D7DFA6" Association="Self.FK__tblSubCat__Categ__64D7DFA6">
             <End Role="tblCategory" EntitySet="tblCategories" />
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblCity__State_I__30CE2BBB" Association="Self.FK__tblCity__State_I__30CE2BBB">
+          <AssociationSet Name="FK__tblCity__State_I__0ECE1972" Association="Self.FK__tblCity__State_I__0ECE1972">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblCity" EntitySet="tblCities" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__349EBC9F" Association="Self.FK__tblProjec__Proje__349EBC9F">
+          <AssociationSet Name="FK__tblProjec__Proje__129EAA56" Association="Self.FK__tblProjec__Proje__129EAA56">
             <End Role="tblCity" EntitySet="tblCities" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__0B9CA70C" Association="Self.FK__tblUser__Credent__0B9CA70C">
+          <AssociationSet Name="FK__tblUser__Credent__699C94C3" Association="Self.FK__tblUser__Credent__699C94C3">
             <End Role="tblCredential" EntitySet="tblCredentials" />
             <End Role="tblUser" EntitySet="tblUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__133DC8D4" Association="Self.FK__tblDepart__Manuf__133DC8D4">
+          <AssociationSet Name="FK__tblDepart__Manuf__713DB68B" Association="Self.FK__tblDepart__Manuf__713DB68B">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblDepartment" EntitySet="tblDepartments" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__1CC7330E" Association="Self.FK__tblProduc__Docum__1CC7330E">
+          <AssociationSet Name="FK__tblProduc__Docum__7AC720C5" Association="Self.FK__tblProduc__Docum__7AC720C5">
             <End Role="tblDocument" EntitySet="tblDocuments" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__2C09769E" Association="Self.FK__tblFeedBa__Produ__2C09769E">
+          <AssociationSet Name="FK__tblFeedBa__Produ__0A096455" Association="Self.FK__tblFeedBa__Produ__0A096455">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___2B155265" Association="Self.FK__tblFeedBa__User___2B155265">
+          <AssociationSet Name="FK__tblFeedBa__User___0915401C" Association="Self.FK__tblFeedBa__User___0915401C">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___0E7913B7" Association="Self.FK__tblManufa__User___0E7913B7">
+          <AssociationSet Name="FK__tblManufa__User___6C79016E" Association="Self.FK__tblManufa__User___6C79016E">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__19EAC663" Association="Self.FK__tblProduc__Manuf__19EAC663">
+          <AssociationSet Name="FK__tblProduc__Manuf__77EAB41A" Association="Self.FK__tblProduc__Manuf__77EAB41A">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__1ADEEA9C" Association="Self.FK__tblProduc__Sales__1ADEEA9C">
+          <AssociationSet Name="FK__tblProduc__Sales__78DED853" Association="Self.FK__tblProduc__Sales__78DED853">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__1BD30ED5" Association="Self.FK__tblProduc__SubCa__1BD30ED5">
+          <AssociationSet Name="FK__tblProduc__SubCa__79D2FC8C" Association="Self.FK__tblProduc__SubCa__79D2FC8C">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__1FA39FB9" Association="Self.FK__tblProper__Produ__1FA39FB9">
+          <AssociationSet Name="FK__tblProper__Produ__7DA38D70" Association="Self.FK__tblProper__Produ__7DA38D70">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__3592E0D8" Association="Self.FK__tblProjec__Proje__3592E0D8">
+          <AssociationSet Name="FK__tblProjec__Proje__1392CE8F" Association="Self.FK__tblProjec__Proje__1392CE8F">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___33AA9866" Association="Self.FK__tblProjec__User___33AA9866">
+          <AssociationSet Name="FK__tblProjec__User___11AA861D" Association="Self.FK__tblProjec__User___11AA861D">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__2097C3F2" Association="Self.FK__tblProper__Prope__2097C3F2">
+          <AssociationSet Name="FK__tblProper__Prope__7E97B1A9" Association="Self.FK__tblProper__Prope__7E97B1A9">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__2744C181" Association="Self.FK__tblTechSp__Prope__2744C181">
+          <AssociationSet Name="FK__tblTechSp__Prope__0544AF38" Association="Self.FK__tblTechSp__Prope__0544AF38">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__2374309D" Association="Self.FK__tblTypeFi__Prope__2374309D">
+          <AssociationSet Name="FK__tblTypeFi__Prope__01741E54" Association="Self.FK__tblTypeFi__Prope__01741E54">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__26509D48" Association="Self.FK__tblTechSp__SubCa__26509D48">
+          <AssociationSet Name="FK__tblTechSp__SubCa__04508AFF" Association="Self.FK__tblTechSp__SubCa__04508AFF">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__22800C64" Association="Self.FK__tblTypeFi__SubCa__22800C64">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__007FFA1B" Association="Self.FK__tblTypeFi__SubCa__007FFA1B">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>

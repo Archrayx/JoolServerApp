@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="86b98818c398472fb834aa2cbdb65892" Name="Diagram1">
+      <Diagram DiagramId="24b1a6284aaf45d596b5d4798f421bde" Name="Diagram1">
         <EntityTypeShape EntityType="JoolServerModel.tblCategory" Width="1.5" PointX="6" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblCity" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblCredential" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
@@ -22,26 +22,26 @@
         <EntityTypeShape EntityType="JoolServerModel.tblTechSpecFilter" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblUser" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="JoolServerModel.tblTypeFilter" Width="1.5" PointX="15.75" PointY="12" IsExpanded="true" />
-        <AssociationConnector Association="JoolServerModel.FK__tblSubCat__Categ__06D7F1EF" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblCity__State_I__30CE2BBB" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__349EBC9F" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblUser__Credent__0B9CA70C" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblDepart__Manuf__133DC8D4" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Docum__1CC7330E" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__Produ__2C09769E" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__User___2B155265" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblManufa__User___0E7913B7" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Manuf__19EAC663" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Sales__1ADEEA9C" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProduc__SubCa__1BD30ED5" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProper__Produ__1FA39FB9" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__3592E0D8" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProjec__User___33AA9866" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblProper__Prope__2097C3F2" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__Prope__2744C181" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__Prope__2374309D" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__SubCa__26509D48" ManuallyRouted="false" />
-        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__SubCa__22800C64" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblSubCat__Categ__64D7DFA6" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblCity__State_I__0ECE1972" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__129EAA56" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblUser__Credent__699C94C3" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblDepart__Manuf__713DB68B" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Docum__7AC720C5" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__Produ__0A096455" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__User___0915401C" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblManufa__User___6C79016E" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Manuf__77EAB41A" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Sales__78DED853" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__SubCa__79D2FC8C" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProper__Produ__7DA38D70" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__1392CE8F" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__User___11AA861D" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProper__Prope__7E97B1A9" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__Prope__0544AF38" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__Prope__01741E54" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__SubCa__04508AFF" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__SubCa__007FFA1B" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

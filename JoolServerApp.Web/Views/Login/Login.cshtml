@@ -22,15 +22,31 @@
             <img id="logo" src="~/Content/Images/JooleSVG.svg" />
             <h1 id="slogan">Building Product Selection Platform</h1>
         </div>
-        <form class="form-group" action="">
-            <i class="bi bi-person-fill pageIcon"></i>
-            <input id="usernameLogin" type="text" class="form-control input" placeholder="Username or Email" />
-            <i class="bi bi-lock-fill pageIcon"></i>
-            <input id="passwordLogin" type="text" class="form-control input" placeholder="Password" />
+        @using (Html.BeginForm("Signin", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+
+
+
+                <i class="bi bi-person-fill pageIcon"></i>
+                @Html.EditorFor(model => model.User_Name, new { htmlAttributes = new { @class = "form-control input", @placeholder = "Username or Email", @id = "usernameLogin" } })
+                @Html.ValidationMessageFor(model => model.User_Name, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+
+                <i class="bi bi-lock-fill pageIcon"></i>
+                @Html.EditorFor(model => model.user_Password, new { htmlAttributes = new { @class = "form-control input", @placeholder = "Password" } })
+                @Html.ValidationMessageFor(model => model.user_Password, "", new { @class = "text-danger" })
+
+            </div>
             <div class="d-flex justify-content-end">
                 <button id="loginBtn" type="submit" class="btn btn-primary">Log In</button>
             </div>
-        </form>
+        }
+
     </div>
 
 

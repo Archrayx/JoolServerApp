@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using System.Net;
 using JoolServerApp.Web.ViewModels;
+using System.Web.Security;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -43,6 +44,26 @@ namespace JoolServerApp.Web.Controllers
                 }
             }
             return View("Login");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signin(CreateVM obj)
+        {
+            var userDetails = db.tblUsers.Where(x => x.User_Name == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
+            if (userDetails == null)
+            {
+                userDetails = db.tblUsers.Where(x => x.User_Email == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
+            }
+            if (userDetails == null)
+            {
+                return View("Login");
+            }
+            else
+            {
+                FormsAuthentication.SetAuthCookie(obj.User_Name, true);
+                return RedirectToAction("Search", "Search");
+            }
+               
         }
     }
 }
