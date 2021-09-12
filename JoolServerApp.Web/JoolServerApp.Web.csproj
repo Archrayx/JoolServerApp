@@ -489,12 +489,11 @@
     <Content Include="Views\tblSubCategories\Edit.cshtml" />
     <Content Include="Views\tblSubCategories\Index.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
-    <Content Include="Views\Document\Documents.cshtml" />
+    <Content Include="Views\Documents\Documents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Documents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

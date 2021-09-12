@@ -1,0 +1,41 @@
+﻿@model IEnumerable<JoolServerApp.Data.tblDocument>
+    @{
+        Layout = null;
+    }
+    @section Scripts
+{
+        <link href="~/Content/Styles/Document.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    }
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        Document_ID
+                    </th>
+                    <th>
+                        Links For Documentation
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Document_ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Document_Folder_Path)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</html>
