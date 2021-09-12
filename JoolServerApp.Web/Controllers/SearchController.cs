@@ -15,14 +15,15 @@ namespace JoolServerApp.Web.Controllers
         public ActionResult Search()
         {
 
-            ViewBag.Category_Name = new SelectList(db.tblCategories, "Category_Name").ToList();
+            ViewBag.Category_Name = new SelectList(db.tblCategories, "Category_ID","Category_Name");
+            ViewBag.Product_Name = new SelectList(db.tblProducts, "Product_ID", "Product_Name");
             return View();
         }
         [HttpPost]
         public ActionResult Search(SearchVM obj)
         {
-
-            ViewBag.Category_Name = new SelectList(db.tblCategories, "Category_Name").ToList();
+            ViewBag.Product_Name = new SelectList(db.tblProducts, "Product_ID", "Product_Name");
+            ViewBag.Category_Name = new SelectList(db.tblCategories, "Category_ID", "Category_Name");
             return View();
         }
     }

@@ -40,13 +40,13 @@
             </div>
 
             <div class="col padding-0">
-                <select id="searchItem" class="form-select" aria-label="Search Item">
-                    <option selected>Search</option>
-                    @*This part must be filled from db*@
-                    <option class="option" value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Product_Name, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
 
 
