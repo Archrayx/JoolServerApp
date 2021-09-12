@@ -31,12 +31,12 @@ namespace JoolServerApp.Web.Controllers
             Repo.JoolServerEntities db = new Repo.JoolServerEntities();
             IRepository<tblUser> userRepo = new Repository<tblUser>(db);
             IEnumerable<tblUser> Users = userRepo.GetAll();
-            Debug.WriteLine(Users);
+       //     Debug.WriteLine(Users);
             IUserService tblService = new UserService(userRepo);
             IEnumerable<tblUser> usertwo = tblService.GetAllUsers();
             foreach(var item in usertwo)
             {
-                Debug.WriteLine(item.User_Name);
+       //         Debug.WriteLine(item.User_Name);
             }
              
             //Debug.WriteLine(Users);
