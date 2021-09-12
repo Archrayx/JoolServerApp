@@ -486,12 +486,10 @@
     <Content Include="Views\tblSubCategories\Details.cshtml" />
     <Content Include="Views\tblSubCategories\Edit.cshtml" />
     <Content Include="Views\tblSubCategories\Index.cshtml" />
-    <Content Include="Views\Search\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
