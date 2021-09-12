@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "ProductSummary";
+}
+@section Scripts
+{
+    <link href="~/Content/Styles/ProductSummary.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+}
+
+
+<div id="productSummary">
+    <div id="productBanner" class="row align-center justify-content-between">
+        <div class="col-2">
+            <img id="logo" src="~/Content/Images/JooleSVG.svg" />
+        </div>
+        <div class="col-6 justify-content-between">
+            <form method="get">
+                <div class="row">
+                    <div class="col-3 padding-0">
+                        <select id="searchCategory" class="form-select" aria-label="Search Category">
+                            <option selected>Category</option>
+                            <!--This part must be filled from db-->
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col padding-0">
+                        <select id="searchItem" class="form-select" aria-label="Search Item">
+                            <option selected>Search</option>
+                            <!--This part must be filled from db-->
+                            <option class="option" value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-1 padding-0">
+                        <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-1 justify-content-end">
+            <div class="grayCircle"></div>
+        </div>
+    </div>
+
+    <div id="productSummaryBody" class="row">
+        <!--form for settings-->
+        <div class="col-3" >
+            <form class="row justify-content-between settingsForm" method="get">
+                <div class="col">
+                    <label for="saveBtn">Search:</label>
+                    <button id="saveBtn" name="saveBtn" type="submit">Save</button>
+                    <button type="button">Clear</button>
+                </div>
+                <hr />
+                <div class="col">
+                    <button type="button">Product</button>
+                    <button type="button">Project</button>
+                </div>
+                <hr />
+                <div class="col-12">
+                    <label for="productType">Product Type</label>
+                    <select class="" id="productType" name="productType">
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                        <option>four</option>
+                    </select>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-4">
+                        <label>Model Year</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" width="10" />
+                    </div>
+                    --
+                    <div class="col-4">
+                        <input type="text" width="10" />
+                    </div>
+                </div>
+                <hr />
+                <div class="col-12">
+                    <label for="productType">Product Type</label>
+                    <select class="" id="productType" name="productType">
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                        <option>four</option>
+                    </select>
+                </div>
+                <hr />
+                <div class="col-12">
+                    <p>AirFlow(CFM)</p>
+                    <label for="myRange">10</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <label for="myRange">90</label>
+                </div>
+                <div class="col-12">
+                    <p>Max Power(W)</p>
+                    <label for="myRange">10</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <label for="myRange">90</label>
+                </div>
+                <div class="col-12">
+                    <p>Sound at max speed(dba)</p>
+                    <label for="myRange">10</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <label for="myRange">90</label>
+                </div>
+                <div class="col-12">
+                    <p>Fan sweep diameter(in)</p>
+                    <label for="myRange">10</label>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <label for="myRange">90</label>
+                </div>
+
+            </form>
+        </div>
+        <!--Display each product-->
+        <div class="col">
+            <h5>setting information here</h5>
+            <div class="row justify-content-evenly">
+                <div class="col-3 informationBox text-center">
+                    <div style="background-color: gray; height:140px; width:140px"></div>
+                    <h6>BigAss</h6>
+                    <h6>Haiku H Series</h6>
+                    <h6>S3150-20-92-19-290</h6>
+
+                    <p>5,467 CFM</p>
+                    <p>21.14 W at max speed</p>
+                    <p>35 dBA at max Speed</p>
+                    <p>60" fan sweep diameter</p>
+                    <button type="button">Add to</button>
+                </div>
+                <div class="col-3 informationBox text-center">
+                    <div style="background-color: gray; height:140px; width:140px"></div>
+                    <h6>BigAss</h6>
+                    <h6>Haiku H Series</h6>
+                    <h6>S3150-20-92-19-290</h6>
+
+                    <p>5,467 CFM</p>
+                    <p>21.14 W at max speed</p>
+                    <p>35 dBA at max Speed</p>
+                    <p>60" fan sweep diameter</p>
+                    <button type="button">Add to</button>
+                </div>
+                <div class="col-3 informationBox text-center">
+                    <div style="background-color: gray; height:140px; width:140px"></div>
+                    <h6>BigAss</h6>
+                    <h6>Haiku H Series</h6>
+                    <h6>S3150-20-92-19-290</h6>
+
+                    <p>5,467 CFM</p>
+                    <p>21.14 W at max speed</p>
+                    <p>35 dBA at max Speed</p>
+                    <p>60" fan sweep diameter</p>
+                    <button type="button">Add to</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
