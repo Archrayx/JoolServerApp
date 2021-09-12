@@ -1,33 +1,33 @@
-﻿﻿#login {
+﻿#searchDiv {
     text-align: center;
     position: absolute;
     padding-bottom: 25px;
+    width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-
-.input {
-    margin: 10px 0;
+.padding-0 {
+    padding: 0;
 }
 
-#loginBtn {
-    margin-top: 25px;
+#searchCategory {
     background-color: #01579b;
+    color: white;
     border-color: #01579b;
-    width: 150px;
 }
 
-.pageIcon {
-    display: inline;
-    position: absolute;
-    right: 0;
-    margin: 4px 8px;
+select option {
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }
 
-#signUp {
-    margin-right: 15%;
+#searchBtn {
+    border-color: #01579b;
+    background-color: #01579b;
+    color: white;
 }
 
 body {

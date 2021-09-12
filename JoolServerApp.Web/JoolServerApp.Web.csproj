@@ -384,6 +384,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tblProductsController.cs" />
@@ -420,6 +422,8 @@
     <Content Include="Content\Images\JooleSVG.svg" />
     <Content Include="Content\Styles\Login.css" />
     <Content Include="Content\Styles\Login2.css" />
+    <Content Include="Content\Styles\ProductSummary.css" />
+    <Content Include="Content\Styles\Search.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -470,6 +474,8 @@
     <Content Include="Views\tblProducts\Details.cshtml" />
     <Content Include="Views\tblProducts\Edit.cshtml" />
     <Content Include="Views\tblProducts\Index.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
+    <Content Include="Views\Product\ProductSummary.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
     <Content Include="Views\Register\Delete.cshtml" />
     <Content Include="Views\Register\Details.cshtml" />
