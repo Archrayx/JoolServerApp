@@ -20,7 +20,7 @@ namespace JoolServerApp.Repo
             this.context = context;
             Debug.WriteLine(context);
             entities = context.Set<T>();
-            Debug.WriteLine(entities);
+            //Debug.WriteLine(entities);
         }
         public IEnumerable<T> GetAll()
         {
