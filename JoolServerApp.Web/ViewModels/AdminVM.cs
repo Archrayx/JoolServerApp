@@ -7,7 +7,7 @@ namespace JoolServerApp.Web.ViewModels
 {
     public class AdminVM
     {
-        public int Product_ID { get; set; }
+        
         public int Manufacturer_ID { get; set; }
         public int Sales_ID { get; set; }
         public int SubCategory_ID { get; set; }

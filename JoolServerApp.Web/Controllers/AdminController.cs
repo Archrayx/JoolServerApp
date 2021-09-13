@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JoolServerApp.Web.ViewModels;
+using System.Diagnostics;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -65,6 +66,7 @@ namespace JoolServerApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AdminVM obj, HttpPostedFileBase ImageData)
         {
+            Debug.WriteLine(obj.Manufacturer_ID + obj.Sales_ID+obj.Document_ID+obj.SubCategory_ID);
             if (ModelState.IsValid)
             {
                 obj.Product_Image = new byte[ImageData.ContentLength];
@@ -77,19 +79,22 @@ namespace JoolServerApp.Web.Controllers
                     Product_Name = obj.Product_Name,
                     Product_Image = obj.Product_Image,
                     Series = obj.Series,
+                    Model = obj.Model,
                     Model_Year = obj.Model_Year,
                     Series_Info = obj.Series_Info,
                     Document_ID = obj.Document_ID,
                     Featured = obj.Featured
                 };
                 this.productService.insertProduct(tempProduct);
-                return RedirectToAction("Index");
-            }
 
-            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path");
-            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name");
-            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name");
-            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name");
+
+
+                ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path");
+                ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name");
+                ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name");
+                ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name");
+                return View();
+            }
             return View();
         }
 
