@@ -124,8 +124,7 @@
                         {
                             <div class="col-3 informationBox text-center">
                                 <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
-                                @Html.ActionLink("productDetails", "productdetails");
-                                <h6>@product.Product_Name</h6>
+                                @Html.ActionLink(product.Product_Name, "productdetails", "productdetails")
                                 <h6>@product.Series</h6>
                                 <h6>@product.Model</h6>
 
