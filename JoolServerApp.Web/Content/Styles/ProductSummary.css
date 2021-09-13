@@ -58,9 +58,6 @@ select option {
     width: 30%
 }
 
-.productLbl {
-    font-weight: 900;
-}
 
 .checkBox {
 }
@@ -69,4 +66,9 @@ select option {
     border: solid;
     margin: 8px;
     padding: 20px 8px;
+}
+
+detailsLink {
+    text-decoration: none;
+    font-weight: 900;
 }
