@@ -36,8 +36,6 @@ namespace JoolServerApp.Web.Controllers
         {
             ViewBag.Category_Name = new SelectList(this.categoryService.GetAllCategories(), "Category_ID", "Category_Name");
             ViewBag.Product_Name = new SelectList(this.productService.GetAllProducts(), "Product_ID", "Product_Name");
-            Debug.WriteLine(obj.Category_Name);
-            Debug.WriteLine(obj.Product_Name);
             return View();
         }
         [HttpPost]
