@@ -12,16 +12,10 @@ using Microsoft.Ajax.Utilities;
 
 namespace JoolServerApp.Web.Controllers
 {
-    public class DocumentsController : Controller
+    public class ContactController : Controller
     {
-        private readonly IDocumentService documentService;
-        // GET: Documents
-
-        public DocumentsController(IDocumentService documentService)
-        {
-            this.documentService = documentService;
-        }
-        public ActionResult Documents()
+        
+        public ActionResult Contact()
         {
             
 

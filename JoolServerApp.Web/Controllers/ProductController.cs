@@ -36,5 +36,7 @@ namespace JoolServerApp.Web.Controllers
 
             return View();
         }
+
+
     }
 }
