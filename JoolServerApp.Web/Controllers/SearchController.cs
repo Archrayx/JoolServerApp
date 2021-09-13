@@ -52,13 +52,6 @@ namespace JoolServerApp.Web.Controllers
 
             ProductResults = ProductResults.ToList();
 
-            foreach (var item in ProductResults)
-
-            { Debug.WriteLine(item.Product_Name); }
-
-            Debug.WriteLine(obj.Category_Name);
-            Debug.WriteLine(obj.Product_Name);
-
             return RedirectToAction("ProductSummary", "Product", ProductResults);
         }
 
