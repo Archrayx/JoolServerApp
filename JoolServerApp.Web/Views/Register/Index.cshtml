@@ -3,12 +3,37 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<style>
+  
+    
+    .imagings{
+        float:right;
+        height:35px;
+        width:35px;
+        border:5px gray solid;
+        background-color:gray;
+        margin-right:10px;
+        margin-bottom:5px;
+    }
+    #displayer {
+        float: right;
+        display: none;
+    }
+</style>
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div class="imagings" onclick="Displayer()">
+    
+</div>
+<br />
+<div id="displayer">
+    <a href="@Url.Action("Login","Login")">Logout</a>
+    <a href="@Url.Action("Login","Login")">Product Summary Page</a>
+    <a href="@Url.Action("Login","Login")">Product view Page</a>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -55,3 +80,15 @@
 }
 
 </table>
+<script>
+    function Displayer() {
+       // console.log(getComputedStyle(document.querySelector(".displaying")).display);
+        //if (getComputedStyle(document.querySelector(".displaying")).display === 'none') {
+        if (document.getElementById("displayer").style.display === 'none') {
+            document.getElementById("displayer").style.display='block';
+        } else {
+            document.getElementById("displayer").style.display = 'none';
+        }
+        
+    }
+</script>
