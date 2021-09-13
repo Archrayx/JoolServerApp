@@ -15,7 +15,6 @@ namespace JoolServerApp.Web.Controllers
 {
     public class LoginController : Controller
     {
-        private JoolServerEntities db = new JoolServerEntities();
         
         private readonly IUserService userService;
 
@@ -64,8 +63,7 @@ namespace JoolServerApp.Web.Controllers
                 };
                 if (ModelState.IsValid)
                 {
-                    db.tblUsers.Add(tempUSR);
-                    db.SaveChanges();
+                    this.userService.insertUser(tempUSR);
                     return RedirectToAction("Login");
                 }
             }
@@ -75,10 +73,10 @@ namespace JoolServerApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Signin(CreateVM obj)
         {
-            var userDetails = db.tblUsers.Where(x => x.User_Name == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
+            var userDetails = this.userService.GetAllUsers().Where(x => x.User_Name == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
             if (userDetails == null)
             {
-                userDetails = db.tblUsers.Where(x => x.User_Email == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
+                userDetails = this.userService.GetAllUsers().Where(x => x.User_Email == obj.User_Name && x.user_Password == obj.user_Password).FirstOrDefault();
             }
             if (userDetails == null)
             {
