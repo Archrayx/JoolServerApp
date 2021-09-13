@@ -16,7 +16,8 @@
         </div>
 
         <div class="col-6 justify-content-between">
-            <form method="get">
+            @using (Html.BeginForm("GetProducts", "Search"))
+            {
                 <div class="row">
                     <div class="col-3 padding-0">
                         @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })
@@ -30,7 +31,7 @@
                         <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
                     </div>
                 </div>
-            </form>
+            }
         </div>
 
         <div class="col-1 justify-content-end">
