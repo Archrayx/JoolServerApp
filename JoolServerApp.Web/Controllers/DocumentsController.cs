@@ -43,8 +43,8 @@ namespace JoolServerApp.Web.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
 
             return File(filedata, contentType);
-            
+
         }
 
-
+    }
     }
