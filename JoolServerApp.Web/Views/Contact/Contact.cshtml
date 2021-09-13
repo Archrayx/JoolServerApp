@@ -1,4 +1,5 @@
-﻿@{
+﻿@model JoolServerApp.Web.ViewModels.ContactVM
+@{
     ViewBag.Title = "Contact";
 }
 
@@ -31,6 +32,18 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_Email)
+                </td>
             </tr>
         }
     </table>

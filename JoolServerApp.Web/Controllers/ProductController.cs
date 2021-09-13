@@ -13,11 +13,13 @@ namespace JoolServerApp.Web.Controllers
     {
         private readonly ICategoryService categoryService;
         private readonly IProductService productService;
+        private readonly IDepartmentService deptService;
 
-        public ProductController(ICategoryService categoryService, IProductService productService)
+        public ProductController(ICategoryService categoryService, IProductService productService, IDepartmentService deptService)
         {
             this.categoryService = categoryService;
             this.productService = productService;
+            this.deptService = deptService;
         }
 
         // GET: Product
@@ -36,6 +38,21 @@ namespace JoolServerApp.Web.Controllers
 
             return View();
         }
+
+        public ActionResult ProductContact(SearchVM obj)
+        {
+            var result = from products in productService.GetAllProducts()
+                         where products.Product_ID.ToString() == obj.Product_Name
+                         select products;
+            var departmentIDs = from ids in result.ToList()
+                                  from deptids in deptService.GetAllDepartments()
+                                  where ids.Manufacturer_ID == deptids.Manufacturer_ID
+                                  select deptids;
+            TempData["Product_ID"] = departmentIDs.ToList();
+            return RedirectToAction("Contact", "Contact");
+        }
+
+
 
 
     }
