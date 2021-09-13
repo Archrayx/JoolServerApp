@@ -396,6 +396,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -466,8 +467,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Admin\admin.html" />
-    <Content Include="Views\Admin\Adminrole.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -483,11 +482,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\tblProducts\Create.cshtml" />
-    <Content Include="Views\tblProducts\Delete.cshtml" />
-    <Content Include="Views\tblProducts\Details.cshtml" />
-    <Content Include="Views\tblProducts\Edit.cshtml" />
-    <Content Include="Views\tblProducts\Index.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\Product\ProductSummary.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
