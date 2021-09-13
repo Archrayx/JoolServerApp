@@ -52,6 +52,9 @@ namespace JoolServerApp.Web
             var container = new UnityContainer();
             container.RegisterType(typeof(IRepository<>), typeof(Repository<>));
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<ICategoryService, CategoryService>();
+            container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<ISubCategoryService, SubCategoryService>();
             var obj = container.Resolve<IRepository<object>>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

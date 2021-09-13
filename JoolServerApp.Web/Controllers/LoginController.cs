@@ -1,17 +1,12 @@
 ﻿using JoolServerApp.Data;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
-using System.Net;
 using JoolServerApp.Web.ViewModels;
 using System.Web.Security;
 using JoolServerApp.Service;
 
 namespace JoolServerApp.Web.Controllers
- 
+
 {
     public class LoginController : Controller
     {
@@ -30,7 +25,6 @@ namespace JoolServerApp.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-           
             return View();
         }
 

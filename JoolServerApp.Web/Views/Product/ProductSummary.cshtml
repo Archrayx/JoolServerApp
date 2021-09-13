@@ -1,4 +1,4 @@
-﻿
+﻿@model JoolServerApp.Web.ViewModels.SearchVM
 @{
     ViewBag.Title = "ProductSummary";
 }
@@ -10,46 +10,41 @@
 
 
 <div id="productSummary">
-    @Html.Partial("_SearchView")
-    @**<div id="productBanner" class="row align-center justify-content-between">
+    <div id="productBanner" class="row align-center justify-content-between">
         <div class="col-2">
             <img id="logo" src="~/Content/Images/JooleSVG.svg" />
         </div>
+
         <div class="col-6 justify-content-between">
             <form method="get">
                 <div class="row">
                     <div class="col-3 padding-0">
-                        <select id="searchCategory" class="form-select" aria-label="Search Category">
-                            <option selected>Category</option>
-                            This part must be filled from db
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })
+                        @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="col padding-0">
-                        <select id="searchItem" class="form-select" aria-label="Search Item">
-                            <option selected>Search</option>
-                            This part must be filled from db
-                            <option class="option" value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, "Search...", htmlAttributes: new { @class = "form-select", id = "searchItem", aria_label = "Search Item" })
+                        @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
                     </div>
+
                     <div class="col-1 padding-0">
                         <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
                     </div>
                 </div>
             </form>
         </div>
+
         <div class="col-1 justify-content-end">
             <div class="grayCircle"></div>
         </div>
-    </div>*@
+
+    </div>
+
 
     <div id="productSummaryBody" class="row">
         <!--form for settings-->
-        <div class="col-3" >
+        <div class="col-3">
             <form class="row justify-content-between settingsForm" method="get">
                 <div class="col">
                     <label for="saveBtn">Search:</label>
