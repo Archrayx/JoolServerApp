@@ -1,13 +1,13 @@
-﻿
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
 @{
     ViewBag.Title = "ProductDetails";
 }
-
 <h2>ProductDetails</h2>
     <!-- Paste code on top shared between pages at this point-->
     <div style="float:left; margin-left:30px;">
         <a href="">Product Summary</a> &nbsp; <a href="">Product Details</a>
-        &nbsp; <a href="">Product Documentation</a> &nbsp; <a href="">Contact</a>
+        &nbsp; <a href="">Product Documentation</a> &nbsp;
+        @Html.ActionLink("Contact", "Contact", "Contact")
     </div>
     <br />
     <div class="container">
@@ -20,7 +20,7 @@
                             Description
                         </th>
                     </tr>
-                    <!--Post code here for model-->
+                    @Model.Series_Info
 
                 </table>
                 <table>
@@ -29,7 +29,7 @@
                             Type
                         </th>
                     </tr>
-                    <!--Post code here for model-->
+                    @Model.Series
                 </table>
             </div>
             <div class="col-sm">

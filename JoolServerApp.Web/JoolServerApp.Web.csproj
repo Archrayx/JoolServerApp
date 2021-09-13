@@ -417,6 +417,7 @@
     <Compile Include="ViewModels\AdminVM.cs" />
     <Compile Include="ViewModels\ContactVM.cs" />
     <Compile Include="ViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\ProductDetailsVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
     <Compile Include="ViewModels\SearchVM.cs" />
   </ItemGroup>
