@@ -17,7 +17,7 @@
         <h1 id="slogan">Building Product Selection Platform</h1>
     </div>
 
-    @using (Html.BeginForm("GetProducts","Search",FormMethod.Post)) {
+    @using (Html.BeginForm("GetProducts","Search")) {
         <div class="row">
             <div class="col-3 padding-0">
                 @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })

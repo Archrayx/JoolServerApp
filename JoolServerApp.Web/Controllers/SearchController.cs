@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using JoolServerApp.Web.ViewModels;
 using JoolServerApp.Service;
+using System.Diagnostics;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -35,19 +36,30 @@ namespace JoolServerApp.Web.Controllers
         {
             ViewBag.Category_Name = new SelectList(this.categoryService.GetAllCategories(), "Category_ID", "Category_Name");
             ViewBag.Product_Name = new SelectList(this.productService.GetAllProducts(), "Product_ID", "Product_Name");
+            Debug.WriteLine(obj.Category_Name);
+            Debug.WriteLine(obj.Product_Name);
             return View();
         }
-
+        [HttpPost]
         public ActionResult GetProducts(SearchVM obj)
         {
 
-            var ProductsResult = from products in productService.GetAllProducts()
-                                 from subcategory in subCategoryService.GetAllSubCategories()
-                                 from category in categoryService.GetAllCategories()
-                                 where obj.Category_Name == category.Category_Name && category.Category_ID == subcategory.Category_ID && obj.Product_Name == products.Product_Name
-                                 select new { TblProduct = this.productService.GetProduct(products.Product_ID) };
-                                        
-            return RedirectToAction("ProductSummary", "Product", ProductsResult.ToList());
+            var ProductResults = from products in productService.GetAllProducts()
+                                 from subcat in subCategoryService.GetAllSubCategories()
+                                 join cat in categoryService.GetAllCategories() on subcat.Category_ID equals cat.Category_ID
+                                 where obj.Product_Name == products.Product_ID.ToString() && obj.Category_Name == cat.Category_ID.ToString()
+                                 select products;
+
+            ProductResults = ProductResults.ToList();
+
+            foreach (var item in ProductResults)
+
+            { Debug.WriteLine(item.Product_Name); }
+
+            Debug.WriteLine(obj.Category_Name);
+            Debug.WriteLine(obj.Product_Name);
+
+            return RedirectToAction("ProductSummary", "Product", ProductResults);
         }
 
 
