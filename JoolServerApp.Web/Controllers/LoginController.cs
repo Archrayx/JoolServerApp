@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using JoolServerApp.Web.ViewModels;
 using System.Web.Security;
 using JoolServerApp.Service;
+using System.Web;
+using System.IO;
 
 namespace JoolServerApp.Web.Controllers
 
@@ -33,14 +35,18 @@ namespace JoolServerApp.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(CreateVM obj)
+        public ActionResult Login(CreateVM obj, HttpPostedFileBase ImageData)
         {
             if (obj.user_Password == obj.confirm_Password && obj.user_Password != null)
-            {
+            {               
+
+                obj.User_Image = new byte[ImageData.ContentLength];
+                ImageData.InputStream.Read(obj.User_Image,0,ImageData.ContentLength);
                 tblUser tempUSR = new tblUser
                 {
                     User_Name = obj.User_Name,
                     User_Email = obj.User_Email,
+                    User_Image = obj.User_Image,
                     user_Password = obj.user_Password,
                     Credential_ID = 1
                 };

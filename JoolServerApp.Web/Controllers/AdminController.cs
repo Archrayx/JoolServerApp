@@ -1,10 +1,12 @@
-﻿using JoolServerApp.Service;
+﻿using JoolServerApp.Data;
+using JoolServerApp.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using JoolServerApp.Web.ViewModels;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -27,8 +29,8 @@ namespace JoolServerApp.Web.Controllers
         // GET: tblProducts
         public ActionResult Index()
         {
-            var tblProducts = this.productService.GetAllProducts().Include(this.documentService).Include(t => t.tblManufacturer).Include(t => t.tblSale).Include(t => t.tblSubCategory);
-            return View(tblProducts.ToList());
+            var tblProducts = this.productService.GetAllProducts();
+            return View(tblProducts);
         }
 
         // GET: tblProducts/Details/5
@@ -61,19 +63,34 @@ namespace JoolServerApp.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Product_ID,Manufacturer_ID,Sales_ID,SubCategory_ID,Product_Name,Product_Image,Series,Model,Model_Year,Series_Info,Document_ID,Featured")] tblProduct tblProduct)
+        public ActionResult Create(AdminVM obj, HttpPostedFileBase ImageData)
         {
             if (ModelState.IsValid)
             {
-                this.productService.insertProduct(tblProduct);
+                obj.Product_Image = new byte[ImageData.ContentLength];
+                ImageData.InputStream.Read(obj.Product_Image, 0, ImageData.ContentLength);
+                tblProduct tempProduct = new tblProduct
+                {
+                    Manufacturer_ID = obj.Manufacturer_ID,
+                    Sales_ID = obj.Sales_ID,
+                    SubCategory_ID = obj.SubCategory_ID,
+                    Product_Name = obj.Product_Name,
+                    Product_Image = obj.Product_Image,
+                    Series = obj.Series,
+                    Model_Year = obj.Model_Year,
+                    Series_Info = obj.Series_Info,
+                    Document_ID = obj.Document_ID,
+                    Featured = obj.Featured
+                };
+                this.productService.insertProduct(tempProduct);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
-            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
-            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
-            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
-            return View(tblProduct);
+            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path");
+            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name");
+            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name");
+            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name");
+            return View();
         }
 
         // GET: tblProducts/Edit/5
@@ -138,13 +155,6 @@ namespace JoolServerApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }
