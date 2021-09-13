@@ -35,11 +35,13 @@ namespace JoolServerApp.Service
         public void insertDepartment(tblDepartment department)
         {
             departmentRepository.Insert(department);
+            departmentRepository.SaveChanges();
         }
 
         public void UpdateDepartment(tblDepartment department)
         {
             departmentRepository.Update(department);
+            departmentRepository.SaveChanges();
         }
     }
 }

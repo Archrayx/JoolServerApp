@@ -24,10 +24,14 @@ namespace JoolServerApp.Service
         public void insertProduct(tblProduct product)
         {
             productRepository.Insert(product);
+            productRepository.SaveChanges();
+
         }
         public void UpdateProduct(tblProduct product)
         {
             productRepository.Update(product);
+            productRepository.SaveChanges();
+
         }
 
         public void DeleteProduct(long id)

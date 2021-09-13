@@ -24,10 +24,14 @@ namespace JoolServerApp.Service
         public void insertProject(tblProject project)
         {
             projectRepository.Insert(project);
+            projectRepository.SaveChanges();
+
         }
         public void UpdateProject(tblProject project)
         {
             projectRepository.Update(project);
+            projectRepository.SaveChanges();
+
         }
 
         public void DeleteProject(long id)

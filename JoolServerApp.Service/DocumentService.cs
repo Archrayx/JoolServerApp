@@ -30,16 +30,20 @@ namespace JoolServerApp.Service
         public tblDocument GetDocument(long id)
         {
             return documentRepository.Get(id);
+
         }
 
         public void insertDocument(tblDocument document)
         {
             documentRepository.Insert(document);
+            documentRepository.SaveChanges();
         }
 
         public void UpdateDocument(tblDocument document)
         {
             documentRepository.Update(document);
+            documentRepository.SaveChanges();
+
         }
     }
 }

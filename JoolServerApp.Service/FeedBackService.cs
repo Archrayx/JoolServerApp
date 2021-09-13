@@ -36,11 +36,13 @@ namespace JoolServerApp.Service
         public void insertFeedback(tblFeedBack feedback)
         {
             feedBackRepository.Insert(feedback);
+            feedBackRepository.SaveChanges();
         }
 
         public void UpdateFeedback(tblFeedBack feedback)
         {
             feedBackRepository.Update(feedback);
+            feedBackRepository.SaveChanges();
         }
     }
 }

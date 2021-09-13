@@ -35,11 +35,15 @@ namespace JoolServerApp.Service
         public void insertSubCategory(tblSubCategory subCategory)
         {
             subCategoryRepository.Insert(subCategory);
+            subCategoryRepository.SaveChanges();
+
         }
 
         public void UpdateSubCategory(tblSubCategory subCategory)
         {
             subCategoryRepository.Update(subCategory);
+            subCategoryRepository.SaveChanges();
+
         }
     }
 }

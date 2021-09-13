@@ -37,11 +37,15 @@ namespace JoolServerApp.Service
         public void insertState(tblState state)
         {
             stateRepository.Insert(state);
+            stateRepository.SaveChanges();
+
         }
 
         public void UpdateState(tblState state)
         {
             stateRepository.Update(state);
+            stateRepository.SaveChanges();
+
         }
     }
 }

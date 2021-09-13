@@ -26,10 +26,12 @@ namespace JoolServerApp.Service
         public void insertUser(tblUser user)
         {
             userRepository.Insert(user);
+            userRepository.SaveChanges();
         }
         public void UpdateUser(tblUser user)
         {
             userRepository.Update(user);
+            userRepository.SaveChanges();
         }
 
         public void DeleteUser(long id)

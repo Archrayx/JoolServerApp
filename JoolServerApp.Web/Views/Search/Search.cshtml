@@ -16,33 +16,24 @@
         <img id="logo" src="~/Content/Images/JooleSVG.svg" />
         <h1 id="slogan">Building Product Selection Platform</h1>
     </div>
+
     @using (Html.BeginForm()) {
         <div class="row">
             <div class="col-3 padding-0">
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })
+                @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
             </div>
+
 
             <div class="col padding-0">
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, "Search...", htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-
-
-
+                @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, null, htmlAttributes: new { @class = "form-select", id = "searchItem", aria_label = "Search Item" })
+                @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
             </div>
+
             <div class="col-1 padding-0">
                 <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
             </div>
-        </div>
+</div>
     }
 
 

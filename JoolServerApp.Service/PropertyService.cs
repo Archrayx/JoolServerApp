@@ -24,10 +24,14 @@ namespace JoolServerApp.Service
         public void insertProperty(tblProperty property)
         {
             propertyRepository.Insert(property);
+            propertyRepository.SaveChanges();
+
         }
         public void UpdateProperty(tblProperty property)
         {
             propertyRepository.Update(property);
+            propertyRepository.SaveChanges();
+
         }
 
         public void DeleteProperty(long id)

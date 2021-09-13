@@ -34,12 +34,14 @@ namespace JoolServerApp.Service
 
         public void insertCity(tblCity city)
         {
-           cityRepository.Insert(city);
+            cityRepository.Insert(city);
+            cityRepository.SaveChanges();
         }
 
         public void UpdateCity(tblCity city)
         {
             cityRepository.Update(city);
+            cityRepository.SaveChanges();
         }
     }
 }
