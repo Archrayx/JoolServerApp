@@ -58,8 +58,8 @@ namespace JoolServerApp.Web.Controllers
 
             Debug.WriteLine(obj.Category_Name);
             Debug.WriteLine(obj.Product_Name);
-
-            return RedirectToAction("ProductSummary", "Product", ProductResults);
+            TempData["Products"] = ProductResults;
+            return RedirectToAction("ProductSummary", "Product");
         }
 
 
