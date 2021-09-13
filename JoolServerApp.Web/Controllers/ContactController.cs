@@ -14,13 +14,18 @@ namespace JoolServerApp.Web.Controllers
 {
     public class DocumentsController : Controller
     {
-        private JoolServerEntities db = new JoolServerEntities();
+        private readonly IDocumentService documentService;
         // GET: Documents
+
+        public DocumentsController(IDocumentService documentService)
+        {
+            this.documentService = documentService;
+        }
         public ActionResult Documents()
         {
-            var tblDocuments = db.tblDocuments;
+            
 
-            return View(tblDocuments.ToList());
+            return View();
         }
     }
 }

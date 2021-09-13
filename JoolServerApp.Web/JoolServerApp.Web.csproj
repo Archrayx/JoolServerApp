@@ -396,6 +396,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -445,6 +446,7 @@
     <Content Include="obj\Debug\JoolServerApp.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Web.dll" />
     <Content Include="obj\Debug\JoolServerApp.Web.pdb" />
+    <Content Include="Item_Docs\Item1_Doc.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
