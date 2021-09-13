@@ -33,6 +33,10 @@ select option {
     color: white;
 }
 
+.productImg {
+    margin: 8px auto;
+}
+
 .grayCircle {
     background: gray;
     border-radius: 50%;
@@ -53,6 +57,20 @@ select option {
     background-image: linear-gradient(#01579b, white);
 }
 
+.productBtn {
+    display: inline;
+    width: 30%
+}
+
+.productLbl {
+    font-weight: 900;
+}
+
+.checkBox {
+}
+
 .informationBox {
     border: solid;
+    margin: 8px;
+    padding: 20px 8px;
 }

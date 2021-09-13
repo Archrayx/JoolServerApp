@@ -398,6 +398,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserTests.cs" />
     <Compile Include="ViewModels\CreateVM.cs" />
+    <Compile Include="ViewModels\ProductVM.cs" />
     <Compile Include="ViewModels\SearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
