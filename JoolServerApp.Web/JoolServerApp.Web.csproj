@@ -443,10 +443,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Item_Docs\Item1_Doc.txt" />
     <Content Include="obj\Debug\JoolServerApp.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Web.dll" />
     <Content Include="obj\Debug\JoolServerApp.Web.pdb" />
-    <Content Include="Item_Docs\Item1_Doc.txt" />
+    <Content Include="Documents\Item1_Doc.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

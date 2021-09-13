@@ -32,30 +32,8 @@
     </style>
 </head>
 <body>
-    <div>
-        <table>
-            <tr>
-                <th>
-                    Document_ID
-                </th>
-                <th>
-                    Links For Documentation
-                </th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Document_ID)
-                    </td>
-                    <td>
-                        <a href="@item.Document_Folder_Path">
-                            @Html.DisplayFor(modelItem => item.Document_Folder_Path)
-                        </a>
-                    </td>
-                </tr>
-            }
-        </table>
+   <div>
+        @Html.ActionLink("Document Download", "Download")
     </div>
 </body>
 </html>

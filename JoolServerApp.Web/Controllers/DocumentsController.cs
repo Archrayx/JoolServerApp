@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Net.Http.Headers;
+using System.Net;
 using System.Reflection.Metadata;
+using System.Diagnostics;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -20,29 +21,40 @@ namespace JoolServerApp.Web.Controllers
 
         }
 
-        public ActionResult Documents()
+        public ActionResult Document()
         {
 
             return View();
         }
 
-        public ActionResult Download()
+        public ActionResult Download(object sender, EventArgs e)
         {
 
             var doc = documentService.GetDocument(1);
-            string filepath = doc.Document_Folder_Path;
-            string fullfilepath = AppDomain.CurrentDomain.BaseDirectory + filepath;
+            string filename = doc.Document_Folder_Path;
+            string filepath = AppDomain.CurrentDomain.BaseDirectory + @"Item_Docs\" + filename;
+            Debug.WriteLine(filepath);
             byte[] filedata = System.IO.File.ReadAllBytes(filepath);
             string contentType = MimeMapping.GetMimeMapping(filepath);
             var cd = new System.Net.Mime.ContentDisposition
             {
-                FileName = filepath,
+                FileName = filename,
                 Inline = true,
             };
+            WebClient req = new WebClient();
+            HttpResponse response = System.Web.HttpContext.Current.Response;
+            response.Clear();
+            response.ClearContent();
+            response.ClearHeaders();
+            response.Buffer = true;
+            response.AddHeader("Content-Disposition", "attachment;filename=\"" + Server.MapPath(filename) + "\"");
+            byte[] data = req.DownloadData(Server.MapPath(filename));
+            response.BinaryWrite(data);
+            response.End();
 
-            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return View("Document");
 
-            return File(filedata, contentType);
+            
 
         }
 
