@@ -8,16 +8,42 @@ using System.Data.Entity;
 using System.Net;
 using JoolServerApp.Web.ViewModels;
 using System.Web.Security;
+using JoolServerApp.Service;
 
 namespace JoolServerApp.Web.Controllers
+ 
 {
     public class LoginController : Controller
     {
         private JoolServerEntities db = new JoolServerEntities();
+        
+        private readonly IUserService userService;
+
+        public LoginController(IUserService userService)
+        {
+            this.userService = userService;
+        }
+
+
+
+
         // GET: Login
+        [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            List<CreateVM> model = new List<CreateVM>();
+            this.userService.GetAllUsers().ToList().ForEach(u =>
+            {
+                CreateVM user = new CreateVM
+                {
+                    User_Email = u.User_Email,
+                    User_Name = u.User_Name,
+                    user_Password = u.user_Password
+                };
+                model.Add(user);
+
+            });
+            return View(model);
         }
 
         // POST: Register/Create
