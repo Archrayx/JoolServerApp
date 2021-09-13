@@ -27,7 +27,18 @@ namespace JoolServerApp.Web.Controllers
         {
             ViewBag.Category_Name = new SelectList(this.categoryService.GetAllCategories(), "Category_ID", "Category_Name");
             ViewBag.Product_Name = new SelectList(this.productService.GetAllProducts(), "Product_ID", "Product_Name");
-            return View();
+            List<ProductVM> products = (from product in this.productService.GetAllProducts()
+                                        select new ProductVM
+                                        {
+                                            Product_ID = product.Product_ID,
+                                            Product_Name = product.Product_Name,
+                                            Series = product.Series,
+                                            Model = product.Model,
+                                            Series_Info = product.Series_Info,
+                                        }).ToList();
+
+
+            return View("ProductSummary", products);
         }
 
         [HttpPost]
@@ -35,8 +46,19 @@ namespace JoolServerApp.Web.Controllers
         {
             ViewBag.Category_Name = new SelectList(this.categoryService.GetAllCategories(), "Category_ID", "Category_Name");
             ViewBag.Product_Name = new SelectList(this.productService.GetAllProducts(), "Product_ID", "Product_Name");
+            List<ProductVM> products = (from product in this.productService.GetAllProducts() 
+                                        select new ProductVM
+                                        {
+                                            Product_ID = product.Product_ID,
+                                            Product_Name = product.Product_Name,
+                                            Series = product.Series,
+                                            Model = product.Model,
+                                            Series_Info = product.Series_Info,
+                                        }).ToList();
 
-            return View();
+
+            return View("ProductSummary", products);
+
         }
 
         public ActionResult ProductContact(SearchVM obj)

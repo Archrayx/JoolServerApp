@@ -1,4 +1,4 @@
-﻿@model JoolServerApp.Web.ViewModels.SearchVM
+﻿@model IEnumerable<JoolServerApp.Web.ViewModels.ProductVM>
 @{
     ViewBag.Title = "ProductSummary";
 }
@@ -19,13 +19,9 @@
             <form method="get">
                 <div class="row">
                     <div class="col-3 padding-0">
-                        @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })
-                        @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="col padding-0">
-                        @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, "Search...", htmlAttributes: new { @class = "form-select", id = "searchItem", aria_label = "Search Item" })
-                        @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="col-1 padding-0">
@@ -121,44 +117,32 @@
         <div class="col">
             <h5>setting information here</h5>
             <div class="row justify-content-evenly">
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
+                <div class="col">
+                    <h5>setting information here</h5>
+                    <div class="row justify-content-evenly">
+                        @foreach (var product in Model)
+                        {
+                            <div class="col-3 informationBox text-center">
+                                <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
+                                @Html.ActionLink("productDetails", "productdetails");
+                                <h6>@product.Product_Name</h6>
+                                <h6>@product.Series</h6>
+                                <h6>@product.Model</h6>
 
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
-                </div>
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
+                                <p>5,467 CFM</p>
+                                <p>21.14 W at max speed</p>
+                                <p>35 dBA at max Speed</p>
+                                <p>60" fan sweep diameter</p>
 
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
-                </div>
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
+                                <input id="@product.Product_Name+checkBox" name="@product.Product_Name+checkBox" type="checkbox" class="checkBox" />
+                                <label for="@product.Product_Name+checkBox" class="productLbl">Compare</label>
+                                <button id="@product.Product_ID+Btn" class="form-control btn-primary productBtn" type="button">Add to</button>
+                            </div>
 
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
 
     </div>
 </div>
