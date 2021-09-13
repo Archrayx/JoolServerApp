@@ -34,11 +34,15 @@ namespace JoolServerApp.Service
         public void insertSale(tblSale sale)
         {
             saleRepository.Insert(sale);
+            saleRepository.SaveChanges();
+
         }
 
         public void UpdateSale(tblSale sale)
         {
             saleRepository.Update(sale);
+            saleRepository.SaveChanges();
+
         }
     }
 }

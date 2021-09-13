@@ -20,14 +20,17 @@ namespace JoolServerApp.Service
         public tblCategory GetCategory(long id)
         {
             return categoryRepository.Get(id);
+
         }
         public void insertCategory(tblCategory category)
         {
             categoryRepository.Insert(category);
+            categoryRepository.SaveChanges();
         }
         public void UpdateCategory(tblCategory category)
         {
             categoryRepository.Update(category);
+            categoryRepository.SaveChanges();
         }
 
         public void DeleteCategory(long id)

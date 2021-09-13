@@ -34,11 +34,15 @@ namespace JoolServerApp.Service
         public void insertManufacturer(tblManufacturer manufacturer)
         {
             manufacturerRepository.Insert(manufacturer);
+            manufacturerRepository.SaveChanges();
+
         }
 
         public void UpdateManufacturer(tblManufacturer manufacturer)
         {
             manufacturerRepository.Update(manufacturer);
+            manufacturerRepository.SaveChanges();
+
         }
     }
 }
