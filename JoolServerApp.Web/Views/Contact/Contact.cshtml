@@ -17,7 +17,7 @@
     <table>
         <tr>
             <th>
-                Manufacturer_Name
+                Manufacturer_ID
             </th>
             <th>
                 Department_Name
@@ -29,20 +29,20 @@
                 Department_Email
             </th>
         </tr>
-        @foreach (var item in Model)
+        @foreach (var item in ViewBag.contact)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Manufacturer_Name)
+                    @item.Manufacturer_ID
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Department_Name)
+                    @item.Department_Name
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Department_Phone)
+                    @item.Department_Phone
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Department_Email)
+                    @item.Department_Email 
                 </td>
             </tr>
         }
