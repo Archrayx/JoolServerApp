@@ -38,7 +38,7 @@ namespace JoolServerApp.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var tblProduct = productService.GetProduct(id);
+            var tblProduct = this.productService.GetProduct(id);
             if (tblProduct == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace JoolServerApp.Web.Controllers
         public ActionResult Create()
         {
             ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path");
-            ViewBag.Manufacturer_ID = new SelectList(manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name");
+            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name");
             ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name");
             ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name");
             return View();
@@ -65,34 +65,33 @@ namespace JoolServerApp.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.tblProducts.Add(tblProduct);
-                db.SaveChanges();
+                this.productService.insertProduct(tblProduct);                
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Document_ID = new SelectList(db.tblDocuments, "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
-            ViewBag.Manufacturer_ID = new SelectList(db.tblManufacturers, "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
-            ViewBag.Sales_ID = new SelectList(db.tblSales, "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
-            ViewBag.SubCategory_ID = new SelectList(db.tblSubCategories, "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
+            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
+            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
+            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
+            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
             return View(tblProduct);
         }
 
         // GET: tblProducts/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(long id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblProduct tblProduct = db.tblProducts.Find(id);
+            var tblProduct = this.productService.GetProduct(id);
             if (tblProduct == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Document_ID = new SelectList(db.tblDocuments, "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
-            ViewBag.Manufacturer_ID = new SelectList(db.tblManufacturers, "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
-            ViewBag.Sales_ID = new SelectList(db.tblSales, "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
-            ViewBag.SubCategory_ID = new SelectList(db.tblSubCategories, "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
+            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
+            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
+            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
+            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
             return View(tblProduct);
         }
 
@@ -105,14 +104,13 @@ namespace JoolServerApp.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tblProduct).State = EntityState.Modified;
-                db.SaveChanges();
+                this.productService.UpdateProduct(tblProduct);                
                 return RedirectToAction("Index");
             }
-            ViewBag.Document_ID = new SelectList(db.tblDocuments, "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
-            ViewBag.Manufacturer_ID = new SelectList(db.tblManufacturers, "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
-            ViewBag.Sales_ID = new SelectList(db.tblSales, "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
-            ViewBag.SubCategory_ID = new SelectList(db.tblSubCategories, "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
+            ViewBag.Document_ID = new SelectList(this.documentService.GetAllDocuments(), "Document_ID", "Document_Folder_Path", tblProduct.Document_ID);
+            ViewBag.Manufacturer_ID = new SelectList(this.manufacturerService.GetAllManufacturers(), "Manufacturer_ID", "Manufacturer_Name", tblProduct.Manufacturer_ID);
+            ViewBag.Sales_ID = new SelectList(this.saleService.GetAllSales(), "Sales_ID", "Sales_Name", tblProduct.Sales_ID);
+            ViewBag.SubCategory_ID = new SelectList(this.subCategoryService.GetAllSubCategories(), "SubCategory_ID", "SubCategory_Name", tblProduct.SubCategory_ID);
             return View(tblProduct);
         }
 
@@ -123,7 +121,7 @@ namespace JoolServerApp.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            tblProduct tblProduct = db.tblProducts.Find(id);
+            tblProduct tblProduct = this.productService.GetProduct(id);
             if (tblProduct == null)
             {
                 return HttpNotFound();
@@ -134,11 +132,9 @@ namespace JoolServerApp.Web.Controllers
         // POST: tblProducts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
-            tblProduct tblProduct = db.tblProducts.Find(id);
-            db.tblProducts.Remove(tblProduct);
-            db.SaveChanges();
+            this.productService.DeleteProduct(id);
             return RedirectToAction("Index");
         }
 
