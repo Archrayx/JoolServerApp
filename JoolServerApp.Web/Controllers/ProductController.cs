@@ -5,16 +5,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using JoolServerApp.Web.ViewModels;
+using System.Web.Security;
+using System.Diagnostics;
+//using JoolServerApp.Service;
 
 namespace JoolServerApp.Web.Controllers
 {
     public class ProductController : Controller
     {
         private JoolServerEntities db = new JoolServerEntities();
+        //private readonly IProductService ProductService;
+
+        //public ProductController(Service.IProductService ProductService)
+        //{
+            //this.ProductService = ProductService;
+        //}
+
         // GET: Product
         public ActionResult ProductSummary()
         {
-
             List<ProductVM> products = (from product in db.tblProducts
                                         select new ProductVM
                                         {
@@ -24,6 +33,7 @@ namespace JoolServerApp.Web.Controllers
                                             Model = product.Model,
                                             Series_Info = product.Series_Info,
                                         }).ToList();
+
 
             return View("ProductSummary", products);
         }

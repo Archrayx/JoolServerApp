@@ -49,7 +49,7 @@
 
     <div id="productSummaryBody" class="row">
         <!--form for settings-->
-        <div class="col-3" >
+        <div class="col-3">
             <form class="row justify-content-between settingsForm" method="get">
                 <div class="col">
                     <label for="saveBtn">Search:</label>
@@ -126,63 +126,45 @@
         <div class="col">
             <h5>setting information here</h5>
             <div class="row justify-content-evenly">
-            @foreach (var product in Model)
-            {
-                <div class="col-3 informationBox text-center">
-                    <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>@product.Product_Name</h6>
-                    <h6>@product.Series</h6>
-                    <h6>@product.Model</h6>
+                @foreach (var product in Model)
+                {
+                    <div class="col-3 informationBox text-center">
+                        <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
+                        @Html.ActionLink("productDetails", "productdetails");
+                        <h6>@product.Product_Name</h6>
+                        <h6>@product.Series</h6>
+                        <h6>@product.Model</h6>
 
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
+                        <p>5,467 CFM</p>
+                        <p>21.14 W at max speed</p>
+                        <p>35 dBA at max Speed</p>
+                        <p>60" fan sweep diameter</p>
 
-                    <input id="@product.Product_Name+checkBox" name="@product.Product_Name+checkBox" type="checkbox" class="checkBox" />
-                    <label for="@product.Product_Name+checkBox" class="productLbl">Compare</label>
-                    <button class="form-control btn-primary productBtn" type="button">Add to</button>
-                </div>
+                        <input id="@product.Product_Name+checkBox" name="@product.Product_Name+checkBox" type="checkbox" class="checkBox" />
+                        <label for="@product.Product_Name+checkBox" class="productLbl">Compare</label>
+                            <button id="@product.Product_ID+Btn" class="form-control btn-primary productBtn" type="button">Add to</button>
+                    </div>
 
-            }
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
-
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
-                </div>
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
-
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
-                </div>
-                <div class="col-3 informationBox text-center">
-                    <div style="background-color: gray; height:140px; width:140px"></div>
-                    <h6>BigAss</h6>
-                    <h6>Haiku H Series</h6>
-                    <h6>S3150-20-92-19-290</h6>
-
-                    <p>5,467 CFM</p>
-                    <p>21.14 W at max speed</p>
-                    <p>35 dBA at max Speed</p>
-                    <p>60" fan sweep diameter</p>
-                    <button type="button">Add to</button>
-                </div>
+                }
             </div>
         </div>
 
     </div>
 </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    const addProjToProd = (e) => {
+        console.log(event.target.id)
+        $.post("login", (e) => {
+            console.log('we in here')
+        })
+    };
+        
+    $(document).ready(() => {
+   
+
+
+    });
+
+</script>
