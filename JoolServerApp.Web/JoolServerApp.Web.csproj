@@ -421,9 +421,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\JooleSVG.svg" />
     <Content Include="Content\Styles\Login.css" />
-    <Content Include="Content\Styles\Login2.css" />
     <Content Include="Content\Styles\ProductSummary.css" />
     <Content Include="Content\Styles\Search.css" />
+    <Content Include="Content\Styles\_Searchview.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -486,6 +486,7 @@
     <Content Include="Views\tblSubCategories\Details.cshtml" />
     <Content Include="Views\tblSubCategories\Edit.cshtml" />
     <Content Include="Views\tblSubCategories\Index.cshtml" />
+    <Content Include="Views\Shared\_SearchView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

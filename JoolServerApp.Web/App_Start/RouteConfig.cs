@@ -106,7 +106,7 @@ namespace JoolServerApp.Web
             routes.MapRoute(
                 name: "ProductSummary",
                 url: "ProductSummary",
-                defaults: new { controller = "Product", action = "ProductSummary", id = UrlParameter.Optional }
+                defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
