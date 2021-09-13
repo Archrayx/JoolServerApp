@@ -31,19 +31,8 @@ namespace JoolServerApp.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            List<CreateVM> model = new List<CreateVM>();
-            this.userService.GetAllUsers().ToList().ForEach(u =>
-            {
-                CreateVM user = new CreateVM
-                {
-                    User_Email = u.User_Email,
-                    User_Name = u.User_Name,
-                    user_Password = u.user_Password
-                };
-                model.Add(user);
-
-            });
-            return View(model);
+           
+            return View();
         }
 
         // POST: Register/Create
