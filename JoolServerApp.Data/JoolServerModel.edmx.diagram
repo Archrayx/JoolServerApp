@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82ea1ba28d9d4b30b2622b040cd0a05b" Name="Diagram1">
+        <EntityTypeShape EntityType="JoolServerModel.tblCategory" Width="1.5" PointX="6" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblCity" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblCredential" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblDepartment" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblDocument" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblFeedBack" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblManufacturer" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblProduct" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblProject" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblProperty" Width="1.5" PointX="10.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblPropertyValue" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblSale" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblState" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblSubCategory" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblTechSpecFilter" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblUser" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JoolServerModel.tblTypeFilter" Width="1.5" PointX="15.75" PointY="12" IsExpanded="true" />
+        <AssociationConnector Association="JoolServerModel.FK__tblSubCat__Categ__06D7F1EF" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblCity__State_I__30CE2BBB" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__349EBC9F" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblUser__Credent__0B9CA70C" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblDepart__Manuf__133DC8D4" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Docum__1CC7330E" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__Produ__2C09769E" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblFeedBa__User___2B155265" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblManufa__User___0E7913B7" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Manuf__19EAC663" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__Sales__1ADEEA9C" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProduc__SubCa__1BD30ED5" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProper__Produ__1FA39FB9" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__Proje__3592E0D8" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProjec__User___33AA9866" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblProper__Prope__2097C3F2" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__Prope__2744C181" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__Prope__2374309D" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTechSp__SubCa__26509D48" ManuallyRouted="false" />
+        <AssociationConnector Association="JoolServerModel.FK__tblTypeFi__SubCa__22800C64" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

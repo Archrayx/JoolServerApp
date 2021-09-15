@@ -1,0 +1,97 @@
+﻿@model IEnumerable<JoolServerApp.Data.tblUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+
+    .imagings {
+        float: right;
+        height: 35px;
+        width: 35px;
+        border: 5px gray solid;
+        background-color: gray;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+
+    #displayer {
+        float: right;
+        display: none;
+    }
+</style>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="imagings" onclick="Displayer()">
+
+</div>
+<br />
+<div id="displayer">
+    <a href="@Url.Action("Login","Login")">Logout</a>
+    <a href="@Url.Action("Login","Login")">Product Summary Page</a>
+    <a href="@Url.Action("Login","Login")">Product view Page</a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCredential.User_Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblCredential.User_Type)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.User_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.User_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.User_ID })
+            </td>
+        </tr>
+    }
+
+
+</table>
+<script>
+    function Displayer() {
+        // console.log(getComputedStyle(document.querySelector(".displaying")).display);
+        //if (getComputedStyle(document.querySelector(".displaying")).display === 'none') {
+        if (document.getElementById("displayer").style.display === 'none') {
+            document.getElementById("displayer").style.display = 'block';
+        } else {
+            document.getElementById("displayer").style.display = 'none';
+        }
+
+    }
+</script> 
