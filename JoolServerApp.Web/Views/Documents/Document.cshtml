@@ -1,0 +1,39 @@
+﻿@model IEnumerable<JoolServerApp.Data.tblDocument>
+@{
+    Layout = null;
+}
+@section Scripts
+{
+    <link href="~/Content/Styles/Document.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom, #0066cc 0%, #ffffff 91%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        table {
+            border: 1px solid;
+        }
+
+        tr {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+   <div>
+        @Html.ActionLink("Document Download", "Download")
+    </div>
+</body>
+</html>

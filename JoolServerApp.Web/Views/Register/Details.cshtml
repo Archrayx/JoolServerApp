@@ -1,0 +1,58 @@
+﻿@model JoolServerApp.Data.tblUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblCredential.User_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblCredential.User_Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.User_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
