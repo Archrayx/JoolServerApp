@@ -1,0 +1,93 @@
+﻿@model IEnumerable<JoolServerApp.Data.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series_Info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Featured)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblDocument.Document_Folder_Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblManufacturer.Manufacturer_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblSale.Sales_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblSubCategory.SubCategory_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Series)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Series_Info)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Featured)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblDocument.Document_Folder_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblManufacturer.Manufacturer_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblSale.Sales_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblSubCategory.SubCategory_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Product_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Product_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Product_ID })
+        </td>
+    </tr>
+}
+
+</table>

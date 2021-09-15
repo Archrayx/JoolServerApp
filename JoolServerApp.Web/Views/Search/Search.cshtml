@@ -1,0 +1,41 @@
+﻿@model JoolServerApp.Web.ViewModels.SearchVM
+
+@{
+    ViewBag.Title = "Search";
+}
+
+@section Scripts
+{
+    <link href="~/Content/Styles/Search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+}
+
+
+<div id="searchDiv">
+    <div class="logoDiv">
+        <img id="logo" src="~/Content/Images/JooleSVG.svg" />
+        <h1 id="slogan">Building Product Selection Platform</h1>
+    </div>
+
+    @using (Html.BeginForm("GetProducts","Search")) {
+        <div class="row">
+            <div class="col-3 padding-0">
+                @Html.DropDownList("Category_Name", (IEnumerable<SelectListItem>)ViewBag.Customer_Name, "Category", htmlAttributes: new { @class = "form-select", id = "searchCategory", aria_label = "Search Category" })
+                @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="col padding-0">
+                @Html.DropDownList("Product_Name", (IEnumerable<SelectListItem>)ViewBag.Product_Name, null, htmlAttributes: new { @class = "form-select", id = "searchItem", aria_label = "Search Item" })
+                @Html.ValidationMessageFor(model => model.Product_Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-1 padding-0">
+                <button id="searchBtn" type="submit" class="form-control"><i class="bi bi-search"></i></button>
+            </div>
+</div>
+    }
+
+
+
+</div>
