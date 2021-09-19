@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="icon-bar">@Html.ActionLink("Product Summary", "ProductSummary", "Product")</span>
+                <span class="icon-bar">@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails")</span>
+                <span class="icon-bar">@Html.ActionLink("Documents", "Document", "Documents")</span>
+                <span class="icon-bar">@Html.ActionLink("Contact", "ProductContact", "Product")</span>
+                @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
+                {
+            <span>@Html.ActionLink("Admin", "Index", "tblProducts")</span>
+                }
+            </div>
+            </div>
+    </div>
+  
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+</body>
+</html>
+

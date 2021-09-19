@@ -1,17 +1,14 @@
 ﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
 @{
-    Layout = "~/Views/Shared/_NavLayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
     ViewBag.Title = "ProductDetails";
 }
+@Html.Partial("~/Views/Shared/_PartialNav.cshtml")
 <h2>ProductDetails</h2>
 <!-- Paste code on top shared between pages at this point-->
-<div style="float:left; margin-left:30px;">
-    <a href="">Product Summary</a> &nbsp; <a href="">Product Details</a>
-    &nbsp; <a href="">Product Documentation</a> &nbsp;
-    @Html.ActionLink("Contact", "Contact", "Contact")
-</div>
+
 <br />
 <div class="container">
     <h3>Product Summary</h3>
