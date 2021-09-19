@@ -2,6 +2,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            display: inline;
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                /* Change the link color to #111 (black) on hover */
+                li a:hover {
+                    background-color: #111;
+                }
+        .active {
+            background-color: skyblue;
+        }
+    </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
@@ -9,20 +40,23 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <span class="icon-bar">@Html.ActionLink("Product Summary", "ProductSummary", "Product")</span>
-                <span class="icon-bar">@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails")</span>
-                <span class="icon-bar">@Html.ActionLink("Documents", "Document", "Documents")</span>
-                <span class="icon-bar">@Html.ActionLink("Contact", "ProductContact", "Product")</span>
-                @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
-                {
-            <span>@Html.ActionLink("Admin", "Index", "tblProducts")</span>
-                }
-            </div>
-            </div>
-    </div>
+    
+        
+            
+    <ul>
+        <li>@Html.ActionLink("Product Summary", "ProductSummary", "Product", new { @class = "active" })</li>
+        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails")</li>
+        <li>@Html.ActionLink("Documents", "Document", "Documents")</li>
+        <li>@Html.ActionLink("Contact", "ProductContact", "Product")</li>
+        <li style="float:right">@Html.ActionLink("Admin", "Index", "Admin")</li>
+        @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
+        {
+
+        }
+    </ul>
+            
+     
+    
   
 
     @Scripts.Render("~/bundles/jquery")
