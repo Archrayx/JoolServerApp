@@ -1,0 +1,41 @@
+﻿@model IEnumerable<JoolServerApp.Web.ViewModels.ProjectVM>
+@{
+    ViewBag.Title = "Project";
+}
+<!--Place partial view on top-->
+<h2>Project</h2>
+<table>
+    <tr>
+        <th>
+            Project_ID
+        </th>
+        <th>
+            Project_Name
+        </th>
+        <th>
+            Project_Address1
+        </th>
+        <th>
+            Project_Address2
+        </th>
+        <th>
+            Project_City
+        </th>
+        <th>
+            Project_State
+        </th>
+        <th>
+            Project_Size
+        </th>
+        <th>
+            Client_Name
+        </th>
+    </tr>
+    @foreach (var proj in Model)
+    {
+        <tr>
+
+        </tr>
+    }
+    <!--Results to be placed above-->
+</table>

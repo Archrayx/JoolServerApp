@@ -403,6 +403,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\tblProductsController.cs" />
@@ -511,6 +512,7 @@
     <Content Include="Views\Documents\Document.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ProductDetails\ProductDetails.cshtml" />
+    <Content Include="Views\Project\Project.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
