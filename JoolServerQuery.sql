@@ -350,6 +350,7 @@ Project_ID int,
 Product_ID int,
 Quantity int,
 
+Primary Key (Project_ID, Product_ID),
 Foreign Key (Project_ID) References dbo.tblProject(Project_ID),
 Foreign Key (Product_ID) References dbo.tblProduct(Product_ID)
 )
