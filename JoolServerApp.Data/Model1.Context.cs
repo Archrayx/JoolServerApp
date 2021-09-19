@@ -34,6 +34,7 @@ namespace JoolServerApp.Data
         public virtual DbSet<tblManufacturer> tblManufacturers { get; set; }
         public virtual DbSet<tblProduct> tblProducts { get; set; }
         public virtual DbSet<tblProject> tblProjects { get; set; }
+        public virtual DbSet<tblProjToProd> tblProjToProds { get; set; }
         public virtual DbSet<tblProperty> tblProperties { get; set; }
         public virtual DbSet<tblPropertyValue> tblPropertyValues { get; set; }
         public virtual DbSet<tblSale> tblSales { get; set; }
