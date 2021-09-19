@@ -12,11 +12,15 @@ namespace JoolServerApp.Web.Controllers
     {
         private readonly IProjectService projectService;
         private readonly IUserService userService;
+        private readonly ICityService cityService;
+        private readonly IStateService stateService;
         // GET: Project
-        public ProjectController(IProjectService projectService,IUserService userService)
+        public ProjectController(IProjectService projectService,IUserService userService,ICityService cityService,IStateService stateService)
         {
             this.projectService = projectService;
             this.userService = userService;
+            this.cityService = cityService;
+            this.stateService = stateService;
         }
         public ActionResult Project()
         {
