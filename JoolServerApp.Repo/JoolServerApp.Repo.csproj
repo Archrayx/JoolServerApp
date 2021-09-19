@@ -263,6 +263,7 @@
     <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
     <Content Include="bin\System.Text.Encodings.Web.dll" />
     <Content Include="bin\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="obj\Debug\build.force" />
     <Content Include="obj\Debug\JoolServerApp.Repo.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Repo.dll" />
     <Content Include="obj\Debug\JoolServerApp.Repo.pdb" />
@@ -290,7 +291,6 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Debug\build.force" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\JoolServerApp.Repo.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\JoolServerApp.Repo.csproj.CopyComplete" />

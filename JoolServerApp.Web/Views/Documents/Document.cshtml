@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<JoolServerApp.Data.tblDocument>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_NavLayout";
+}
+@{
+    ViewBag.Title = "Documents";
 }
 @section Scripts
 {
@@ -32,7 +35,7 @@
     </style>
 </head>
 <body>
-   <div>
+    <div>
         @Html.ActionLink("Document Download", "Download")
     </div>
 </body>
