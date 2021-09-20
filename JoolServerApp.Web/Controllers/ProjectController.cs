@@ -45,10 +45,9 @@ namespace JoolServerApp.Web.Controllers
 
             return View("Project",ProjectResults);
         }
-        public ActionResult ProjectClick(ProjectVM project) 
-        {
-            
-            return View("ProjectItemDisplay",project);
+        public ActionResult ProjectClick(long id) 
+        {            
+            return RedirectToAction("ProjectItemDisplay","ProjectItemDisplay",id);
         }
 
         public ActionResult Edit(long id)
