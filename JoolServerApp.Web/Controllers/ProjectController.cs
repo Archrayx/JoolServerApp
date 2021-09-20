@@ -74,24 +74,9 @@ namespace JoolServerApp.Web.Controllers
                 this.projectService.UpdateProject(tblProject);
                 return RedirectToAction("Project");
             }
-            List<ProjectVM> ProjectResults = (from project in projectService.GetAllProjects()
-                                              join city in cityService.GetAllCities() on project.Project_City equals city.City_ID
-                                              join state in stateService.GetAllStates() on project.Project_State equals state.State_ID
-                                              where (string)Session["UserName"] == project.User_Id.ToString()
-                                              select new ProjectVM
-                                              {
-                                                  Project_ID = project.Project_ID,
-                                                  Project_Name = project.Project_Name,
-                                                  Project_Address1 = project.Project_Address1,
-                                                  Project_Address2 = project.Project_Address2,
-                                                  Project_City = city.City_Name,
-                                                  Project_State = state.State_Name,
-                                                  Project_Size = project.Project_Size,
-                                                  Client_Name = project.Client_Name,
+            
 
-                                              }).ToList();
-
-            return View("Project", ProjectResults);
+            return View(tblProject);
         }
         public ActionResult Delete(long id)
         {

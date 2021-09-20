@@ -514,7 +514,8 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ProductDetails\ProductDetails.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
-    <Content Include="Views\Project\ProjectEdit.cshtml" />
+    <Content Include="Views\Project\Edit.cshtml" />
+    <Content Include="Views\Project\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
