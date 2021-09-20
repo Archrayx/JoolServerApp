@@ -47,6 +47,8 @@ namespace JoolServerApp.Repo
             {
                 throw new ArgumentNullException("entity");
             }
+            entities.Attach(entity);
+            context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }
 
