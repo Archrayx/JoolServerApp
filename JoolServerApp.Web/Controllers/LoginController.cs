@@ -1,6 +1,7 @@
 ﻿using JoolServerApp.Data;
 using JoolServerApp.Service;
 using JoolServerApp.Web.ViewModels;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,17 +39,28 @@ namespace JoolServerApp.Web.Controllers
         {
             if (obj.user_Password == obj.confirm_Password && obj.user_Password != null)
             {
-
-                obj.User_Image = new byte[ImageData.ContentLength];
-                ImageData.InputStream.Read(obj.User_Image, 0, ImageData.ContentLength);
-                tblUser tempUSR = new tblUser
+                var allowedExtensions = new[] {
+            ".Jpg", ".png", ".jpg", "jpeg"
+        };
+                obj.User_Image = ImageData.ToString();
+                var fileName = Path.GetFileName(ImageData.FileName); //getting only file name(ex-ganesh.jpg)  
+                var ext = Path.GetExtension(ImageData.FileName); //getting the extension(ex-.jpg)  
+                if (allowedExtensions.Contains(ext)) //check what type of extension  
                 {
-                    User_Name = obj.User_Name,
-                    User_Email = obj.User_Email,
-                    User_Image = obj.User_Image,
-                    user_Password = obj.user_Password,
-                    Credential_ID = 1
-                };
+                    string name = Path.GetFileNameWithoutExtension(fileName); //getting file name without extension  
+                    string myfile = name + "_" + obj.User_Name + ext; //appending the name with id  
+                                                               // store the file inside ~/project folder(Img)  
+                    var path = Path.Combine(Server.MapPath("~/Document/UserIMG"), myfile);
+                    tblUser tempUSR = new tblUser
+                    {
+                        User_Name = obj.User_Name,
+                        User_Email = obj.User_Email,
+                        User_Image = path,
+                        user_Password = obj.user_Password,
+                        Credential_ID = 1
+                    };
+                }
+                
                 if (ModelState.IsValid)
                 {
                     this.userService.insertUser(tempUSR);

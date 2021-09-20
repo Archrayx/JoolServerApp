@@ -10,7 +10,7 @@ namespace JoolServerApp.Web.ViewModels
         [DisplayName("Email Address:")]
         public string User_Email { get; set; }
         [DisplayName("Profile Pic:")]
-        public byte[] User_Image { get; set; }
+        public string User_Image { get; set; }
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         public string user_Password { get; set; }
