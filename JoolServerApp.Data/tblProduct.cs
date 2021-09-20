@@ -18,6 +18,7 @@ namespace JoolServerApp.Data
         public tblProduct()
         {
             this.tblFeedBacks = new HashSet<tblFeedBack>();
+            this.tblProjToProds = new HashSet<tblProjToProd>();
             this.tblPropertyValues = new HashSet<tblPropertyValue>();
         }
     
@@ -40,6 +41,8 @@ namespace JoolServerApp.Data
         public virtual tblManufacturer tblManufacturer { get; set; }
         public virtual tblSale tblSale { get; set; }
         public virtual tblSubCategory tblSubCategory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblProjToProd> tblProjToProds { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPropertyValue> tblPropertyValues { get; set; }
     }

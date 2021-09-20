@@ -1,0 +1,70 @@
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
+        @{ViewBag.Product = Model.Product_ID; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            display: inline;
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                /* Change the link color to #111 (black) on hover */
+                li a:hover {
+                    background-color: #111;
+                }
+
+        .active {
+            background-color: skyblue;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+
+
+    <ul>
+        <li>@Html.ActionLink("Product Summary", "ProductSummary", "Product", null, new { @class = "active" })</li>
+        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails",new { id = Model.Product_ID }, null)</li>
+        <li>@Html.ActionLink("Documents", "Document", "Documents", new { obj = Model }, null)</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Contact",new { obj = Model }, null)</li>
+        <li style="float:right">@Html.ActionLink("Admin", "Index", "Admin")</li>
+        @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
+        {
+
+        }
+    </ul>
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>
+

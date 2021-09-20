@@ -2,18 +2,15 @@
 @{
     ViewBag.Title = "Contact";
 }
-
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <h2>Contact</h2>
 <style>
-    body {
-        height: 100%;
-        margin: 0;
-        background: linear-gradient(to bottom, #0066cc 0%, #ffffff 91%);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+    
 </style>
 <body>
+    @Html.Partial("~/Views/Shared/_PartialNav.cshtml")
     <table>
         <tr>
             <th>

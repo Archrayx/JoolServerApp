@@ -14,6 +14,12 @@ namespace JoolServerApp.Data
     
     public partial class tblProject
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblProject()
+        {
+            this.tblProjToProds = new HashSet<tblProjToProd>();
+        }
+    
         public int Project_ID { get; set; }
         public string Project_Name { get; set; }
         public int User_Id { get; set; }
@@ -27,5 +33,7 @@ namespace JoolServerApp.Data
         public virtual tblCity tblCity { get; set; }
         public virtual tblState tblState { get; set; }
         public virtual tblUser tblUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblProjToProd> tblProjToProds { get; set; }
     }
 }

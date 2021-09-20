@@ -241,10 +241,6 @@
       <DependentUpon>JoolServer.edmx</DependentUpon>
       <LastGenOutput>JoolServer.cs</LastGenOutput>
     </Content>
-    <Content Include="JoolServerModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>JoolServerModel.cs</LastGenOutput>
-    </Content>
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Data.dll" />
     <Content Include="obj\Debug\JoolServerApp.Data.pdb" />
@@ -1769,9 +1765,6 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.ssdl" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.CopyComplete" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.CoreCompileInputs.cache" />
@@ -2501,14 +2494,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JoolServer.edmx</DependentUpon>
     </Compile>
-    <Compile Include="JoolServerModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JoolServerModel.Designer.cs">
-      <DependentUpon>JoolServerModel.cs</DependentUpon>
-    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblCategory.cs">
@@ -2536,6 +2521,9 @@
       <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProject.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjToProd.cs">
       <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProperty.cs">
