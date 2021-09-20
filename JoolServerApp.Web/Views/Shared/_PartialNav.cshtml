@@ -1,4 +1,6 @@
-﻿
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
+        @{ViewBag.Product = Model.Product_ID; }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +31,7 @@
                 li a:hover {
                     background-color: #111;
                 }
+
         .active {
             background-color: skyblue;
         }
@@ -40,28 +43,28 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
-        
-            
+
+
+
     <ul>
-        <li>@Html.ActionLink("Product Summary", "ProductSummary", "Product", new { @class = "active" })</li>
-        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails")</li>
-        <li>@Html.ActionLink("Documents", "Document", "Documents")</li>
-        <li>@Html.ActionLink("Contact", "ProductContact", "Product")</li>
+        <li>@Html.ActionLink("Product Summary", "ProductSummary", "Product", null, new { @class = "active" })</li>
+        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails",new { id = Model.Product_ID }, null)</li>
+        <li>@Html.ActionLink("Documents", "Document", "Documents", new { obj = Model }, null)</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Contact",new { obj = Model }, null)</li>
         <li style="float:right">@Html.ActionLink("Admin", "Index", "Admin")</li>
         @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
         {
 
         }
     </ul>
-            
-     
-    
-  
+
+
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    
+
 </body>
 </html>
 

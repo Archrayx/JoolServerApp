@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JoolServerApp.Data.tblDocument>
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -17,14 +17,7 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <style>
-        body {
-            height: 100%;
-            margin: 0;
-            background: linear-gradient(to bottom, #0066cc 0%, #ffffff 91%);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
+       
         table {
             border: 1px solid;
         }
@@ -39,7 +32,7 @@
     @Html.Partial("~/Views/Shared/_PartialNav.cshtml")
 
     <div>
-        @Html.ActionLink("Document Download", "Download")
+        @Html.ActionLink("Document Download", "Download", new { obj = Model })
     </div>
 </body>
 </html>
