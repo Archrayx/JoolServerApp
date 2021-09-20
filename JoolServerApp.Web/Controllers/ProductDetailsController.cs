@@ -22,15 +22,18 @@ namespace JoolServerApp.Web.Controllers
         {
             var item = this.productService.GetProduct(id);
 
-            ProductDetailsVM product = new ProductDetailsVM();
-            product.Product_ID = item.Product_ID;
-            product.Product_Name = item.Product_Name;
-            product.Series = item.Series;
-            product.Model = item.Model;
-            product.Manufacturer_ID = item.Manufacturer_ID;
-            product.Sales_ID = item.Sales_ID;
-            product.Series_Info = item.Series_Info;
-            product.SubCategory_ID = item.SubCategory_ID;
+            ProductDetailsVM product = new ProductDetailsVM
+            {
+                Product_ID = item.Product_ID,
+                Product_Name = item.Product_Name,
+                Series = item.Series,
+                Model = item.Model,
+                Manufacturer_ID = item.Manufacturer_ID,
+                Sales_ID = item.Sales_ID,
+                Series_Info = item.Series_Info,
+                SubCategory_ID = item.SubCategory_ID,
+                Document_ID = item.Document_ID
+            };
 
 
             return View("ProductDetails", product);

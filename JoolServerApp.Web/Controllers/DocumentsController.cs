@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Net;
 using System.Reflection.Metadata;
 using System.Diagnostics;
+using JoolServerApp.Web.ViewModels;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -20,19 +21,19 @@ namespace JoolServerApp.Web.Controllers
             this.documentService = documentService;
 
         }
-
-        public ActionResult Document()
+       
+        
+        public ActionResult Document(ProductDetailsVM obj)
         {
 
-            return View();
+            return View(obj);
         }
-
-        public ActionResult Download(object sender, EventArgs e)
+        public ActionResult Download(object sender, EventArgs e, ProductDetailsVM obj)
         {
 
-            var doc = documentService.GetDocument(1);
+            var doc = documentService.GetDocument(obj.Document_ID);
             string filename = doc.Document_Folder_Path;
-            string filepath = AppDomain.CurrentDomain.BaseDirectory + @"Item_Docs\" + filename;
+            string filepath = AppDomain.CurrentDomain.BaseDirectory + @"Documents\" + filename;
             Debug.WriteLine(filepath);
             byte[] filedata = System.IO.File.ReadAllBytes(filepath);
             string contentType = MimeMapping.GetMimeMapping(filepath);
@@ -52,7 +53,7 @@ namespace JoolServerApp.Web.Controllers
             response.BinaryWrite(data);
             response.End();
 
-            return View("Document");
+            return View("Document",obj);
 
             
 

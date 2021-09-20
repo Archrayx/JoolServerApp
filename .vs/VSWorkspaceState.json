@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\JoolServerApp.Data"
+    "\\JoolServerApp",
+    "\\JoolServerApp.Data",
+    "\\JoolServerApp.Web",
+    "\\JoolServerApp.Web\\Controllers"
   ],
   "SelectedNode": "\\JoolServerApp.Data\\JoolServerApp.Data.sln",
   "PreviewInSolutionExplorer": false

@@ -26,11 +26,14 @@ namespace JoolServerApp.Web.Controllers
             this.manufacturerService = manufacturerService;
             this.saleService = saleService;
             this.subCategoryService = subCategoryService;
+            
+
         }
         // GET: tblProducts
         public ActionResult Index()
         {
             var tblProducts = this.productService.GetAllProducts();
+            Debug.WriteLine(Session["UserName"]);
             return View(tblProducts);
         }
 

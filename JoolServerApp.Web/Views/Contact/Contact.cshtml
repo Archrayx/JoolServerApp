@@ -1,19 +1,18 @@
-﻿@model JoolServerApp.Web.ViewModels.ContactVM
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
 @{
     ViewBag.Title = "Contact";
 }
-
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <h2>Contact</h2>
 <style>
-    body {
-        height: 100%;
-        margin: 0;
-        background: linear-gradient(to bottom, #0066cc 0%, #ffffff 91%);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+    
 </style>
 <body>
+    <h2>Contact</h2>
+
+    @Html.Partial("~/Views/Shared/_PartialNav.cshtml", Model)
     <table>
         <tr>
             <th>
@@ -42,7 +41,7 @@
                     @item.Department_Phone
                 </td>
                 <td>
-                    @item.Department_Email 
+                    @item.Department_Email
                 </td>
             </tr>
         }

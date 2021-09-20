@@ -58,7 +58,7 @@ CREATE TABLE [dbo].[tblDocument](
 )
 GO
 SET IDENTITY_INSERT [dbo].[tblDocument] ON
-INSERT [dbo].[tblDocument]([Document_ID],[Document_Folder_Path]) VALUES(1, 'JoolServerApp\Item_Docs\Item1_Doc.txt')
+INSERT [dbo].[tblDocument]([Document_ID],[Document_Folder_Path]) VALUES(1, 'Item1_Doc.txt')
 SET IDENTITY_INSERT [dbo].[tblDocument] OFF
 GO
 
@@ -350,6 +350,7 @@ Project_ID int,
 Product_ID int,
 Quantity int,
 
+Primary Key (Project_ID, Product_ID),
 Foreign Key (Project_ID) References dbo.tblProject(Project_ID),
 Foreign Key (Product_ID) References dbo.tblProduct(Product_ID)
 )

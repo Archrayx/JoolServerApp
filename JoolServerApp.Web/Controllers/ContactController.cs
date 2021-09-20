@@ -27,11 +27,10 @@ namespace JoolServerApp.Web.Controllers
         }
 
         
-        // GET: Documents
-        public ActionResult Contact()
+        public ActionResult Contact(ProductDetailsVM obj)
         {
             var Contact_Info = from department in deptService.GetAllDepartments()
-                                   where department.Manufacturer_ID == 1
+                                   where department.Manufacturer_ID == obj.Manufacturer_ID
                                    select department;
 
             List < ContactVM > contacts = new List<ContactVM>();
@@ -48,7 +47,7 @@ namespace JoolServerApp.Web.Controllers
                 contacts.Add(tempVM);
             }
             ViewBag.contact = contacts;
-            return View();
+            return View("Contact", obj);
 
         }
         
