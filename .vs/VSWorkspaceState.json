@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\JoolServerApp",
     "\\JoolServerApp.Data",
     "\\JoolServerApp.Web",
-    "\\JoolServerApp.Web\\Controllers",
+    "\\JoolServerApp.Web\\ViewModels",
     "\\JoolServerApp.Web\\Views",
     "\\JoolServerApp.Web\\Views\\Product"
   ],
-  "SelectedNode": "\\JoolServerApp.Data\\JoolServerApp.Data.sln",
+  "SelectedNode": "\\JoolServerApp.Web\\Web.config",
   "PreviewInSolutionExplorer": false
 }
