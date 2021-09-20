@@ -50,18 +50,21 @@ namespace JoolServerApp.Web.Controllers
                     string name = Path.GetFileNameWithoutExtension(fileName); //getting file name without extension  
                     string myfile = name + "_" + obj.User_Name + ext; //appending the name with id  
                                                                // store the file inside ~/project folder(Img)  
-                    var path = Path.Combine(Server.MapPath("~/Document/UserIMG"), myfile);
+                    var path = Path.Combine(Server.MapPath("~/Documents/UserIMG"), myfile);
+                    
                     tblUser tempUSR = new tblUser
                     {
                         User_Name = obj.User_Name,
                         User_Email = obj.User_Email,
-                        User_Image = path,
+                        User_Image = "/Documents/UserIMG/"+myfile,
                         user_Password = obj.user_Password,
                         Credential_ID = 1
                     };
+                    
                     if (ModelState.IsValid)
                     {
                         this.userService.insertUser(tempUSR);
+                        ImageData.SaveAs(path);
                         return RedirectToAction("Login");
                     }
                 }
@@ -85,6 +88,7 @@ namespace JoolServerApp.Web.Controllers
             }
             else
             {
+                //can also use user.identity.name to check current user
                 Session["UserID"] = userDetails.User_ID;
                 Session["Role"] = userDetails.Credential_ID;
                 Session["UserName"] = userDetails.User_Name;
