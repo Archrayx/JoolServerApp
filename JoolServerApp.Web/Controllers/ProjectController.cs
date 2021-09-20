@@ -25,10 +25,13 @@ namespace JoolServerApp.Web.Controllers
         }
         public ActionResult Project()
         {
+            int user_id = (from user in this.userService.GetAllUsers()
+             where user.User_Name == Session["UserName"].ToString()
+             select user.User_ID).FirstOrDefault();
             List<ProjectVM> ProjectResults = (from project in projectService.GetAllProjects()
                                               join city in cityService.GetAllCities() on project.Project_City equals city.City_ID
                                               join state in stateService.GetAllStates() on project.Project_State equals state.State_ID
-                                              where (string)Session["UserName"] == project.User_Id.ToString()
+                                              where user_id == project.User_Id
                                               select new ProjectVM
                                               {
                                                   Project_ID = project.Project_ID,

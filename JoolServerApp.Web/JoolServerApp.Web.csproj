@@ -503,11 +503,6 @@
     <Content Include="Views\Register\Details.cshtml" />
     <Content Include="Views\Register\Edit.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
-    <Content Include="Views\tblSubCategories\Create.cshtml" />
-    <Content Include="Views\tblSubCategories\Delete.cshtml" />
-    <Content Include="Views\tblSubCategories\Details.cshtml" />
-    <Content Include="Views\tblSubCategories\Edit.cshtml" />
-    <Content Include="Views\tblSubCategories\Index.cshtml" />
     <Content Include="Views\Shared\_SearchView.cshtml" />
     <Content Include="Views\Documents\Document.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
