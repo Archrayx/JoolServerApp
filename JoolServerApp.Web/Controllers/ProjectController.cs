@@ -17,6 +17,7 @@ namespace JoolServerApp.Web.Controllers
         private readonly IUserService userService;
         private readonly ICityService cityService;
         private readonly IStateService stateService;
+        
         // GET: Project
         public ProjectController(IProjectService projectService,IUserService userService,ICityService cityService,IStateService stateService)
         {
@@ -61,7 +62,10 @@ namespace JoolServerApp.Web.Controllers
             {
                 return HttpNotFound();
             }
-           
+            ViewBag.User_Id = new SelectList(this.userService.GetAllUsers(), "User_Id", "User_Name", tblProject.User_Id);
+            ViewBag.City_ID = new SelectList(this.cityService.GetAllCities(), "Project_City", "City_Name", tblProject.Project_City);
+            ViewBag.State_ID = new SelectList(this.stateService.GetAllStates(), "Project_State", "State_Name", tblProject.Project_State);
+
             return View(tblProject);
         }
 
@@ -74,7 +78,9 @@ namespace JoolServerApp.Web.Controllers
                 this.projectService.UpdateProject(tblProject);
                 return RedirectToAction("Project");
             }
-            
+            ViewBag.User_Id = new SelectList(this.userService.GetAllUsers(), "User_Id", "User_Name", tblProject.User_Id);
+            ViewBag.City_ID = new SelectList(this.cityService.GetAllCities(), "Project_City", "City_Name", tblProject.Project_City);
+            ViewBag.State_ID = new SelectList(this.stateService.GetAllStates(), "Project_State", "State_Name", tblProject.Project_State);
 
             return View(tblProject);
         }
@@ -95,7 +101,9 @@ namespace JoolServerApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
+            
             this.projectService.DeleteProject(id);
+            
             return RedirectToAction("Project");
         }
 
