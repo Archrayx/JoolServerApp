@@ -59,13 +59,14 @@ namespace JoolServerApp.Web.Controllers
                         user_Password = obj.user_Password,
                         Credential_ID = 1
                     };
+                    if (ModelState.IsValid)
+                    {
+                        this.userService.insertUser(tempUSR);
+                        return RedirectToAction("Login");
+                    }
                 }
                 
-                if (ModelState.IsValid)
-                {
-                    this.userService.insertUser(tempUSR);
-                    return RedirectToAction("Login");
-                }
+                
             }
             return View("Login");
         }

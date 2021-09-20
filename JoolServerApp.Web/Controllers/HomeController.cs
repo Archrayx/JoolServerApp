@@ -23,7 +23,7 @@ namespace JoolServerApp.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            Repo.JoolServerEntities db = new Repo.JoolServerEntities();
+            Data.JoolServerEntities db = new Data.JoolServerEntities();
             IRepository<tblUser> userRepo = new Repository<tblUser>(db);
             IEnumerable<tblUser> Users = userRepo.GetAll();
             Debug.WriteLine(Users);

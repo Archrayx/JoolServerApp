@@ -69,8 +69,7 @@ namespace JoolServerApp.Web.Controllers
             Debug.WriteLine(obj.Manufacturer_ID + obj.Sales_ID + obj.Document_ID + obj.SubCategory_ID);
             if (ModelState.IsValid)
             {
-                obj.Product_Image = new byte[ImageData.ContentLength];
-                ImageData.InputStream.Read(obj.Product_Image, 0, ImageData.ContentLength);
+                
                 tblProduct tempProduct = new tblProduct
                 {
                     Manufacturer_ID = obj.Manufacturer_ID,

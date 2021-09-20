@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
-
+using JoolServerApp.Data;
 namespace JoolServerApp.Repo
 {
     public class Repository<T> : IRepository<T> where T : class
