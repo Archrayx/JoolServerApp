@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using JoolServerApp.Data;
+using System.Collections.Generic;
 
 namespace JoolServerApp.Service
 {
-    public class DocumentService:IDocumentService
+    public class DocumentService : IDocumentService
     {
         private IRepository<tblDocument> documentRepository;
         public DocumentService(IRepository<tblDocument> documentRepository)

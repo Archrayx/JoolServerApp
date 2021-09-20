@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using JoolServerApp.Service;
-using System.Web.Mvc;
+﻿using JoolServerApp.Service;
 using JoolServerApp.Web.ViewModels;
+using System.Web.Mvc;
 
 namespace JoolServerApp.Web.Controllers
 {

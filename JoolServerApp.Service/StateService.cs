@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using JoolServerApp.Data;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
+using System.Collections.Generic;
 
 
 
 namespace JoolServerApp.Service
 {
-    public class StateService: IStateService
+    public class StateService : IStateService
     {
         private IRepository<tblState> stateRepository;
         public StateService(IRepository<tblState> stateRepository)
@@ -19,7 +16,7 @@ namespace JoolServerApp.Service
 
         public void DeleteState(long id)
         {
-            tblState state=stateRepository.Get(id);
+            tblState state = stateRepository.Get(id);
             stateRepository.Remove(state);
             stateRepository.SaveChanges();
         }

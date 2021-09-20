@@ -1,8 +1,7 @@
-using System;
-using System.Web.Mvc;
-using JoolServerApp.Data;
 using JoolServerApp.Repo;
 using JoolServerApp.Service;
+using System;
+using System.Web.Mvc;
 using Unity;
 using Unity.AspNet.Mvc;
 

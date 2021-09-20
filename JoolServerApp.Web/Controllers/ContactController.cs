@@ -1,15 +1,9 @@
-﻿
-using System;
+﻿using JoolServerApp.Service;
+using JoolServerApp.Web.ViewModels;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using JoolServerApp.Data;
-using JoolServerApp.Service;
-using JoolServerApp.Web.Models;
-using JoolServerApp.Web.ViewModels;
-using Microsoft.Ajax.Utilities;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -26,14 +20,14 @@ namespace JoolServerApp.Web.Controllers
             this.productService = productService;
         }
 
-        
+
         public ActionResult Contact(ProductDetailsVM obj)
         {
             var Contact_Info = from department in deptService.GetAllDepartments()
-                                   where department.Manufacturer_ID == obj.Manufacturer_ID
-                                   select department;
+                               where department.Manufacturer_ID == obj.Manufacturer_ID
+                               select department;
 
-            List < ContactVM > contacts = new List<ContactVM>();
+            List<ContactVM> contacts = new List<ContactVM>();
             foreach (var item in Contact_Info)
             {
                 Debug.WriteLine(item);
@@ -50,7 +44,7 @@ namespace JoolServerApp.Web.Controllers
             return View("Contact", obj);
 
         }
-        
-        
+
+
     }
 }

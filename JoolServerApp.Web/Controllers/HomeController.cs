@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using JoolServerApp.Data;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
 using JoolServerApp.Service;
-using JoolServerApp.Web.Models;
-using Microsoft.Ajax.Utilities;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Web.Mvc;
 //using Microsoft.Extensions.DependencyInjection;
 
 namespace JoolServerApp.Web.Controllers
@@ -34,11 +29,11 @@ namespace JoolServerApp.Web.Controllers
             Debug.WriteLine(Users);
             IUserService tblService = new UserService(userRepo);
             IEnumerable<tblUser> usertwo = tblService.GetAllUsers();
-            foreach(var item in usertwo)
+            foreach (var item in usertwo)
             {
                 Debug.WriteLine(item.User_Name);
             }
-             
+
             //Debug.WriteLine(Users);
             //Debug.WriteLine(tblService.GetUser(1));
             /*

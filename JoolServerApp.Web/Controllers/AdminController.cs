@@ -1,13 +1,10 @@
 ﻿using JoolServerApp.Data;
 using JoolServerApp.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using JoolServerApp.Web.ViewModels;
+using System.Diagnostics;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using JoolServerApp.Web.ViewModels;
-using System.Diagnostics;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -26,7 +23,7 @@ namespace JoolServerApp.Web.Controllers
             this.manufacturerService = manufacturerService;
             this.saleService = saleService;
             this.subCategoryService = subCategoryService;
-            
+
 
         }
         // GET: tblProducts
@@ -69,7 +66,7 @@ namespace JoolServerApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AdminVM obj, HttpPostedFileBase ImageData)
         {
-            Debug.WriteLine(obj.Manufacturer_ID + obj.Sales_ID+obj.Document_ID+obj.SubCategory_ID);
+            Debug.WriteLine(obj.Manufacturer_ID + obj.Sales_ID + obj.Document_ID + obj.SubCategory_ID);
             if (ModelState.IsValid)
             {
                 obj.Product_Image = new byte[ImageData.ContentLength];
@@ -163,6 +160,6 @@ namespace JoolServerApp.Web.Controllers
             return RedirectToAction("Index");
         }
 
-       
+
     }
 }

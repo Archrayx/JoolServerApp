@@ -1,13 +1,10 @@
 ﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace JoolServerApp.Service
 {
-    public class CityService:ICityService
+    public class CityService : ICityService
     {
         private IRepository<tblCity> cityRepository;
 
@@ -17,14 +14,14 @@ namespace JoolServerApp.Service
         }
         public void DeleteCity(long id)
         {
-            tblCity city=cityRepository.Get(id);
+            tblCity city = cityRepository.Get(id);
             cityRepository.Remove(city);
             cityRepository.SaveChanges();
         }
 
         public IEnumerable<tblCity> GetAllCities()
         {
-           return cityRepository.GetAll();
+            return cityRepository.GetAll();
         }
 
         public tblCity GetCity(long id)

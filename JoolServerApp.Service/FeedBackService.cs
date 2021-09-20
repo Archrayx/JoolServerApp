@@ -1,24 +1,21 @@
 ﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 
 namespace JoolServerApp.Service
 {
     public class FeedBackService : IFeedBackService
     {
-        private IRepository<tblFeedBack>  feedBackRepository;
-      
+        private IRepository<tblFeedBack> feedBackRepository;
+
         public FeedBackService(IRepository<tblFeedBack> feedBackRepository)
         {
             this.feedBackRepository = feedBackRepository;
         }
         public void DeleteFeedback(long id)
         {
-            tblFeedBack feedBack = feedBackRepository.Get(id); 
+            tblFeedBack feedBack = feedBackRepository.Get(id);
             feedBackRepository.Remove(feedBack);
             feedBackRepository.SaveChanges();
         }

@@ -1,12 +1,8 @@
-﻿using JoolServerApp.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using JoolServerApp.Service;
 using JoolServerApp.Web.ViewModels;
-using JoolServerApp.Service;
 using System.Diagnostics;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -22,7 +18,7 @@ namespace JoolServerApp.Web.Controllers
             this.categoryService = categoryService;
             this.productService = productService;
         }
-      
+
         // GET: Search
         public ActionResult Search()
         {

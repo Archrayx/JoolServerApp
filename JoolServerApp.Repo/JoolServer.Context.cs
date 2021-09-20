@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using JoolServerApp.Data;
+using Microsoft.AspNetCore.Http;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.SqlClient;
-using System.Net.NetworkInformation;
-using System.Xml;
-using JoolServerApp.Data;
-using Microsoft.AspNetCore.Http;
 
 
 //------------------------------------------------------------------------------
@@ -26,13 +19,13 @@ namespace JoolServerApp.Repo
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-      
-  /*public JoolServerEntities(DbContextOptions<JoolServerEntities> options, IHttpContextAccessor httpContextAccessor)
-            :base(options)
-        {
-            _httpContextAccessor = httpContextAccessor;
-        }*/
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) 
+
+        /*public JoolServerEntities(DbContextOptions<JoolServerEntities> options, IHttpContextAccessor httpContextAccessor)
+                  :base(options)
+              {
+                  _httpContextAccessor = httpContextAccessor;
+              }*/
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }

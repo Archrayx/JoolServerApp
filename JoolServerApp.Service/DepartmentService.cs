@@ -1,13 +1,10 @@
 ﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace JoolServerApp.Service
 {
-    public class DepartmentService:IDepartmentService
+    public class DepartmentService : IDepartmentService
     {
         private IRepository<tblDepartment> departmentRepository;
 

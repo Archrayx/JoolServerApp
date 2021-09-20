@@ -1,18 +1,17 @@
 ﻿using JoolServerApp.Data;
-using System.Linq;
-using System.Web.Mvc;
-using JoolServerApp.Web.ViewModels;
-using System.Web.Security;
 using JoolServerApp.Service;
+using JoolServerApp.Web.ViewModels;
+using System.Linq;
 using System.Web;
-using System.IO;
+using System.Web.Mvc;
+using System.Web.Security;
 
 namespace JoolServerApp.Web.Controllers
 
 {
     public class LoginController : Controller
     {
-        
+
         private readonly IUserService userService;
 
         public LoginController(IUserService userService)
@@ -38,10 +37,10 @@ namespace JoolServerApp.Web.Controllers
         public ActionResult Login(CreateVM obj, HttpPostedFileBase ImageData)
         {
             if (obj.user_Password == obj.confirm_Password && obj.user_Password != null)
-            {               
+            {
 
                 obj.User_Image = new byte[ImageData.ContentLength];
-                ImageData.InputStream.Read(obj.User_Image,0,ImageData.ContentLength);
+                ImageData.InputStream.Read(obj.User_Image, 0, ImageData.ContentLength);
                 tblUser tempUSR = new tblUser
                 {
                     User_Name = obj.User_Name,
@@ -79,7 +78,7 @@ namespace JoolServerApp.Web.Controllers
                 FormsAuthentication.SetAuthCookie(userDetails.User_Name, true);
                 return RedirectToAction("Search", "Search");
             }
-               
+
         }
     }
 }

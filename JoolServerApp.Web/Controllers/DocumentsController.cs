@@ -1,13 +1,10 @@
 ﻿using JoolServerApp.Service;
+using JoolServerApp.Web.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
-using System.Reflection.Metadata;
-using System.Diagnostics;
-using JoolServerApp.Web.ViewModels;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -21,8 +18,8 @@ namespace JoolServerApp.Web.Controllers
             this.documentService = documentService;
 
         }
-       
-        
+
+
         public ActionResult Document(ProductDetailsVM obj)
         {
 
@@ -53,11 +50,11 @@ namespace JoolServerApp.Web.Controllers
             response.BinaryWrite(data);
             response.End();
 
-            return View("Document",obj);
+            return View("Document", obj);
 
-            
+
 
         }
 
     }
-    }
+}
