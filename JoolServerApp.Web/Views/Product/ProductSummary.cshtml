@@ -128,7 +128,7 @@
                         {
                             <div class="col-3 informationBox text-center">
                                 <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
-                                @Html.ActionLink(product.Product_Name, "productdetails", "productdetails", new { id = product.Product_ID } ,
+                                @Html.ActionLink(product.Product_Name, "productDetails", "ProductDetails", new { id = product.Product_ID } ,
                                new Dictionary<string, object> { {"class", "detailsLink" } }
                                 )
                                 <h6>@product.Series</h6>

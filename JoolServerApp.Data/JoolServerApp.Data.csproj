@@ -72,12 +72,25 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.24.2.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid.9.24.2\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>packages\starkbank-ecdsa.1.3.1\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -227,10 +240,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>JoolServer.edmx</DependentUpon>
       <LastGenOutput>JoolServer.cs</LastGenOutput>
-    </Content>
-    <Content Include="JoolServerModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>JoolServerModel.cs</LastGenOutput>
     </Content>
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\JoolServerApp.Data.dll" />
@@ -1756,9 +1765,6 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\JoolServerModel.ssdl" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.CopyComplete" />
     <Content Include="obj\Debug\JoolServerApp.Data.csproj.CoreCompileInputs.cache" />
@@ -2488,14 +2494,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JoolServer.edmx</DependentUpon>
     </Compile>
-    <Compile Include="JoolServerModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JoolServerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="JoolServerModel.Designer.cs">
-      <DependentUpon>JoolServerModel.cs</DependentUpon>
-    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblCategory.cs">
@@ -2523,6 +2521,9 @@
       <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProject.cs">
+      <DependentUpon>JoolServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjToProd.cs">
       <DependentUpon>JoolServer.tt</DependentUpon>
     </Compile>
     <Compile Include="tblProperty.cs">

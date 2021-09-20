@@ -73,7 +73,10 @@ namespace JoolServerApp.Web.Controllers
             }
             else
             {
-                FormsAuthentication.SetAuthCookie(obj.User_Name, true);
+                Session["UserID"] = userDetails.User_ID;
+                Session["Role"] = userDetails.Credential_ID;
+                Session["UserName"] = userDetails.User_Name;
+                FormsAuthentication.SetAuthCookie(userDetails.User_Name, true);
                 return RedirectToAction("Search", "Search");
             }
                

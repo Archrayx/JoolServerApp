@@ -511,6 +511,7 @@
     <Content Include="Views\Documents\Document.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ProductDetails\ProductDetails.cshtml" />
+    <Content Include="Views\Shared\_PartialNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

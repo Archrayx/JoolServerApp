@@ -26,12 +26,34 @@ namespace JoolServerApp.Web.Controllers
             this.productService = productService;
         }
 
-        
-        // GET: Documents
         public ActionResult Contact()
         {
+            
             var Contact_Info = from department in deptService.GetAllDepartments()
-                                   where department.Manufacturer_ID == 1
+                               where department.Manufacturer_ID == 1
+                               select department;
+
+            List<ContactVM> contacts = new List<ContactVM>();
+            foreach (var item in Contact_Info)
+            {
+                Debug.WriteLine(item);
+                ContactVM tempVM = new ContactVM
+                {
+                    Manufacturer_ID = item.Manufacturer_ID,
+                    Department_Name = item.Department_Name,
+                    Department_Phone = item.Department_Phone,
+                    Department_Email = item.Department_Email
+                };
+                contacts.Add(tempVM);
+            }
+            ViewBag.contact = contacts;
+            return View();
+        }
+        // GET: Documents
+        public ActionResult Contact(ProductDetailsVM obj)
+        {
+            var Contact_Info = from department in deptService.GetAllDepartments()
+                                   where department.Manufacturer_ID == obj.Manufacturer_ID
                                    select department;
 
             List < ContactVM > contacts = new List<ContactVM>();
@@ -48,7 +70,7 @@ namespace JoolServerApp.Web.Controllers
                 contacts.Add(tempVM);
             }
             ViewBag.contact = contacts;
-            return View();
+            return View(obj);
 
         }
         
