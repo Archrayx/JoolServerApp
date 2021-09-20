@@ -16,7 +16,7 @@ namespace JoolServerApp.Web.ViewModels
         //Insert city value here from city table
         public string Project_State { get; set; }
         //Insert State value here from state table
-        public string Project_Size { get; set; }
+        public int? Project_Size { get; set; }
         public string Client_Name { get; set; }
 
     }

@@ -420,6 +420,7 @@
     <Compile Include="ViewModels\CreateVM.cs" />
     <Compile Include="ViewModels\ProductDetailsVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
+    <Compile Include="ViewModels\ProjectVM.cs" />
     <Compile Include="ViewModels\SearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -513,6 +514,7 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\ProductDetails\ProductDetails.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
+    <Content Include="Views\Project\ProjectEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
