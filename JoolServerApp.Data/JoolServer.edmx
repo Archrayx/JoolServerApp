@@ -44,11 +44,6 @@
           <Property Name="Document_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Document_Folder_Path" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'JoolServer.dbo.tblDocuments' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tblDocuments">
-          <Property Name="This Has no importance to it  but heres a nice picture using txt imaging art" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="tblFeedBack">
           <Key>
             <PropertyRef Name="Feeback_ID" />
@@ -79,7 +74,7 @@ warning 6013: The table/view 'JoolServer.dbo.tblDocuments' does not have a prima
           <Property Name="Sales_ID" Type="int" Nullable="false" />
           <Property Name="SubCategory_ID" Type="int" Nullable="false" />
           <Property Name="Product_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Product_Image" Type="image" />
+          <Property Name="Product_Image" Type="varchar" MaxLength="555" />
           <Property Name="Series" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Model_Year" Type="int" Nullable="false" />
@@ -182,11 +177,11 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="User_Email" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="User_Image" Type="image" />
+          <Property Name="User_Image" Type="varchar" MaxLength="555" />
           <Property Name="user_Password" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Credential_ID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__tblCity__State_I__4CCB4BEB">
+        <Association Name="FK__tblCity__State_I__36470DEF">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -198,7 +193,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__2F3AE904">
+        <Association Name="FK__tblDepart__Manuf__18B6AB08">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -210,7 +205,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__480696CE">
+        <Association Name="FK__tblFeedBa__Produ__318258D2">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -222,7 +217,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___47127295">
+        <Association Name="FK__tblFeedBa__User___308E3499">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -234,7 +229,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___2A7633E7">
+        <Association Name="FK__tblManufa__User___13F1F5EB">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -246,7 +241,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__38C4533E">
+        <Association Name="FK__tblProduc__Docum__22401542">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -258,7 +253,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__35E7E693">
+        <Association Name="FK__tblProduc__Manuf__1F63A897">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -270,7 +265,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__36DC0ACC">
+        <Association Name="FK__tblProduc__Sales__2057CCD0">
           <End Role="tblSales" Type="Self.tblSales" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +277,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__37D02F05">
+        <Association Name="FK__tblProduc__SubCa__214BF109">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -294,7 +289,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__509BDCCF">
+        <Association Name="FK__tblProjec__Proje__3A179ED3">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +301,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__51900108">
+        <Association Name="FK__tblProjec__Proje__3B0BC30C">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -318,7 +313,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___4FA7B896">
+        <Association Name="FK__tblProjec__User___39237A9A">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -330,7 +325,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Produ__556091EC">
+        <Association Name="FK__tblProjTo__Produ__3EDC53F0">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -342,7 +337,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Proje__546C6DB3">
+        <Association Name="FK__tblProjTo__Proje__3DE82FB7">
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -354,7 +349,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Produ__3BA0BFE9">
+        <Association Name="FK__tblProper__Produ__251C81ED">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -366,7 +361,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__3C94E422">
+        <Association Name="FK__tblProper__Prope__2610A626">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -378,7 +373,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblSubCat__Categ__22D5121F">
+        <Association Name="FK__tblSubCat__Categ__0C50D423">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -390,7 +385,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__4341E1B1">
+        <Association Name="FK__tblTechSp__Prope__2CBDA3B5">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -402,7 +397,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__424DBD78">
+        <Association Name="FK__tblTechSp__SubCa__2BC97F7C">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -414,7 +409,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__3F7150CD">
+        <Association Name="FK__tblTypeFi__Prope__28ED12D1">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -426,7 +421,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__3E7D2C94">
+        <Association Name="FK__tblTypeFi__SubCa__27F8EE98">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -438,7 +433,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__2799C73C">
+        <Association Name="FK__tblUser__Credent__11158940">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -476,91 +471,91 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
     [tblTypeFilter].[Type_Options] AS [Type_Options]
     FROM [dbo].[tblTypeFilter] AS [tblTypeFilter]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__tblCity__State_I__4CCB4BEB" Association="Self.FK__tblCity__State_I__4CCB4BEB">
+          <AssociationSet Name="FK__tblCity__State_I__36470DEF" Association="Self.FK__tblCity__State_I__36470DEF">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblCity" EntitySet="tblCity" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__2F3AE904" Association="Self.FK__tblDepart__Manuf__2F3AE904">
+          <AssociationSet Name="FK__tblDepart__Manuf__18B6AB08" Association="Self.FK__tblDepart__Manuf__18B6AB08">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblDepartment" EntitySet="tblDepartment" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__480696CE" Association="Self.FK__tblFeedBa__Produ__480696CE">
+          <AssociationSet Name="FK__tblFeedBa__Produ__318258D2" Association="Self.FK__tblFeedBa__Produ__318258D2">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___47127295" Association="Self.FK__tblFeedBa__User___47127295">
+          <AssociationSet Name="FK__tblFeedBa__User___308E3499" Association="Self.FK__tblFeedBa__User___308E3499">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblFeedBack" EntitySet="tblFeedBack" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___2A7633E7" Association="Self.FK__tblManufa__User___2A7633E7">
+          <AssociationSet Name="FK__tblManufa__User___13F1F5EB" Association="Self.FK__tblManufa__User___13F1F5EB">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__38C4533E" Association="Self.FK__tblProduc__Docum__38C4533E">
+          <AssociationSet Name="FK__tblProduc__Docum__22401542" Association="Self.FK__tblProduc__Docum__22401542">
             <End Role="tblDocument" EntitySet="tblDocument" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__35E7E693" Association="Self.FK__tblProduc__Manuf__35E7E693">
+          <AssociationSet Name="FK__tblProduc__Manuf__1F63A897" Association="Self.FK__tblProduc__Manuf__1F63A897">
             <End Role="tblManufacturer" EntitySet="tblManufacturer" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__36DC0ACC" Association="Self.FK__tblProduc__Sales__36DC0ACC">
+          <AssociationSet Name="FK__tblProduc__Sales__2057CCD0" Association="Self.FK__tblProduc__Sales__2057CCD0">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__37D02F05" Association="Self.FK__tblProduc__SubCa__37D02F05">
+          <AssociationSet Name="FK__tblProduc__SubCa__214BF109" Association="Self.FK__tblProduc__SubCa__214BF109">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblProduct" EntitySet="tblProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__509BDCCF" Association="Self.FK__tblProjec__Proje__509BDCCF">
+          <AssociationSet Name="FK__tblProjec__Proje__3A179ED3" Association="Self.FK__tblProjec__Proje__3A179ED3">
             <End Role="tblCity" EntitySet="tblCity" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__51900108" Association="Self.FK__tblProjec__Proje__51900108">
+          <AssociationSet Name="FK__tblProjec__Proje__3B0BC30C" Association="Self.FK__tblProjec__Proje__3B0BC30C">
             <End Role="tblState" EntitySet="tblState" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___4FA7B896" Association="Self.FK__tblProjec__User___4FA7B896">
+          <AssociationSet Name="FK__tblProjec__User___39237A9A" Association="Self.FK__tblProjec__User___39237A9A">
             <End Role="tblUser" EntitySet="tblUser" />
             <End Role="tblProject" EntitySet="tblProject" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Produ__556091EC" Association="Self.FK__tblProjTo__Produ__556091EC">
+          <AssociationSet Name="FK__tblProjTo__Produ__3EDC53F0" Association="Self.FK__tblProjTo__Produ__3EDC53F0">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblProjToProd" EntitySet="tblProjToProd" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Proje__546C6DB3" Association="Self.FK__tblProjTo__Proje__546C6DB3">
+          <AssociationSet Name="FK__tblProjTo__Proje__3DE82FB7" Association="Self.FK__tblProjTo__Proje__3DE82FB7">
             <End Role="tblProject" EntitySet="tblProject" />
             <End Role="tblProjToProd" EntitySet="tblProjToProd" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__3BA0BFE9" Association="Self.FK__tblProper__Produ__3BA0BFE9">
+          <AssociationSet Name="FK__tblProper__Produ__251C81ED" Association="Self.FK__tblProper__Produ__251C81ED">
             <End Role="tblProduct" EntitySet="tblProduct" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__3C94E422" Association="Self.FK__tblProper__Prope__3C94E422">
+          <AssociationSet Name="FK__tblProper__Prope__2610A626" Association="Self.FK__tblProper__Prope__2610A626">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValue" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblSubCat__Categ__22D5121F" Association="Self.FK__tblSubCat__Categ__22D5121F">
+          <AssociationSet Name="FK__tblSubCat__Categ__0C50D423" Association="Self.FK__tblSubCat__Categ__0C50D423">
             <End Role="tblCategory" EntitySet="tblCategory" />
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__4341E1B1" Association="Self.FK__tblTechSp__Prope__4341E1B1">
+          <AssociationSet Name="FK__tblTechSp__Prope__2CBDA3B5" Association="Self.FK__tblTechSp__Prope__2CBDA3B5">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__424DBD78" Association="Self.FK__tblTechSp__SubCa__424DBD78">
+          <AssociationSet Name="FK__tblTechSp__SubCa__2BC97F7C" Association="Self.FK__tblTechSp__SubCa__2BC97F7C">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__3F7150CD" Association="Self.FK__tblTypeFi__Prope__3F7150CD">
+          <AssociationSet Name="FK__tblTypeFi__Prope__28ED12D1" Association="Self.FK__tblTypeFi__Prope__28ED12D1">
             <End Role="tblProperty" EntitySet="tblProperty" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__3E7D2C94" Association="Self.FK__tblTypeFi__SubCa__3E7D2C94">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__27F8EE98" Association="Self.FK__tblTypeFi__SubCa__27F8EE98">
             <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilter" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__2799C73C" Association="Self.FK__tblUser__Credent__2799C73C">
+          <AssociationSet Name="FK__tblUser__Credent__11158940" Association="Self.FK__tblUser__Credent__11158940">
             <End Role="tblCredential" EntitySet="tblCredential" />
             <End Role="tblUser" EntitySet="tblUser" />
           </AssociationSet>
@@ -576,7 +571,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           </Key>
           <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__22D5121F" FromRole="tblCategory" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblSubCategories" Relationship="Self.FK__tblSubCat__Categ__0C50D423" FromRole="tblCategory" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblCity">
           <Key>
@@ -585,8 +580,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="City_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="State_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__4CCB4BEB" FromRole="tblCity" ToRole="tblState" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__509BDCCF" FromRole="tblCity" ToRole="tblProject" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblCity__State_I__36470DEF" FromRole="tblCity" ToRole="tblState" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__3A179ED3" FromRole="tblCity" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblCredential">
           <Key>
@@ -594,7 +589,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           </Key>
           <Property Name="Credential_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__2799C73C" FromRole="tblCredential" ToRole="tblUser" />
+          <NavigationProperty Name="tblUsers" Relationship="Self.FK__tblUser__Credent__11158940" FromRole="tblCredential" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
@@ -605,7 +600,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Department_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Department_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Department_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__2F3AE904" FromRole="tblDepartment" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblDepart__Manuf__18B6AB08" FromRole="tblDepartment" ToRole="tblManufacturer" />
         </EntityType>
         <EntityType Name="tblDocument">
           <Key>
@@ -613,7 +608,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           </Key>
           <Property Name="Document_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Document_Folder_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__38C4533E" FromRole="tblDocument" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Docum__22401542" FromRole="tblDocument" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblFeedBack">
           <Key>
@@ -625,8 +620,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Feedback_Time" Type="Time" Precision="7" />
           <Property Name="Feedback_Score" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Feedback_Content" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__480696CE" FromRole="tblFeedBack" ToRole="tblProduct" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___47127295" FromRole="tblFeedBack" ToRole="tblUser" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblFeedBa__Produ__318258D2" FromRole="tblFeedBack" ToRole="tblProduct" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblFeedBa__User___308E3499" FromRole="tblFeedBack" ToRole="tblUser" />
         </EntityType>
         <EntityType Name="tblManufacturer">
           <Key>
@@ -637,9 +632,9 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Manufacturer_Department" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Manufacturer_Web" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__2F3AE904" FromRole="tblManufacturer" ToRole="tblDepartment" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___2A7633E7" FromRole="tblManufacturer" ToRole="tblUser" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__35E7E693" FromRole="tblManufacturer" ToRole="tblProduct" />
+          <NavigationProperty Name="tblDepartments" Relationship="Self.FK__tblDepart__Manuf__18B6AB08" FromRole="tblManufacturer" ToRole="tblDepartment" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblManufa__User___13F1F5EB" FromRole="tblManufacturer" ToRole="tblUser" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Manuf__1F63A897" FromRole="tblManufacturer" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblProduct">
           <Key>
@@ -650,20 +645,20 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Sales_ID" Type="Int32" Nullable="false" />
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Product_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Product_Image" Type="String" MaxLength="555" FixedLength="false" Unicode="false" />
           <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Model_Year" Type="Int32" Nullable="false" />
           <Property Name="Series_Info" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Document_ID" Type="Int32" Nullable="false" />
           <Property Name="Featured" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__38C4533E" FromRole="tblProduct" ToRole="tblDocument" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__480696CE" FromRole="tblProduct" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__35E7E693" FromRole="tblProduct" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__36DC0ACC" FromRole="tblProduct" ToRole="tblSales" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__37D02F05" FromRole="tblProduct" ToRole="tblSubCategory" />
-          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Produ__556091EC" FromRole="tblProduct" ToRole="tblProjToProd" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__3BA0BFE9" FromRole="tblProduct" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblDocument" Relationship="Self.FK__tblProduc__Docum__22401542" FromRole="tblProduct" ToRole="tblDocument" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__Produ__318258D2" FromRole="tblProduct" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturer" Relationship="Self.FK__tblProduc__Manuf__1F63A897" FromRole="tblProduct" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblSale" Relationship="Self.FK__tblProduc__Sales__2057CCD0" FromRole="tblProduct" ToRole="tblSales" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblProduc__SubCa__214BF109" FromRole="tblProduct" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Produ__3EDC53F0" FromRole="tblProduct" ToRole="tblProjToProd" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Produ__251C81ED" FromRole="tblProduct" ToRole="tblPropertyValue" />
         </EntityType>
         <EntityType Name="tblProject">
           <Key>
@@ -678,10 +673,10 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Project_State" Type="Int32" Nullable="false" />
           <Property Name="Project_Size" Type="Int32" Nullable="false" />
           <Property Name="Client_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__509BDCCF" FromRole="tblProject" ToRole="tblCity" />
-          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__51900108" FromRole="tblProject" ToRole="tblState" />
-          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___4FA7B896" FromRole="tblProject" ToRole="tblUser" />
-          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Proje__546C6DB3" FromRole="tblProject" ToRole="tblProjToProd" />
+          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblProjec__Proje__3A179ED3" FromRole="tblProject" ToRole="tblCity" />
+          <NavigationProperty Name="tblState" Relationship="Self.FK__tblProjec__Proje__3B0BC30C" FromRole="tblProject" ToRole="tblState" />
+          <NavigationProperty Name="tblUser" Relationship="Self.FK__tblProjec__User___39237A9A" FromRole="tblProject" ToRole="tblUser" />
+          <NavigationProperty Name="tblProjToProds" Relationship="Self.FK__tblProjTo__Proje__3DE82FB7" FromRole="tblProject" ToRole="tblProjToProd" />
         </EntityType>
         <EntityType Name="tblProjToProd">
           <Key>
@@ -691,8 +686,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Project_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_ID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProjTo__Produ__556091EC" FromRole="tblProjToProd" ToRole="tblProduct" />
-          <NavigationProperty Name="tblProject" Relationship="Self.FK__tblProjTo__Proje__546C6DB3" FromRole="tblProjToProd" ToRole="tblProject" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProjTo__Produ__3EDC53F0" FromRole="tblProjToProd" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProject" Relationship="Self.FK__tblProjTo__Proje__3DE82FB7" FromRole="tblProjToProd" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblProperty">
           <Key>
@@ -702,9 +697,9 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IsType" Type="Int32" />
           <Property Name="IsTechSpec" Type="Int32" />
-          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__3C94E422" FromRole="tblProperty" ToRole="tblPropertyValue" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__4341E1B1" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__3F7150CD" FromRole="tblProperty" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK__tblProper__Prope__2610A626" FromRole="tblProperty" ToRole="tblPropertyValue" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__Prope__2CBDA3B5" FromRole="tblProperty" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__Prope__28ED12D1" FromRole="tblProperty" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblPropertyValue">
           <Key>
@@ -714,8 +709,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Property_ID" Type="Int32" Nullable="false" />
           <Property Name="Product_ID" Type="Int32" Nullable="false" />
           <Property Name="Value" Type="Int32" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__3BA0BFE9" FromRole="tblPropertyValue" ToRole="tblProduct" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__3C94E422" FromRole="tblPropertyValue" ToRole="tblProperty" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK__tblProper__Produ__251C81ED" FromRole="tblPropertyValue" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblProper__Prope__2610A626" FromRole="tblPropertyValue" ToRole="tblProperty" />
         </EntityType>
         <EntityType Name="tblSale">
           <Key>
@@ -726,7 +721,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="Sales_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Sales_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sales_Web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__36DC0ACC" FromRole="tblSales" ToRole="tblProduct" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__Sales__2057CCD0" FromRole="tblSales" ToRole="tblProduct" />
         </EntityType>
         <EntityType Name="tblState">
           <Key>
@@ -734,8 +729,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           </Key>
           <Property Name="State_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="State_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__4CCB4BEB" FromRole="tblState" ToRole="tblCity" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__51900108" FromRole="tblState" ToRole="tblProject" />
+          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__State_I__36470DEF" FromRole="tblState" ToRole="tblCity" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__Proje__3B0BC30C" FromRole="tblState" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblSubCategory">
           <Key>
@@ -744,10 +739,10 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <Property Name="SubCategory_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__22D5121F" FromRole="tblSubCategory" ToRole="tblCategory" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__37D02F05" FromRole="tblSubCategory" ToRole="tblProduct" />
-          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__424DBD78" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
-          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__3E7D2C94" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
+          <NavigationProperty Name="tblCategory" Relationship="Self.FK__tblSubCat__Categ__0C50D423" FromRole="tblSubCategory" ToRole="tblCategory" />
+          <NavigationProperty Name="tblProducts" Relationship="Self.FK__tblProduc__SubCa__214BF109" FromRole="tblSubCategory" ToRole="tblProduct" />
+          <NavigationProperty Name="tblTechSpecFilters" Relationship="Self.FK__tblTechSp__SubCa__2BC97F7C" FromRole="tblSubCategory" ToRole="tblTechSpecFilter" />
+          <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK__tblTypeFi__SubCa__27F8EE98" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblTechSpecFilter">
           <Key>
@@ -758,8 +753,8 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Min_Value" Type="Int32" />
           <Property Name="Max_Value" Type="Int32" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__4341E1B1" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__424DBD78" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTechSp__Prope__2CBDA3B5" FromRole="tblTechSpecFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTechSp__SubCa__2BC97F7C" FromRole="tblTechSpecFilter" ToRole="tblSubCategory" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>
@@ -768,13 +763,13 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="User_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="User_Image" Type="String" MaxLength="555" FixedLength="false" Unicode="false" />
           <Property Name="user_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Credential_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__2799C73C" FromRole="tblUser" ToRole="tblCredential" />
-          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___47127295" FromRole="tblUser" ToRole="tblFeedBack" />
-          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___2A7633E7" FromRole="tblUser" ToRole="tblManufacturer" />
-          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___4FA7B896" FromRole="tblUser" ToRole="tblProject" />
+          <NavigationProperty Name="tblCredential" Relationship="Self.FK__tblUser__Credent__11158940" FromRole="tblUser" ToRole="tblCredential" />
+          <NavigationProperty Name="tblFeedBacks" Relationship="Self.FK__tblFeedBa__User___308E3499" FromRole="tblUser" ToRole="tblFeedBack" />
+          <NavigationProperty Name="tblManufacturers" Relationship="Self.FK__tblManufa__User___13F1F5EB" FromRole="tblUser" ToRole="tblManufacturer" />
+          <NavigationProperty Name="tblProjects" Relationship="Self.FK__tblProjec__User___39237A9A" FromRole="tblUser" ToRole="tblProject" />
         </EntityType>
         <EntityType Name="tblTypeFilter">
           <Key>
@@ -785,10 +780,10 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Type_Options" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__3F7150CD" FromRole="tblTypeFilter" ToRole="tblProperty" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__3E7D2C94" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK__tblTypeFi__Prope__28ED12D1" FromRole="tblTypeFilter" ToRole="tblProperty" />
+          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK__tblTypeFi__SubCa__27F8EE98" FromRole="tblTypeFilter" ToRole="tblSubCategory" />
         </EntityType>
-        <Association Name="FK__tblSubCat__Categ__22D5121F">
+        <Association Name="FK__tblSubCat__Categ__0C50D423">
           <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="*" />
           <ReferentialConstraint>
@@ -800,7 +795,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblCity__State_I__4CCB4BEB">
+        <Association Name="FK__tblCity__State_I__36470DEF">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
           <ReferentialConstraint>
@@ -812,7 +807,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__509BDCCF">
+        <Association Name="FK__tblProjec__Proje__3A179ED3">
           <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -824,7 +819,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblUser__Credent__2799C73C">
+        <Association Name="FK__tblUser__Credent__11158940">
           <End Role="tblCredential" Type="Self.tblCredential" Multiplicity="1" />
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
           <ReferentialConstraint>
@@ -836,7 +831,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblDepart__Manuf__2F3AE904">
+        <Association Name="FK__tblDepart__Manuf__18B6AB08">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -848,7 +843,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Docum__38C4533E">
+        <Association Name="FK__tblProduc__Docum__22401542">
           <End Role="tblDocument" Type="Self.tblDocument" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -860,7 +855,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__Produ__480696CE">
+        <Association Name="FK__tblFeedBa__Produ__318258D2">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -872,7 +867,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblFeedBa__User___47127295">
+        <Association Name="FK__tblFeedBa__User___308E3499">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
           <End Role="tblFeedBack" Type="Self.tblFeedBack" Multiplicity="*" />
           <ReferentialConstraint>
@@ -884,7 +879,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblManufa__User___2A7633E7">
+        <Association Name="FK__tblManufa__User___13F1F5EB">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -896,7 +891,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Manuf__35E7E693">
+        <Association Name="FK__tblProduc__Manuf__1F63A897">
           <End Role="tblManufacturer" Type="Self.tblManufacturer" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -908,7 +903,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__Sales__36DC0ACC">
+        <Association Name="FK__tblProduc__Sales__2057CCD0">
           <End Role="tblSales" Type="Self.tblSale" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -920,7 +915,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProduc__SubCa__37D02F05">
+        <Association Name="FK__tblProduc__SubCa__214BF109">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="*" />
           <ReferentialConstraint>
@@ -932,7 +927,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Produ__556091EC">
+        <Association Name="FK__tblProjTo__Produ__3EDC53F0">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -944,7 +939,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Produ__3BA0BFE9">
+        <Association Name="FK__tblProper__Produ__251C81ED">
           <End Role="tblProduct" Type="Self.tblProduct" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -956,7 +951,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__Proje__51900108">
+        <Association Name="FK__tblProjec__Proje__3B0BC30C">
           <End Role="tblState" Type="Self.tblState" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -968,7 +963,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjec__User___4FA7B896">
+        <Association Name="FK__tblProjec__User___39237A9A">
           <End Role="tblUser" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="*" />
           <ReferentialConstraint>
@@ -980,7 +975,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProjTo__Proje__546C6DB3">
+        <Association Name="FK__tblProjTo__Proje__3DE82FB7">
           <End Role="tblProject" Type="Self.tblProject" Multiplicity="1" />
           <End Role="tblProjToProd" Type="Self.tblProjToProd" Multiplicity="*" />
           <ReferentialConstraint>
@@ -992,7 +987,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblProper__Prope__3C94E422">
+        <Association Name="FK__tblProper__Prope__2610A626">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblPropertyValue" Type="Self.tblPropertyValue" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1004,7 +999,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__Prope__4341E1B1">
+        <Association Name="FK__tblTechSp__Prope__2CBDA3B5">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1016,7 +1011,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__Prope__3F7150CD">
+        <Association Name="FK__tblTypeFi__Prope__28ED12D1">
           <End Role="tblProperty" Type="Self.tblProperty" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1028,7 +1023,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTechSp__SubCa__424DBD78">
+        <Association Name="FK__tblTechSp__SubCa__2BC97F7C">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTechSpecFilter" Type="Self.tblTechSpecFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1040,7 +1035,7 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblTypeFi__SubCa__3E7D2C94">
+        <Association Name="FK__tblTypeFi__SubCa__27F8EE98">
           <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
           <End Role="tblTypeFilter" Type="Self.tblTypeFilter" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1071,91 +1066,91 @@ warning 6002: The table/view 'JoolServer.dbo.tblTypeFilter' does not have a prim
           <EntitySet Name="tblTechSpecFilters" EntityType="Self.tblTechSpecFilter" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
           <EntitySet Name="tblTypeFilters" EntityType="Self.tblTypeFilter" />
-          <AssociationSet Name="FK__tblSubCat__Categ__22D5121F" Association="Self.FK__tblSubCat__Categ__22D5121F">
+          <AssociationSet Name="FK__tblSubCat__Categ__0C50D423" Association="Self.FK__tblSubCat__Categ__0C50D423">
             <End Role="tblCategory" EntitySet="tblCategories" />
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblCity__State_I__4CCB4BEB" Association="Self.FK__tblCity__State_I__4CCB4BEB">
+          <AssociationSet Name="FK__tblCity__State_I__36470DEF" Association="Self.FK__tblCity__State_I__36470DEF">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblCity" EntitySet="tblCities" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__509BDCCF" Association="Self.FK__tblProjec__Proje__509BDCCF">
+          <AssociationSet Name="FK__tblProjec__Proje__3A179ED3" Association="Self.FK__tblProjec__Proje__3A179ED3">
             <End Role="tblCity" EntitySet="tblCities" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblUser__Credent__2799C73C" Association="Self.FK__tblUser__Credent__2799C73C">
+          <AssociationSet Name="FK__tblUser__Credent__11158940" Association="Self.FK__tblUser__Credent__11158940">
             <End Role="tblCredential" EntitySet="tblCredentials" />
             <End Role="tblUser" EntitySet="tblUsers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblDepart__Manuf__2F3AE904" Association="Self.FK__tblDepart__Manuf__2F3AE904">
+          <AssociationSet Name="FK__tblDepart__Manuf__18B6AB08" Association="Self.FK__tblDepart__Manuf__18B6AB08">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblDepartment" EntitySet="tblDepartments" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Docum__38C4533E" Association="Self.FK__tblProduc__Docum__38C4533E">
+          <AssociationSet Name="FK__tblProduc__Docum__22401542" Association="Self.FK__tblProduc__Docum__22401542">
             <End Role="tblDocument" EntitySet="tblDocuments" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__Produ__480696CE" Association="Self.FK__tblFeedBa__Produ__480696CE">
+          <AssociationSet Name="FK__tblFeedBa__Produ__318258D2" Association="Self.FK__tblFeedBa__Produ__318258D2">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblFeedBa__User___47127295" Association="Self.FK__tblFeedBa__User___47127295">
+          <AssociationSet Name="FK__tblFeedBa__User___308E3499" Association="Self.FK__tblFeedBa__User___308E3499">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblFeedBack" EntitySet="tblFeedBacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblManufa__User___2A7633E7" Association="Self.FK__tblManufa__User___2A7633E7">
+          <AssociationSet Name="FK__tblManufa__User___13F1F5EB" Association="Self.FK__tblManufa__User___13F1F5EB">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Manuf__35E7E693" Association="Self.FK__tblProduc__Manuf__35E7E693">
+          <AssociationSet Name="FK__tblProduc__Manuf__1F63A897" Association="Self.FK__tblProduc__Manuf__1F63A897">
             <End Role="tblManufacturer" EntitySet="tblManufacturers" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__Sales__36DC0ACC" Association="Self.FK__tblProduc__Sales__36DC0ACC">
+          <AssociationSet Name="FK__tblProduc__Sales__2057CCD0" Association="Self.FK__tblProduc__Sales__2057CCD0">
             <End Role="tblSales" EntitySet="tblSales" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProduc__SubCa__37D02F05" Association="Self.FK__tblProduc__SubCa__37D02F05">
+          <AssociationSet Name="FK__tblProduc__SubCa__214BF109" Association="Self.FK__tblProduc__SubCa__214BF109">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblProduct" EntitySet="tblProducts" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Produ__556091EC" Association="Self.FK__tblProjTo__Produ__556091EC">
+          <AssociationSet Name="FK__tblProjTo__Produ__3EDC53F0" Association="Self.FK__tblProjTo__Produ__3EDC53F0">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblProjToProd" EntitySet="tblProjToProds" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Produ__3BA0BFE9" Association="Self.FK__tblProper__Produ__3BA0BFE9">
+          <AssociationSet Name="FK__tblProper__Produ__251C81ED" Association="Self.FK__tblProper__Produ__251C81ED">
             <End Role="tblProduct" EntitySet="tblProducts" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__Proje__51900108" Association="Self.FK__tblProjec__Proje__51900108">
+          <AssociationSet Name="FK__tblProjec__Proje__3B0BC30C" Association="Self.FK__tblProjec__Proje__3B0BC30C">
             <End Role="tblState" EntitySet="tblStates" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjec__User___4FA7B896" Association="Self.FK__tblProjec__User___4FA7B896">
+          <AssociationSet Name="FK__tblProjec__User___39237A9A" Association="Self.FK__tblProjec__User___39237A9A">
             <End Role="tblUser" EntitySet="tblUsers" />
             <End Role="tblProject" EntitySet="tblProjects" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProjTo__Proje__546C6DB3" Association="Self.FK__tblProjTo__Proje__546C6DB3">
+          <AssociationSet Name="FK__tblProjTo__Proje__3DE82FB7" Association="Self.FK__tblProjTo__Proje__3DE82FB7">
             <End Role="tblProject" EntitySet="tblProjects" />
             <End Role="tblProjToProd" EntitySet="tblProjToProds" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblProper__Prope__3C94E422" Association="Self.FK__tblProper__Prope__3C94E422">
+          <AssociationSet Name="FK__tblProper__Prope__2610A626" Association="Self.FK__tblProper__Prope__2610A626">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblPropertyValue" EntitySet="tblPropertyValues" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__Prope__4341E1B1" Association="Self.FK__tblTechSp__Prope__4341E1B1">
+          <AssociationSet Name="FK__tblTechSp__Prope__2CBDA3B5" Association="Self.FK__tblTechSp__Prope__2CBDA3B5">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__Prope__3F7150CD" Association="Self.FK__tblTypeFi__Prope__3F7150CD">
+          <AssociationSet Name="FK__tblTypeFi__Prope__28ED12D1" Association="Self.FK__tblTypeFi__Prope__28ED12D1">
             <End Role="tblProperty" EntitySet="tblProperties" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTechSp__SubCa__424DBD78" Association="Self.FK__tblTechSp__SubCa__424DBD78">
+          <AssociationSet Name="FK__tblTechSp__SubCa__2BC97F7C" Association="Self.FK__tblTechSp__SubCa__2BC97F7C">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTechSpecFilter" EntitySet="tblTechSpecFilters" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblTypeFi__SubCa__3E7D2C94" Association="Self.FK__tblTypeFi__SubCa__3E7D2C94">
+          <AssociationSet Name="FK__tblTypeFi__SubCa__27F8EE98" Association="Self.FK__tblTypeFi__SubCa__27F8EE98">
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
             <End Role="tblTypeFilter" EntitySet="tblTypeFilters" />
           </AssociationSet>

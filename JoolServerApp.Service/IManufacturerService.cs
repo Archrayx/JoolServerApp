@@ -1,8 +1,5 @@
-﻿using System;
+﻿using JoolServerApp.Data;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using JoolServerApp.Data;
 
 namespace JoolServerApp.Service
 {

@@ -1,4 +1,4 @@
-﻿@model JoolServerApp.Web.ViewModels.ContactVM
+﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
 @{
     ViewBag.Title = "Contact";
 }
@@ -10,7 +10,9 @@
     
 </style>
 <body>
-    @Html.Partial("~/Views/Shared/_PartialNav.cshtml")
+    <h2>Contact</h2>
+
+    @Html.Partial("~/Views/Shared/_PartialNav.cshtml", Model)
     <table>
         <tr>
             <th>
@@ -39,7 +41,7 @@
                     @item.Department_Phone
                 </td>
                 <td>
-                    @item.Department_Email 
+                    @item.Department_Email
                 </td>
             </tr>
         }

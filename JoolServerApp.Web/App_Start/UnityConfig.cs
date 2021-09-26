@@ -1,8 +1,7 @@
-using System;
-using System.Web.Mvc;
-using JoolServerApp.Data;
 using JoolServerApp.Repo;
 using JoolServerApp.Service;
+using System;
+using System.Web.Mvc;
 using Unity;
 using Unity.AspNet.Mvc;
 
@@ -59,6 +58,9 @@ namespace JoolServerApp.Web
             container.RegisterType<IDepartmentService, DepartmentService>();
             container.RegisterType<IDocumentService, DocumentService>();
             container.RegisterType<ISaleService, SaleService>();
+            container.RegisterType<IProjectService, ProjectService>();
+            container.RegisterType<ICityService, CityService>();
+            container.RegisterType<IStateService, StateService>();
             var obj = container.Resolve<IRepository<object>>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

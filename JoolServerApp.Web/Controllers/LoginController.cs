@@ -1,18 +1,18 @@
 ﻿using JoolServerApp.Data;
-using System.Linq;
-using System.Web.Mvc;
-using JoolServerApp.Web.ViewModels;
-using System.Web.Security;
 using JoolServerApp.Service;
-using System.Web;
+using JoolServerApp.Web.ViewModels;
 using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Security;
 
 namespace JoolServerApp.Web.Controllers
 
 {
     public class LoginController : Controller
     {
-        
+
         private readonly IUserService userService;
 
         public LoginController(IUserService userService)
@@ -38,23 +38,38 @@ namespace JoolServerApp.Web.Controllers
         public ActionResult Login(CreateVM obj, HttpPostedFileBase ImageData)
         {
             if (obj.user_Password == obj.confirm_Password && obj.user_Password != null)
-            {               
-
-                obj.User_Image = new byte[ImageData.ContentLength];
-                ImageData.InputStream.Read(obj.User_Image,0,ImageData.ContentLength);
-                tblUser tempUSR = new tblUser
+            {
+                var allowedExtensions = new[] {
+            ".Jpg", ".png", ".jpg", "jpeg"
+        };
+                obj.User_Image = ImageData.ToString();
+                var fileName = Path.GetFileName(ImageData.FileName); //getting only file name(ex-ganesh.jpg)  
+                var ext = Path.GetExtension(ImageData.FileName); //getting the extension(ex-.jpg)  
+                if (allowedExtensions.Contains(ext)) //check what type of extension  
                 {
-                    User_Name = obj.User_Name,
-                    User_Email = obj.User_Email,
-                    User_Image = obj.User_Image,
-                    user_Password = obj.user_Password,
-                    Credential_ID = 1
-                };
-                if (ModelState.IsValid)
-                {
-                    this.userService.insertUser(tempUSR);
-                    return RedirectToAction("Login");
+                    string name = Path.GetFileNameWithoutExtension(fileName); //getting file name without extension  
+                    string myfile = name + "_" + obj.User_Name + ext; //appending the name with id  
+                                                               // store the file inside ~/project folder(Img)  
+                    var path = Path.Combine(Server.MapPath("~/Documents/UserIMG"), myfile);
+                    
+                    tblUser tempUSR = new tblUser
+                    {
+                        User_Name = obj.User_Name,
+                        User_Email = obj.User_Email,
+                        User_Image = "/Documents/UserIMG/"+myfile,
+                        user_Password = obj.user_Password,
+                        Credential_ID = 1
+                    };
+                    
+                    if (ModelState.IsValid)
+                    {
+                        this.userService.insertUser(tempUSR);
+                        ImageData.SaveAs(path);
+                        return RedirectToAction("Login");
+                    }
                 }
+                
+                
             }
             return View("Login");
         }
@@ -73,13 +88,14 @@ namespace JoolServerApp.Web.Controllers
             }
             else
             {
+                //can also use user.identity.name to check current user
                 Session["UserID"] = userDetails.User_ID;
                 Session["Role"] = userDetails.Credential_ID;
                 Session["UserName"] = userDetails.User_Name;
                 FormsAuthentication.SetAuthCookie(userDetails.User_Name, true);
                 return RedirectToAction("Search", "Search");
             }
-               
+
         }
     }
 }

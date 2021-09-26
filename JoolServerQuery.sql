@@ -58,7 +58,7 @@ CREATE TABLE [dbo].[tblDocument](
 )
 GO
 SET IDENTITY_INSERT [dbo].[tblDocument] ON
-INSERT [dbo].[tblDocument]([Document_ID],[Document_Folder_Path]) VALUES(1, 'JoolServerApp\Item_Docs\Item1_Doc.txt')
+INSERT [dbo].[tblDocument]([Document_ID],[Document_Folder_Path]) VALUES(1, 'Item1_Doc.txt')
 SET IDENTITY_INSERT [dbo].[tblDocument] OFF
 GO
 
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[tblUser]
 ([User_ID][int] IDENTITY(1,1) NOT NULL,
 [User_Name][varchar](100) NOT NULL,
 [User_Email][varchar](100) NOT NULL,
-[User_Image][image] NULL,
+[User_Image][varchar] (555) NULL,
 [user_Password] [varchar](100) NOT NULL,
 [Credential_ID] [int] NOT NULL,
 PRIMARY KEY (User_ID),
@@ -184,7 +184,7 @@ Manufacturer_ID int Not Null,
 Sales_ID int Not Null,
 SubCategory_ID int Not Null,
 Product_Name varchar(50) Not Null,
-Product_Image image Null,
+Product_Image varchar (555) Null,
 Series varchar(50) Not Null,
 Model varchar(50) Not Null,
 Model_Year int Not Null,

@@ -7,7 +7,14 @@
     <link href="~/Content/Styles/ProductSummary.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 }
+<head>
 
+    <style>
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
 
 <div id="productSummary">
     <div id="productBanner" class="row align-center justify-content-between">
@@ -36,7 +43,7 @@
 
         <div class="col-1 justify-content-end">
             <div class="grayCircle">
-                @Html.ActionLink("Admin", "Index", "Admin")
+                <img style="width:100px; height:100px; float:right;" src="@Url.Content(ViewBag.userIMG)" alt="Image"/>
             </div>
         </div>
 
@@ -55,7 +62,7 @@
                 <hr />
                 <div class="col">
                     <button type="button">Product</button>
-                    <button type="button">Project</button>
+                    @Html.ActionLink("Projects","Project","Project")
                 </div>
                 <hr />
                 <div class="col-12">
@@ -127,7 +134,9 @@
                         @foreach (var product in Model)
                         {
                             <div class="col-3 informationBox text-center">
-                                <div class="productImg" style="background-color: gray; height:140px; width:140px"></div>
+                                <div class="productImg" style=" height:140px; width:140px">
+                                    <img style="height:140px; width:140px" src="@Url.Content(product.Product_Image)" alt="Image" />
+                                </div>
                                 @Html.ActionLink(product.Product_Name, "productDetails", "ProductDetails", new { id = product.Product_ID } ,
                                new Dictionary<string, object> { {"class", "detailsLink" } }
                                 )

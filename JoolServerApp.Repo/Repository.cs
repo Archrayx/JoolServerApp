@@ -1,15 +1,12 @@
-﻿
-using JoolServerApp.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
-
+using System.Linq;
+using JoolServerApp.Data;
 namespace JoolServerApp.Repo
 {
-    public class Repository<T> : IRepository<T> where T : class 
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly JoolServerEntities context;
         private DbSet<T> entities;
@@ -20,7 +17,7 @@ namespace JoolServerApp.Repo
             this.context = context;
             Debug.WriteLine(context);
             entities = context.Set<T>();
-            
+
         }
         public IEnumerable<T> GetAll()
         {

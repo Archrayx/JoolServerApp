@@ -27,7 +27,7 @@ namespace JoolServerApp.Data
         public int Sales_ID { get; set; }
         public int SubCategory_ID { get; set; }
         public string Product_Name { get; set; }
-        public byte[] Product_Image { get; set; }
+        public string Product_Image { get; set; }
         public string Series { get; set; }
         public string Model { get; set; }
         public int Model_Year { get; set; }

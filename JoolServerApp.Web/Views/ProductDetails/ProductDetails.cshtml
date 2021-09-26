@@ -5,7 +5,7 @@
 @{
     ViewBag.Title = "ProductDetails";
 }
-@Html.Partial("~/Views/Shared/_PartialNav.cshtml")
+@Html.Partial("~/Views/Shared/_PartialNav.cshtml", Model)
 <h2>ProductDetails</h2>
 <!-- Paste code on top shared between pages at this point-->
 
@@ -30,6 +30,7 @@
                     </th>
                 </tr>
                 @Model.Series
+                @Model.Document_ID
             </table>
         </div>
         <div class="col-sm">

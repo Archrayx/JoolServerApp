@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using JoolServerApp.Data;
+using System.Collections.Generic;
 
 namespace JoolServerApp.Service
 {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace JoolServerApp.Web.ViewModels
+﻿namespace JoolServerApp.Web.ViewModels
 {
     public class ProductDetailsVM
     {
@@ -15,7 +10,7 @@ namespace JoolServerApp.Web.ViewModels
         public string Series_Info { get; set; }
         public int? Manufacturer_ID { get; set; }
         public int? Sales_ID { get; set; }
-        public int ? SubCategory_ID { get; set;}
+        public int? SubCategory_ID { get; set; }
         public int Document_ID { get; set; }
 
 

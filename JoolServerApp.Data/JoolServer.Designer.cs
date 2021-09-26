@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\river\Documents\Visual Studio 2019\projects\JoolProject\JoolServerApp.Data\JoolServer.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Xavier Laptop\Source\Repos\JoolServerApp\JoolServerApp.Data\JoolServer.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

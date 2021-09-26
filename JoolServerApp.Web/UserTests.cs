@@ -1,10 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using JoolServerApp.Service;
-using System.Collections.Generic;
-using JoolServerApp.Data;
-using Moq;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
+using JoolServerApp.Service;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
 
 namespace JoolServerApp.Web
 {

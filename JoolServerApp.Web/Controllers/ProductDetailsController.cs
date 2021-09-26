@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using JoolServerApp.Service;
-using System.Web.Mvc;
+﻿using JoolServerApp.Service;
 using JoolServerApp.Web.ViewModels;
+using System.Web.Mvc;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -33,7 +29,6 @@ namespace JoolServerApp.Web.Controllers
                 Series_Info = item.Series_Info,
                 SubCategory_ID = item.SubCategory_ID,
                 Document_ID = item.Document_ID
-                
             };
 
 

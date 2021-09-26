@@ -29,10 +29,10 @@
 </head>
 <body>
     <h2>Document</h2>
-    @Html.Partial("~/Views/Shared/_PartialNav.cshtml")
+    @Html.Partial("~/Views/Shared/_PartialNav.cshtml", Model)
 
     <div>
-        @Html.ActionLink("Document Download", "Download", new { obj = Model })
+        @Html.ActionLink("Document Download", "Download", Model)
     </div>
 </body>
 </html>

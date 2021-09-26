@@ -1,5 +1,5 @@
 ﻿@model JoolServerApp.Web.ViewModels.ProductDetailsVM
-        @{ViewBag.Product = Model.Product_ID; }
+        
 
 <!DOCTYPE html>
 <html>
@@ -43,18 +43,18 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-
+    <h2>NAME = @Model.Product_ID</h2>
+    <h2>NAME = @Session["Role"]</h2>
 
 
     <ul>
         <li>@Html.ActionLink("Product Summary", "ProductSummary", "Product", null, new { @class = "active" })</li>
-        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails",new { id = Model.Product_ID }, null)</li>
-        <li>@Html.ActionLink("Documents", "Document", "Documents", new { obj = Model }, null)</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Contact",new { obj = Model }, null)</li>
-        <li style="float:right">@Html.ActionLink("Admin", "Index", "Admin")</li>
-        @if (Request.IsAuthenticated && @HttpContext.Current.Session["Role"].ToString() == "3")
+        <li>@Html.ActionLink("Product Details", "ProductDetails", "ProductDetails", new { id = Model.Product_ID }, null)</li>
+        <li>@Html.ActionLink("Documents", "Document", "Documents", Model, null)</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Contact", Model, null)</li>
+        @if(Session["Role"].ToString() == "3")
         {
-
+            <li style="float:right">@Html.ActionLink("Admin", "Index", "Admin")</li>
         }
     </ul>
 

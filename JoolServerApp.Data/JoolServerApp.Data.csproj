@@ -2478,7 +2478,6 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="BaseEntity.cs" />
     <Compile Include="JoolServer.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

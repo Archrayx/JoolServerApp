@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace JoolServerApp.Web.ViewModels
@@ -14,7 +10,7 @@ namespace JoolServerApp.Web.ViewModels
         [DisplayName("Email Address:")]
         public string User_Email { get; set; }
         [DisplayName("Profile Pic:")]
-        public byte[] User_Image { get; set; }
+        public string User_Image { get; set; }
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         public string user_Password { get; set; }

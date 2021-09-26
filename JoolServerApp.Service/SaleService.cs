@@ -1,9 +1,6 @@
 ﻿using JoolServerApp.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using JoolServerApp.Repo;
+using System.Collections.Generic;
 
 namespace JoolServerApp.Service
 {
@@ -16,7 +13,7 @@ namespace JoolServerApp.Service
         }
         public void DeleteSale(long id)
         {
-            tblSale sale=saleRepository.Get(id);
+            tblSale sale = saleRepository.Get(id);
             saleRepository.Remove(sale);
             saleRepository.SaveChanges();
         }

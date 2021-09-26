@@ -1,13 +1,10 @@
 ﻿using JoolServerApp.Service;
+using JoolServerApp.Web.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
-using System.Reflection.Metadata;
-using System.Diagnostics;
-using JoolServerApp.Web.ViewModels;
 
 namespace JoolServerApp.Web.Controllers
 {
@@ -22,14 +19,7 @@ namespace JoolServerApp.Web.Controllers
 
         }
 
-        public ActionResult Document()
-        {
-            ProductDetailsVM obj = new ProductDetailsVM
-            {
-                Document_ID = 1
-            };
-            return View(obj);
-        }
+
         public ActionResult Document(ProductDetailsVM obj)
         {
 
@@ -40,7 +30,7 @@ namespace JoolServerApp.Web.Controllers
 
             var doc = documentService.GetDocument(obj.Document_ID);
             string filename = doc.Document_Folder_Path;
-            string filepath = AppDomain.CurrentDomain.BaseDirectory + @"Item_Docs\" + filename;
+            string filepath = AppDomain.CurrentDomain.BaseDirectory + @"Documents\" + filename;
             Debug.WriteLine(filepath);
             byte[] filedata = System.IO.File.ReadAllBytes(filepath);
             string contentType = MimeMapping.GetMimeMapping(filepath);
@@ -60,11 +50,11 @@ namespace JoolServerApp.Web.Controllers
             response.BinaryWrite(data);
             response.End();
 
-            return View("Document",obj);
+            return View("Document", obj);
 
-            
+
 
         }
 
     }
-    }
+}

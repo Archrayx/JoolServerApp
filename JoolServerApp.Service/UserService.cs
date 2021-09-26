@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using JoolServerApp.Data;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace JoolServerApp.Service
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
         private IRepository<tblUser> userRepository;
 

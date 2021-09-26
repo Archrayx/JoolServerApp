@@ -3,7 +3,21 @@
 @{
     ViewBag.Title = "Create";
 }
+<head>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        function show(input) {
+            if (input.files && input.files[0]) {
+                var filerdr = new FileReader();
+                filerdr.onload = function (e) {
+                    $('#user_img').attr('src', e.target.result);
+                }
+                filerdr.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 
+</head>
 <h2>Create</h2>
 
 @using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -50,8 +64,15 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Product_Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                <img id="user_img"
+                     height="100"
+                     width="90"
+                     style="border:solid" />
+            </div>
+
             <div class="col-md-10">
-                <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                <input type="file" name="ImageData" id="ImageData" onchange="show(this);" />
             </div>
         </div>
 

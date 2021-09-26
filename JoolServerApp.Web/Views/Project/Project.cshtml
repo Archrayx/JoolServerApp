@@ -1,0 +1,70 @@
+﻿@model IEnumerable<JoolServerApp.Web.ViewModels.ProjectVM>
+@{
+    ViewBag.Title = "Project";
+}
+<!--Place partial view on top-->
+<h2>Project</h2>
+<table>
+    <tr>
+        <th>
+            Project_ID
+        </th>
+        <th>
+            Project_Name
+        </th>
+        <th>
+            Project_Address1
+        </th>
+        <th>
+            Project_Address2
+        </th>
+        <th>
+            Project_City
+        </th>
+        <th>
+            Project_State
+        </th>
+        <th>
+            Project_Size
+        </th>
+        <th>
+            Client_Name
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_Address1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_Address2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_State)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Project_Size)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Client_Name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Project_ID }) |
+        |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Project_ID })
+    </td>
+    </tr>
+    }
+    @Html.ActionLink("Product Summary","Search","Search")
+    <!--Results to be placed above-->
+</table>

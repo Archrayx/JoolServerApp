@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using JoolServerApp.Data;
 using JoolServerApp.Repo;
-using JoolServerApp.Data;
+using System.Collections.Generic;
 
 namespace JoolServerApp.Service
 {
-    public class SubCategoryService:ISubCategoryService
+    public class SubCategoryService : ISubCategoryService
     {
         private IRepository<tblSubCategory> subCategoryRepository;
         public SubCategoryService(IRepository<tblSubCategory> subCategoryRepository)
